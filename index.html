@@ -585,27 +585,32 @@ overflow:hidden;
 position:relative;
 }
 
-/* DESIGN 01 AUTO PREVIEW */
+/* AUTO PREVIEW */
 
-.design01-auto{
+.design-auto{
 position:absolute;
 inset:0;
 width:100%;
 height:100%;
 }
 
-.design01-auto img{
+.design-auto img{
 position:absolute;
 inset:0;
 width:100%;
 height:100%;
 object-fit:cover;
 opacity:0;
-transition:opacity .9s ease;
+transform:scale(1.015);
+transition:
+opacity 1.15s cubic-bezier(.22,.61,.36,1),
+transform 1.15s cubic-bezier(.22,.61,.36,1);
+will-change:opacity,transform;
 }
 
-.design01-auto img.active{
+.design-auto img.active{
 opacity:1;
+transform:scale(1);
 }
 
 .tshirt-card-image>img{
@@ -702,14 +707,14 @@ object-fit:cover;
 opacity:1;
 transform:scale(1);
 transition:
-opacity .38s ease,
-transform .55s cubic-bezier(.22,.61,.36,1);
+opacity .55s cubic-bezier(.22,.61,.36,1),
+transform .7s cubic-bezier(.22,.61,.36,1);
 will-change:opacity,transform;
 }
 
 .visual img.gallery-changing{
 opacity:0;
-transform:scale(1.035);
+transform:scale(1.025);
 }
 
 .visual-placeholder{
@@ -1946,8 +1951,11 @@ const products={
 
 tshirts:[
 
+/* DESIGN 01 */
+
 {
 name:"VEXORA DESIGN 01",
+
 price:5900,
 
 image:"tee01_1.jpg",
@@ -1970,139 +1978,339 @@ XL:3
 
 },
 
+/* DESIGN 02 */
+
 {
 name:"VEXORA DESIGN 02",
+
 price:5900,
-image:"",
-gallery:[],
+
+image:"tee02_1.jpg",
+
+gallery:[
+"tee02_1.jpg",
+"tee02_2.jpg",
+"tee02_3.jpg",
+"tee02_4.jpg"
+],
+
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
+
 },
+
+/* DESIGN 03 */
 
 {
 name:"VEXORA DESIGN 03",
+
 price:5900,
+
 image:"",
+
 gallery:[],
+
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
+
 },
+
+/* DESIGN 04 */
 
 {
 name:"VEXORA DESIGN 04",
+
 price:5900,
+
 image:"",
+
 gallery:[],
+
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
+
 },
+
+/* DESIGN 05 */
 
 {
 name:"VEXORA DESIGN 05",
+
 price:5900,
+
 image:"",
+
 gallery:[],
+
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
+
 },
+
+/* DESIGN 06 */
 
 {
 name:"VEXORA DESIGN 06",
+
 price:5900,
+
 image:"",
+
 gallery:[],
+
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
+
 },
+
+/* DESIGN 07 */
 
 {
 name:"VEXORA DESIGN 07",
+
 price:5900,
+
 image:"",
+
 gallery:[],
+
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
+
 },
+
+/* DESIGN 08 */
 
 {
 name:"VEXORA DESIGN 08",
+
 price:5900,
+
 image:"",
+
 gallery:[],
+
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
+
 },
+
+/* DESIGN 09 */
 
 {
 name:"VEXORA DESIGN 09",
+
 price:5900,
+
 image:"",
+
 gallery:[],
+
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
+
 },
+
+/* DESIGN 10 */
 
 {
 name:"VEXORA DESIGN 10",
+
 price:5900,
+
 image:"",
+
 gallery:[],
+
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
+
 },
+
+/* DESIGN 11 */
 
 {
 name:"VEXORA DESIGN 11",
+
 price:5900,
+
 image:"",
+
 gallery:[],
+
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
+
 },
+
+/* DESIGN 12 */
 
 {
 name:"VEXORA DESIGN 12",
+
 price:5900,
+
 image:"",
+
 gallery:[],
+
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
+
 },
+
+/* DESIGN 13 */
 
 {
 name:"VEXORA DESIGN 13",
+
 price:5900,
+
 image:"",
+
 gallery:[],
+
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
+
 },
+
+/* DESIGN 14 */
 
 {
 name:"VEXORA DESIGN 14",
+
 price:5900,
+
 image:"",
+
 gallery:[],
+
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
+
 },
+
+/* DESIGN 15 */
 
 {
 name:"VEXORA DESIGN 15",
+
 price:5900,
+
 image:"",
+
 gallery:[],
+
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
+
 },
+
+/* DESIGN 16 */
 
 {
 name:"VEXORA DESIGN 16",
+
 price:5900,
+
 image:"",
+
 gallery:[],
+
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
+
 }
 
 ],
@@ -2112,19 +2320,37 @@ pants:[
 {
 name:"VEXORA WIDE LEG PANTS",
 price:8900,
+
 image:"",
 gallery:[],
+
 desc:"Relaxed wide-leg silhouette with a clean architectural finish.",
-sizes:{S:2,M:4,L:5,XL:1}
+
+sizes:{
+S:2,
+M:4,
+L:5,
+XL:1
+}
+
 },
 
 {
 name:"VEXORA UTILITY PANTS",
 price:9500,
+
 image:"",
 gallery:[],
+
 desc:"Functional utility-inspired pants.",
-sizes:{S:0,M:0,L:0,XL:0}
+
+sizes:{
+S:0,
+M:0,
+L:0,
+XL:0
+}
+
 }
 
 ],
@@ -2134,19 +2360,37 @@ hoodies:[
 {
 name:"VEXORA SIGNATURE HOODIE",
 price:9900,
+
 image:"",
 gallery:[],
+
 desc:"Heavyweight hoodie with an oversized VEXORA silhouette.",
-sizes:{S:1,M:3,L:4,XL:2}
+
+sizes:{
+S:1,
+M:3,
+L:4,
+XL:2
+}
+
 },
 
 {
 name:"VEXORA NOIR HOODIE",
 price:10900,
+
 image:"",
 gallery:[],
+
 desc:"Premium heavyweight hoodie with a monochrome aesthetic.",
-sizes:{S:0,M:0,L:0,XL:0}
+
+sizes:{
+S:0,
+M:0,
+L:0,
+XL:0
+}
+
 }
 
 ],
@@ -2156,19 +2400,31 @@ accessories:[
 {
 name:"VEXORA SIGNATURE CAP",
 price:3900,
+
 image:"",
 gallery:[],
+
 desc:"Minimal structured cap finished with the VEXORA signature.",
-sizes:{FREE:12}
+
+sizes:{
+FREE:12
+}
+
 },
 
 {
 name:"VEXORA CROSSBODY BAG",
 price:5900,
+
 image:"",
 gallery:[],
+
 desc:"Compact crossbody silhouette for everyday essentials.",
-sizes:{FREE:3}
+
+sizes:{
+FREE:3
+}
+
 }
 
 ]
@@ -2176,54 +2432,87 @@ sizes:{FREE:3}
 };
 
 let category="tshirts";
+
 let productIndex=0;
+
 let galleryIndex=0;
+
 let selectedSize="";
+
 let bag=[];
 
 const $=id=>document.getElementById(id);
 
 function money(value){
-return "Rs. "+Number(value).toLocaleString("en-LK");
+
+return "Rs. "+
+Number(value).toLocaleString("en-LK");
+
 }
 
 function getTotalStock(product){
+
 return Object.values(product.sizes)
-.reduce((total,stock)=>total+Number(stock),0);
+.reduce(
+(total,stock)=>
+total+Number(stock),
+0
+);
+
 }
 
 function getGallery(product){
 
-if(product.gallery && product.gallery.length){
+if(
+product.gallery &&
+product.gallery.length
+){
+
 return product.gallery;
+
 }
 
 if(product.image){
+
 return [product.image];
+
 }
 
 return [];
+
 }
 
 /* INTRO */
 
 $("intro").onclick=()=>{
+
 $("intro").classList.add("hide");
+
 };
 
 setTimeout(()=>{
+
 $("intro").classList.add("hide");
+
 },3000);
 
 /* NAV */
 
 window.addEventListener("scroll",()=>{
-$("nav").classList.toggle("scrolled",window.scrollY>30);
+
+$("nav").classList.toggle(
+"scrolled",
+window.scrollY>30
+);
+
 });
 
 $("homeBtn").onclick=e=>{
+
 e.preventDefault();
+
 showHome();
+
 };
 
 /* PAGE CONTROL */
@@ -2231,8 +2520,11 @@ showHome();
 function hidePages(){
 
 $("shopPage").classList.remove("active");
+
 $("bagPage").classList.remove("active");
+
 $("orderPage").classList.remove("active");
+
 $("success").classList.remove("active");
 
 }
@@ -2242,7 +2534,9 @@ function showHome(){
 hidePages();
 
 $("home").style.display="block";
+
 $("tshirtGrid").style.display="none";
+
 $("productArea").style.display="grid";
 
 window.scrollTo({
@@ -2254,12 +2548,16 @@ behavior:"smooth"
 
 /* CATEGORY */
 
-document.querySelectorAll(".category").forEach(card=>{
+document
+.querySelectorAll(".category")
+.forEach(card=>{
 
 card.onclick=()=>{
 
 category=card.dataset.cat;
+
 productIndex=0;
+
 galleryIndex=0;
 
 $("home").style.display="none";
@@ -2269,14 +2567,20 @@ hidePages();
 $("shopPage").classList.add("active");
 
 const titles={
+
 tshirts:"PRINT OVERSIZED T-SHIRTS.",
+
 pants:"PANTS.",
+
 hoodies:"HOODIES.",
+
 accessories:"ACCESSORIES."
+
 };
 
 $("shopKicker").textContent=
-"VEXORA / "+category.toUpperCase();
+"VEXORA / "+
+category.toUpperCase();
 
 $("shopTitle").textContent=
 titles[category];
@@ -2284,6 +2588,7 @@ titles[category];
 if(category==="tshirts"){
 
 $("tshirtGrid").style.display="grid";
+
 $("productArea").style.display="none";
 
 renderTshirtGrid();
@@ -2291,6 +2596,7 @@ renderTshirtGrid();
 }else{
 
 $("tshirtGrid").style.display="none";
+
 $("productArea").style.display="grid";
 
 renderProduct();
@@ -2313,27 +2619,47 @@ const grid=$("tshirtGrid");
 
 const list=products.tshirts;
 
-grid.innerHTML=list.map((product,index)=>{
+grid.innerHTML=list.map(
+(product,index)=>{
 
-const stock=getTotalStock(product);
+const stock=
+getTotalStock(product);
 
 let imageHTML="";
 
-if(index===0){
+/*
+DESIGN 01 + DESIGN 02
+AUTO FRONT / BACK PREVIEW
+*/
+
+if(
+index===0 ||
+index===1
+){
+
+const number=
+String(index+1)
+.padStart(2,"0");
+
+const front=
+`tee${number}_1.jpg`;
+
+const back=
+`tee${number}_2.jpg`;
 
 imageHTML=`
 
-<div class="design01-auto">
+<div class="design-auto">
 
 <img
-src="tee01_1.jpg"
+src="${front}"
 class="active"
-alt="VEXORA DESIGN 01 FRONT"
+alt="VEXORA DESIGN ${number} FRONT"
 >
 
 <img
-src="tee01_2.jpg"
-alt="VEXORA DESIGN 01 BACK"
+src="${back}"
+alt="VEXORA DESIGN ${number} BACK"
 >
 
 </div>
@@ -2347,7 +2673,10 @@ imageHTML=`
 <img
 src="${product.image}"
 alt="${product.name}"
-onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+onerror="
+this.style.display='none';
+this.nextElementSibling.style.display='block';
+"
 >
 
 `;
@@ -2367,9 +2696,20 @@ ${imageHTML}
 
 <span
 class="tshirt-placeholder"
-style="${index===0||product.image?'display:none':''}"
+style="${
+index===0 ||
+index===1 ||
+product.image
+?
+'display:none'
+:
+''
+}"
 >
-VEXORA / DESIGN ${String(index+1).padStart(2,"0")}
+
+VEXORA / DESIGN
+${String(index+1).padStart(2,"0")}
+
 </span>
 
 </div>
@@ -2377,23 +2717,42 @@ VEXORA / DESIGN ${String(index+1).padStart(2,"0")}
 <div class="tshirt-card-info">
 
 <div class="tshirt-number">
-VEXORA / DESIGN ${String(index+1).padStart(2,"0")}
+
+VEXORA / DESIGN
+${String(index+1).padStart(2,"0")}
+
 </div>
 
 <div class="tshirt-card-name">
+
 ${product.name}
+
 </div>
 
 <div class="tshirt-card-price">
+
 ${money(product.price)}
+
 </div>
 
-<div class="tshirt-stock ${stock>0?"in":"out"}">
-${stock>0?stock+" IN STOCK":"SOLD OUT"}
+<div class="tshirt-stock ${
+stock>0?"in":"out"
+}">
+
+${
+stock>0
+?
+stock+" IN STOCK"
+:
+"SOLD OUT"
+}
+
 </div>
 
 <div class="tshirt-view">
+
 VIEW PRODUCT →
+
 </div>
 
 </div>
@@ -2404,35 +2763,49 @@ VIEW PRODUCT →
 
 }).join("");
 
-/* DESIGN 01 AUTO SLIDESHOW */
+/*
+AUTO FRONT / BACK
+FOR DESIGN 01 + DESIGN 02
+*/
 
-const design01=document.querySelector(
-".design01-auto"
+const autoCards=
+document.querySelectorAll(
+".design-auto"
 );
 
-if(design01){
+autoCards.forEach(
+autoCard=>{
 
 const imgs=
-design01.querySelectorAll("img");
+autoCard.querySelectorAll("img");
 
 let current=0;
 
 setInterval(()=>{
 
-imgs[current].classList.remove("active");
+imgs[current]
+.classList
+.remove("active");
 
 current=
-current===0?1:0;
+current===0
+?
+1
+:
+0;
 
-imgs[current].classList.add("active");
+imgs[current]
+.classList
+.add("active");
 
-},2000);
+},2500);
 
-}
+});
 
 /* CARD CLICK */
 
-document.querySelectorAll(".tshirt-card")
+document
+.querySelectorAll(".tshirt-card")
 .forEach(card=>{
 
 card.onclick=()=>{
@@ -2451,8 +2824,11 @@ $("productArea").style.display="grid";
 renderProduct();
 
 window.scrollTo({
+
 top:0,
+
 behavior:"smooth"
+
 });
 
 };
@@ -2465,92 +2841,140 @@ behavior:"smooth"
 
 function renderProduct(){
 
-const list=products[category];
+const list=
+products[category];
 
-const p=list[productIndex];
+const p=
+list[productIndex];
 
-const totalStock=getTotalStock(p);
+const totalStock=
+getTotalStock(p);
 
-const gallery=getGallery(p);
+const gallery=
+getGallery(p);
 
-if(galleryIndex>=gallery.length){
+if(
+gallery.length &&
+galleryIndex>=gallery.length
+){
+
 galleryIndex=0;
+
 }
 
 $("pIndex").textContent=
-String(productIndex+1).padStart(2,"0")
+
+String(productIndex+1)
+.padStart(2,"0")
+
 +" / "+
-String(list.length).padStart(2,"0");
+
+String(list.length)
+.padStart(2,"0");
 
 $("current").textContent=
+
 gallery.length
 ?
-String(galleryIndex+1).padStart(2,"0")
+String(galleryIndex+1)
+.padStart(2,"0")
 :
 "00";
 
 $("total").textContent=
+
 gallery.length
 ?
-String(gallery.length).padStart(2,"0")
+String(gallery.length)
+.padStart(2,"0")
 :
 "00";
 
 $("visualNo").textContent=
+
 gallery.length
 ?
-String(galleryIndex+1).padStart(2,"0")
+String(galleryIndex+1)
+.padStart(2,"0")
 :
 "00";
 
-$("pName").textContent=p.name;
+$("pName").textContent=
+p.name;
 
-$("pDesc").textContent=p.desc;
+$("pDesc").textContent=
+p.desc;
 
-$("price").textContent=money(p.price);
+$("price").textContent=
+money(p.price);
 
-const status=$("status");
-const stockText=$("stockText");
+const status=
+$("status");
+
+const stockText=
+$("stockText");
 
 if(totalStock>0){
 
-status.textContent="IN STOCK";
-status.className="status in";
+status.textContent=
+"IN STOCK";
+
+status.className=
+"status in";
 
 stockText.textContent=
-totalStock+" TOTAL IN STOCK";
+totalStock+
+" TOTAL IN STOCK";
 
 stockText.className=
 "stock-text green";
 
 }else{
 
-status.textContent="OUT OF STOCK";
-status.className="status out";
+status.textContent=
+"OUT OF STOCK";
 
-stockText.textContent="SOLD OUT";
+status.className=
+"status out";
+
+stockText.textContent=
+"SOLD OUT";
 
 stockText.className=
 "stock-text red";
 
 }
 
-const img=$("productImage");
-const placeholder=$("placeholder");
+const img=
+$("productImage");
+
+const placeholder=
+$("placeholder");
 
 if(gallery.length){
 
-img.src=gallery[galleryIndex];
-img.style.display="block";
+img.classList.remove(
+"gallery-changing"
+);
 
-placeholder.style.display="none";
+img.src=
+gallery[galleryIndex];
+
+img.style.display=
+"block";
+
+placeholder.style.display=
+"none";
 
 }else{
 
 img.removeAttribute("src");
-img.style.display="none";
 
-placeholder.style.display="block";
+img.style.display=
+"none";
+
+placeholder.style.display=
+"block";
 
 }
 
@@ -2562,36 +2986,63 @@ renderSizes(p);
 
 function changeGallery(direction){
 
-const p=products[category][productIndex];
+const p=
+products[category][productIndex];
 
-const gallery=getGallery(p);
+const gallery=
+getGallery(p);
 
 if(gallery.length<=1){
+
 return;
+
 }
 
+const oldIndex=
+galleryIndex;
+
 galleryIndex=
-(galleryIndex+direction+gallery.length)
-%gallery.length;
+(
+galleryIndex+
+direction+
+gallery.length
+)
+%
+gallery.length;
 
-const img=$("productImage");
+const img=
+$("productImage");
 
-img.classList.add("gallery-changing");
+/*
+START FADE OUT
+*/
+
+img.classList.add(
+"gallery-changing"
+);
+
+/*
+WAIT FOR SMOOTH FADE
+*/
 
 setTimeout(()=>{
 
-img.src=gallery[galleryIndex];
+const newImage=
+gallery[galleryIndex];
+
+const reveal=()=>{
 
 $("current").textContent=
-String(galleryIndex+1).padStart(2,"0");
+String(galleryIndex+1)
+.padStart(2,"0");
 
 $("total").textContent=
-String(gallery.length).padStart(2,"0");
+String(gallery.length)
+.padStart(2,"0");
 
 $("visualNo").textContent=
-String(galleryIndex+1).padStart(2,"0");
-
-img.onload=()=>{
+String(galleryIndex+1)
+.padStart(2,"0");
 
 requestAnimationFrame(()=>{
 
@@ -2603,67 +3054,145 @@ img.classList.remove(
 
 };
 
-},180);
+img.onload=reveal;
+
+img.src=newImage;
+
+/*
+CACHE / ALREADY LOADED
+*/
+
+if(img.complete){
+
+reveal();
 
 }
 
+},260);
+
+}
+
+/* ARROWS */
+
 $("next").onclick=()=>{
+
 changeGallery(1);
+
 };
 
 $("prev").onclick=()=>{
+
 changeGallery(-1);
+
 };
+
+/* KEYBOARD ARROWS */
+
+document.addEventListener(
+"keydown",
+e=>{
+
+if(
+e.key==="ArrowRight" &&
+$("shopPage").classList.contains("active")
+){
+
+changeGallery(1);
+
+}
+
+if(
+e.key==="ArrowLeft" &&
+$("shopPage").classList.contains("active")
+){
+
+changeGallery(-1);
+
+}
+
+});
 
 /* SIZES */
 
 function renderSizes(product){
 
-const container=$("sizes");
+const container=
+$("sizes");
 
 container.innerHTML="";
 
 selectedSize="";
 
 $("add").disabled=true;
-$("add").textContent="SELECT SIZE";
 
-Object.entries(product.sizes)
-.forEach(([size,stock])=>{
+$("add").textContent=
+"SELECT SIZE";
 
-const wrap=document.createElement("div");
-const button=document.createElement("button");
-const label=document.createElement("span");
+Object.entries(
+product.sizes
+)
+.forEach(
+([size,stock])=>{
 
-wrap.className="size-wrap";
+const wrap=
+document.createElement("div");
 
-button.className="size";
-button.textContent=size;
+const button=
+document.createElement("button");
 
-label.className="size-stock";
+const label=
+document.createElement("span");
+
+wrap.className=
+"size-wrap";
+
+button.className=
+"size";
+
+button.textContent=
+size;
+
+label.className=
+"size-stock";
 
 if(stock>0){
 
-button.classList.add("available");
-label.classList.add("available");
+button.classList.add(
+"available"
+);
 
-label.textContent=stock+" LEFT";
+label.classList.add(
+"available"
+);
+
+label.textContent=
+stock+" LEFT";
 
 button.onclick=()=>{
+
 selectSize(size);
+
 };
 
 }else{
 
 button.disabled=true;
-button.classList.add("sold");
 
-label.classList.add("sold");
-label.textContent="SOLD OUT";
+button.classList.add(
+"sold"
+);
+
+label.classList.add(
+"sold"
+);
+
+label.textContent=
+"SOLD OUT";
 
 }
 
 wrap.appendChild(button);
+
 wrap.appendChild(label);
 
 container.appendChild(wrap);
@@ -2677,13 +3206,18 @@ function selectSize(size){
 const p=
 products[category][productIndex];
 
-if(Number(p.sizes[size]||0)<=0){
+if(
+Number(p.sizes[size]||0)<=0
+){
+
 return;
+
 }
 
 selectedSize=size;
 
-document.querySelectorAll(".size")
+document
+.querySelectorAll(".size")
 .forEach(button=>{
 
 button.classList.toggle(
@@ -2696,7 +3230,9 @@ button.textContent===size
 $("add").disabled=false;
 
 $("add").textContent=
-"ADD "+size+" TO CART";
+"ADD "+
+size+
+" TO CART";
 
 }
 
@@ -2718,11 +3254,15 @@ return;
 }
 
 const stock=
-Number(p.sizes[selectedSize]||0);
+Number(
+p.sizes[selectedSize]||0
+);
 
 if(stock<=0){
 
-alert("THIS SIZE IS SOLD OUT.");
+alert(
+"THIS SIZE IS SOLD OUT."
+);
 
 renderProduct();
 
@@ -2731,14 +3271,17 @@ return;
 }
 
 const existing=
-bag.find(item=>
+bag.find(
+item=>
 item.name===p.name &&
 item.size===selectedSize
 );
 
 if(existing){
 
-if(existing.quantity>=stock){
+if(
+existing.quantity>=stock
+){
 
 alert(
 "MAXIMUM AVAILABLE STOCK REACHED."
@@ -2755,9 +3298,13 @@ existing.quantity++;
 bag.push({
 
 name:p.name,
+
 price:p.price,
+
 image:p.image,
+
 size:selectedSize,
+
 quantity:1
 
 });
@@ -2765,6 +3312,7 @@ quantity:1
 }
 
 updateBagCount();
+
 openBag();
 
 };
@@ -2778,22 +3326,30 @@ total+item.quantity,
 0
 );
 
-$("bagCount").textContent=count;
+$("bagCount")
+.textContent=count;
 
 }
 
-$("bagBtn").onclick=openBag;
+$("bagBtn").onclick=
+openBag;
 
 function openBag(){
 
-$("home").style.display="none";
+$("home").style.display=
+"none";
 
 hidePages();
 
-$("tshirtGrid").style.display="none";
-$("productArea").style.display="grid";
+$("tshirtGrid").style.display=
+"none";
 
-$("bagPage").classList.add("active");
+$("productArea").style.display=
+"grid";
+
+$("bagPage").classList.add(
+"active"
+);
 
 renderBag();
 
@@ -2803,7 +3359,8 @@ window.scrollTo(0,0);
 
 function renderBag(){
 
-const container=$("bagContent");
+const container=
+$("bagContent");
 
 if(!bag.length){
 
@@ -2811,10 +3368,15 @@ container.innerHTML=`
 
 <div class="empty">
 
-<h2>YOUR BAG IS EMPTY.</h2>
+<h2>
+YOUR BAG IS EMPTY.
+</h2>
 
 <p style="margin-top:15px">
-Add something from the VEXORA collection.
+
+Add something from the
+VEXORA collection.
+
 </p>
 
 </div>
@@ -2827,11 +3389,15 @@ return;
 
 let subtotal=0;
 
-let html=`<div class="bag-items">`;
+let html=
+`<div class="bag-items">`;
 
-bag.forEach((item,index)=>{
+bag.forEach(
+(item,index)=>{
 
-subtotal+=item.price*item.quantity;
+subtotal+=
+item.price*
+item.quantity;
 
 html+=`
 
@@ -2842,7 +3408,10 @@ html+=`
 ${
 item.image
 ?
-`<img src="${item.image}" alt="">`
+`<img
+src="${item.image}"
+alt=""
+>`
 :
 "VEXORA"
 }
@@ -2852,38 +3421,55 @@ item.image
 <div>
 
 <div class="bag-name">
+
 ${item.name}
+
 </div>
 
 <div class="bag-meta">
+
 SIZE / ${item.size}
+
 </div>
 
 <button
 class="remove"
 onclick="removeItem(${index})"
 >
+
 REMOVE
+
 </button>
 
 </div>
 
 <div class="qty">
 
-<button onclick="changeQty(${index},-1)">
+<button
+onclick="changeQty(${index},-1)"
+>
 −
 </button>
 
-<span>${item.quantity}</span>
+<span>
+${item.quantity}
+</span>
 
-<button onclick="changeQty(${index},1)">
+<button
+onclick="changeQty(${index},1)"
+>
 +
 </button>
 
 </div>
 
 <div class="bag-price">
-${money(item.price*item.quantity)}
+
+${money(
+item.price*
+item.quantity
+)}
+
 </div>
 
 </div>
@@ -2895,56 +3481,98 @@ ${money(item.price*item.quantity)}
 html+=`</div>`;
 
 const delivery=
-subtotal>=10000?0:350;
+subtotal>=10000
+?
+0
+:
+350;
 
-const total=subtotal+delivery;
+const total=
+subtotal+
+delivery;
 
 html+=`
 
 <div class="bag-summary">
 
 <div class="summary-row">
-<span>SUBTOTAL</span>
-<span>${money(subtotal)}</span>
+
+<span>
+SUBTOTAL
+</span>
+
+<span>
+${money(subtotal)}
+</span>
+
 </div>
 
 <div class="summary-row">
-<span>DELIVERY</span>
+
 <span>
-${delivery===0?"FREE":money(delivery)}
+DELIVERY
 </span>
+
+<span>
+
+${
+delivery===0
+?
+"FREE"
+:
+money(delivery)
+}
+
+</span>
+
 </div>
 
 <div class="summary-row total">
-<span>TOTAL</span>
-<span>${money(total)}</span>
+
+<span>
+TOTAL
+</span>
+
+<span>
+${money(total)}
+</span>
+
 </div>
 
 <button
 class="checkout"
 onclick="checkout()"
 >
+
 PROCEED TO CHECKOUT
+
 </button>
 
 </div>
 
 `;
 
-container.innerHTML=html;
+container.innerHTML=
+html;
 
 }
 
 function findProduct(name){
 
-for(const key in products){
+for(
+const key in products
+){
 
 const product=
 products[key].find(
 p=>p.name===name
 );
 
-if(product)return product;
+if(product){
+
+return product;
+
+}
 
 }
 
@@ -2954,14 +3582,20 @@ return null;
 
 function changeQty(index,change){
 
-const item=bag[index];
+const item=
+bag[index];
 
-const product=findProduct(item.name);
+const product=
+findProduct(item.name);
 
 const stock=
-Number(product.sizes[item.size]||0);
+Number(
+product.sizes[item.size]||0
+);
 
-const next=item.quantity+change;
+const next=
+item.quantity+
+change;
 
 if(next<1){
 
@@ -2973,16 +3607,19 @@ alert(
 "ONLY "+
 stock+
 " AVAILABLE IN SIZE "+
-item.size+"."
+item.size+
+"."
 );
 
 }else{
 
-item.quantity=next;
+item.quantity=
+next;
 
 }
 
 updateBagCount();
+
 renderBag();
 
 }
@@ -2992,6 +3629,7 @@ function removeItem(index){
 bag.splice(index,1);
 
 updateBagCount();
+
 renderBag();
 
 }
@@ -3000,11 +3638,17 @@ renderBag();
 
 function checkout(){
 
-if(!bag.length)return;
+if(!bag.length){
+
+return;
+
+}
 
 hidePages();
 
-$("orderPage").classList.add("active");
+$("orderPage")
+.classList
+.add("active");
 
 renderCheckout();
 
@@ -3018,10 +3662,12 @@ let subtotal=0;
 
 let html="";
 
-bag.forEach(item=>{
+bag.forEach(
+item=>{
 
 subtotal+=
-item.price*item.quantity;
+item.price*
+item.quantity;
 
 html+=`
 
@@ -3034,14 +3680,21 @@ ${item.name}
 <br>
 
 <small>
+
 SIZE ${item.size}
 × ${item.quantity}
+
 </small>
 
 </span>
 
 <span>
-${money(item.price*item.quantity)}
+
+${money(
+item.price*
+item.quantity
+)}
+
 </span>
 
 </div>
@@ -3051,67 +3704,114 @@ ${money(item.price*item.quantity)}
 });
 
 const delivery=
-subtotal>=10000?0:350;
+subtotal>=10000
+?
+0
+:
+350;
 
-const total=subtotal+delivery;
+const total=
+subtotal+
+delivery;
 
-$("orderItems").innerHTML=html;
+$("orderItems")
+.innerHTML=
+html;
 
-$("checkoutSubtotal").textContent=
+$("checkoutSubtotal")
+.textContent=
 money(subtotal);
 
-$("checkoutDelivery").textContent=
-delivery===0?"FREE":money(delivery);
+$("checkoutDelivery")
+.textContent=
+delivery===0
+?
+"FREE"
+:
+money(delivery);
 
-$("checkoutTotal").textContent=
+$("checkoutTotal")
+.textContent=
 money(total);
 
 }
 
-/* CONFIRM */
+/* CONFIRM ORDER */
 
 $("confirm").onclick=()=>{
 
-const name=$("name").value.trim();
-const phone=$("phone").value.trim();
-const address=$("address").value.trim();
-const district=$("district").value;
-const payment=$("payment").value;
+const name=
+$("name")
+.value
+.trim();
+
+const phone=
+$("phone")
+.value
+.trim();
+
+const address=
+$("address")
+.value
+.trim();
+
+const district=
+$("district")
+.value;
+
+const payment=
+$("payment")
+.value;
 
 if(!name){
 
-alert("PLEASE ENTER YOUR NAME.");
+alert(
+"PLEASE ENTER YOUR NAME."
+);
+
 return;
 
 }
 
 if(!phone){
 
-alert("PLEASE ENTER YOUR CONTACT NUMBER.");
+alert(
+"PLEASE ENTER YOUR CONTACT NUMBER."
+);
+
 return;
 
 }
 
 if(!address){
 
-alert("PLEASE ENTER YOUR ADDRESS.");
+alert(
+"PLEASE ENTER YOUR ADDRESS."
+);
+
 return;
 
 }
 
 if(!district){
 
-alert("PLEASE SELECT YOUR DISTRICT.");
+alert(
+"PLEASE SELECT YOUR DISTRICT."
+);
+
 return;
 
 }
 
 for(const item of bag){
 
-const product=findProduct(item.name);
+const product=
+findProduct(item.name);
 
 const stock=
-Number(product.sizes[item.size]||0);
+Number(
+product.sizes[item.size]||0
+);
 
 if(item.quantity>stock){
 
@@ -3131,27 +3831,39 @@ return;
 }
 
 let subtotal=0;
+
 let orderLines="";
 
-bag.forEach(item=>{
+bag.forEach(
+item=>{
 
 subtotal+=
-item.price*item.quantity;
+item.price*
+item.quantity;
 
 orderLines+=
 `${item.name}
 Size: ${item.size}
 Quantity: ${item.quantity}
-Price: ${money(item.price*item.quantity)}
+Price: ${money(
+item.price*
+item.quantity
+)}
 
 `;
 
 });
 
 const delivery=
-subtotal>=10000?0:350;
+subtotal>=10000
+?
+0
+:
+350;
 
-const total=subtotal+delivery;
+const total=
+subtotal+
+delivery;
 
 const orderId=
 "VX-"+
@@ -3172,7 +3884,13 @@ PRODUCTS
 
 ${orderLines}
 SUBTOTAL: ${money(subtotal)}
-DELIVERY: ${delivery===0?"FREE":money(delivery)}
+DELIVERY: ${
+delivery===0
+?
+"FREE"
+:
+money(delivery)
+}
 TOTAL: ${money(total)}
 
 CUSTOMER DETAILS
@@ -3186,25 +3904,35 @@ Payment: ${payment}
 
 ORDER STATUS: CONFIRMED`;
 
-bag.forEach(item=>{
+bag.forEach(
+item=>{
 
-const product=findProduct(item.name);
+const product=
+findProduct(item.name);
 
 product.sizes[item.size]=
 Math.max(
 0,
-Number(product.sizes[item.size])-
+Number(
+product.sizes[item.size]
+)-
 item.quantity
 );
 
 });
 
-$("orderPage").classList.remove("active");
+$("orderPage")
+.classList
+.remove("active");
 
-$("success").classList.add("active");
+$("success")
+.classList
+.add("active");
 
-$("successId").textContent=
-"ORDER #"+orderId;
+$("successId")
+.textContent=
+"ORDER #"+
+orderId;
 
 window.scrollTo(0,0);
 
@@ -3224,55 +3952,81 @@ updateBagCount();
 
 /* CONTINUE */
 
-$("continue").onclick=showHome;
+$("continue").onclick=
+showHome;
 
 /* SEARCH */
 
-const searchOverlay=$("searchOverlay");
-const searchInput=$("searchInput");
-const searchResults=$("searchResults");
+const searchOverlay=
+$("searchOverlay");
+
+const searchInput=
+$("searchInput");
+
+const searchResults=
+$("searchResults");
 
 $("openSearch").onclick=()=>{
 
-searchOverlay.classList.add("active");
+searchOverlay
+.classList
+.add("active");
 
 searchInput.value="";
 
 renderSearch("");
 
 setTimeout(()=>{
+
 searchInput.focus();
+
 },250);
 
 };
 
 $("closeSearch").onclick=()=>{
 
-searchOverlay.classList.remove("active");
+searchOverlay
+.classList
+.remove("active");
 
 };
 
-searchOverlay.addEventListener("click",e=>{
+searchOverlay
+.addEventListener(
+"click",
+e=>{
 
-if(e.target===searchOverlay){
+if(
+e.target===searchOverlay
+){
 
-searchOverlay.classList.remove("active");
+searchOverlay
+.classList
+.remove("active");
 
 }
 
 });
 
-document.addEventListener("keydown",e=>{
+document.addEventListener(
+"keydown",
+e=>{
 
 if(e.key==="Escape"){
 
-searchOverlay.classList.remove("active");
+searchOverlay
+.classList
+.remove("active");
 
 }
 
 });
 
-searchInput.addEventListener("input",()=>{
+searchInput
+.addEventListener(
+"input",
+()=>{
 
 renderSearch(
 searchInput.value.trim()
@@ -3284,14 +4038,19 @@ function allProducts(){
 
 const result=[];
 
-for(const key in products){
+for(
+const key in products
+){
 
-products[key].forEach((product,index)=>{
+products[key].forEach(
+(product,index)=>{
 
 result.push({
 
 ...product,
+
 category:key,
+
 index:index
 
 });
@@ -3306,22 +4065,35 @@ return result;
 
 function renderSearch(query){
 
-const all=allProducts();
+const all=
+allProducts();
 
-const q=query.toLowerCase();
+const q=
+query.toLowerCase();
 
 const results=
 q
 ?
-all.filter(product=>{
+all.filter(
+product=>{
 
 return(
 
-product.name.toLowerCase().includes(q)
+product.name
+.toLowerCase()
+.includes(q)
+
 ||
-product.category.toLowerCase().includes(q)
+
+product.category
+.toLowerCase()
+.includes(q)
+
 ||
-product.desc.toLowerCase().includes(q)
+
+product.desc
+.toLowerCase()
+.includes(q)
 
 );
 
@@ -3350,7 +4122,8 @@ return;
 }
 
 searchResults.innerHTML=
-results.map(product=>{
+results.map(
+product=>{
 
 const stock=
 getTotalStock(product);
@@ -3369,14 +4142,20 @@ ${
 product.image
 ?
 `
+
 <img
 src="${product.image}"
 alt="${product.name}"
 >
+
 `
 :
 `
-<span>VEXORA / PRODUCT</span>
+
+<span>
+VEXORA / PRODUCT
+</span>
+
 `
 }
 
@@ -3385,18 +4164,31 @@ alt="${product.name}"
 <div class="search-card-info">
 
 <div class="search-category">
-VEXORA / ${product.category.toUpperCase()}
+
+VEXORA /
+${product.category.toUpperCase()}
+
 </div>
 
 <div class="search-name">
+
 ${product.name}
+
 </div>
 
 <div class="search-price">
+
 ${money(product.price)}
+
 </div>
 
-<div class="search-stock ${stock>0?"in":"out"}">
+<div class="search-stock ${
+stock>0
+?
+"in"
+:
+"out"
+}">
 
 ${
 stock>0
@@ -3417,53 +4209,82 @@ stock+" IN STOCK"
 }).join("");
 
 document
-.querySelectorAll(".search-card")
+.querySelectorAll(
+".search-card"
+)
 .forEach(card=>{
 
 card.onclick=()=>{
 
-category=card.dataset.category;
+category=
+card.dataset.category;
 
 productIndex=
-Number(card.dataset.index);
+Number(
+card.dataset.index
+);
 
 galleryIndex=0;
 
-searchOverlay.classList.remove("active");
+searchOverlay
+.classList
+.remove("active");
 
-$("home").style.display="none";
+$("home").style.display=
+"none";
 
 hidePages();
 
-$("shopPage").classList.add("active");
+$("shopPage")
+.classList
+.add("active");
 
 const titles={
 
-tshirts:"PRINT OVERSIZED T-SHIRTS.",
-pants:"PANTS.",
-hoodies:"HOODIES.",
-accessories:"ACCESSORIES."
+tshirts:
+"PRINT OVERSIZED T-SHIRTS.",
+
+pants:
+"PANTS.",
+
+hoodies:
+"HOODIES.",
+
+accessories:
+"ACCESSORIES."
 
 };
 
-$("shopKicker").textContent=
+$("shopKicker")
+.textContent=
 "VEXORA / "+
 category.toUpperCase();
 
-$("shopTitle").textContent=
+$("shopTitle")
+.textContent=
 titles[category];
 
 if(category==="tshirts"){
 
-$("tshirtGrid").style.display="grid";
-$("productArea").style.display="none";
+$("tshirtGrid")
+.style
+.display="grid";
+
+$("productArea")
+.style
+.display="none";
 
 renderTshirtGrid();
 
 }else{
 
-$("tshirtGrid").style.display="none";
-$("productArea").style.display="grid";
+$("tshirtGrid")
+.style
+.display="none";
+
+$("productArea")
+.style
+.display="grid";
 
 renderProduct();
 
@@ -3481,9 +4302,13 @@ window.scrollTo(0,0);
 
 updateBagCount();
 
-$("tshirtGrid").style.display="none";
+$("tshirtGrid")
+.style
+.display="none";
 
-$("productArea").style.display="grid";
+$("productArea")
+.style
+.display="grid";
 
 galleryIndex=0;
 
