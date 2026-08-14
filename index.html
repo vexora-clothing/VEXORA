@@ -582,16 +582,40 @@ background:radial-gradient(circle at 50% 35%,#202020,#080808 65%);
 display:grid;
 place-items:center;
 overflow:hidden;
+position:relative;
 }
 
-.tshirt-card-image img{
+/* DESIGN 01 AUTO PREVIEW */
+
+.design01-auto{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+}
+
+.design01-auto img{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:opacity .9s ease;
+}
+
+.design01-auto img.active{
+opacity:1;
+}
+
+.tshirt-card-image>img{
 width:100%;
 height:100%;
 object-fit:cover;
 transition:.45s;
 }
 
-.tshirt-card:hover .tshirt-card-image img{
+.tshirt-card:hover .tshirt-card-image>img{
 transform:scale(1.04);
 }
 
@@ -670,8 +694,6 @@ overflow:hidden;
 display:grid;
 place-items:center;
 }
-
-/* SMOOTH IMAGE */
 
 .visual img{
 width:100%;
@@ -1397,17 +1419,11 @@ font-size:38px;
 <body>
 
 <div id="intro">
-
 <div class="intro">
-
 <small>THE NEW STANDARD</small>
-
 <h1>VEXORA</h1>
-
 <div class="intro-line"></div>
-
 </div>
-
 </div>
 
 <header class="nav" id="nav">
@@ -1419,42 +1435,21 @@ VEXORA
 <div class="nav-right">
 
 <ul class="navlinks">
-
-<li>
-<a href="#categories">
-COLLECTION
-</a>
-</li>
-
-<li>
-<a href="#about">
-ABOUT
-</a>
-</li>
-
+<li><a href="#categories">COLLECTION</a></li>
+<li><a href="#about">ABOUT</a></li>
 </ul>
 
-<button
-class="search-btn"
-id="openSearch"
-aria-label="Search"
->
+<button class="search-btn" id="openSearch">
 ⌕
 </button>
 
-<button
-class="bag-btn"
-id="bagBtn"
->
-BAG
-<span class="bag-count" id="bagCount">0</span>
+<button class="bag-btn" id="bagBtn">
+BAG <span class="bag-count" id="bagCount">0</span>
 </button>
 
 </div>
 
 </header>
-
-<!-- SEARCH -->
 
 <div class="search-overlay" id="searchOverlay">
 
@@ -1464,10 +1459,7 @@ BAG
 VEXORA / SEARCH
 </div>
 
-<button
-class="close-search"
-id="closeSearch"
->
+<button class="close-search" id="closeSearch">
 ×
 </button>
 
@@ -1485,14 +1477,9 @@ placeholder="Search products..."
 
 </div>
 
-<div
-class="search-results"
-id="searchResults"
-></div>
+<div class="search-results" id="searchResults"></div>
 
 </div>
-
-<!-- HOME -->
 
 <main id="home">
 
@@ -1505,8 +1492,7 @@ VEXORA / EST. 2026
 </div>
 
 <h1>
-WEAR<br>
-VEXORA.
+WEAR<br>VEXORA.
 </h1>
 
 <p>
@@ -1514,10 +1500,7 @@ Modern silhouettes. Strong identity.
 Designed for those who don't follow the standard.
 </p>
 
-<a
-href="#categories"
-class="cta"
->
+<a href="#categories" class="cta">
 EXPLORE COLLECTION →
 </a>
 
@@ -1555,126 +1538,58 @@ EXPLORE COLLECTION →
 
 </div>
 
-<section
-class="section"
-id="categories"
->
+<section class="section" id="categories">
 
 <div class="label">
 01 / SHOP
 </div>
 
 <h2 class="title">
-CHOOSE<br>
-YOUR CATEGORY.
+CHOOSE<br>YOUR CATEGORY.
 </h2>
 
 <div class="category-grid">
 
-<div
-class="category"
-data-cat="tshirts"
->
-
-<span class="cat-no">
-01
-</span>
+<div class="category" data-cat="tshirts">
+<span class="cat-no">01</span>
 
 <div>
-
-<div class="cat-mini">
-VEXORA / 001
-</div>
-
-<h3>
-T-SHIRTS
-</h3>
-
-<div class="arrow">
-→
+<div class="cat-mini">VEXORA / 001</div>
+<h3>T-SHIRTS</h3>
+<div class="arrow">→</div>
 </div>
 
 </div>
 
-</div>
-
-<div
-class="category"
-data-cat="pants"
->
-
-<span class="cat-no">
-02
-</span>
+<div class="category" data-cat="pants">
+<span class="cat-no">02</span>
 
 <div>
-
-<div class="cat-mini">
-VEXORA / 002
-</div>
-
-<h3>
-PANTS
-</h3>
-
-<div class="arrow">
-→
+<div class="cat-mini">VEXORA / 002</div>
+<h3>PANTS</h3>
+<div class="arrow">→</div>
 </div>
 
 </div>
 
-</div>
-
-<div
-class="category"
-data-cat="hoodies"
->
-
-<span class="cat-no">
-03
-</span>
+<div class="category" data-cat="hoodies">
+<span class="cat-no">03</span>
 
 <div>
-
-<div class="cat-mini">
-VEXORA / 003
-</div>
-
-<h3>
-HOODIES
-</h3>
-
-<div class="arrow">
-→
+<div class="cat-mini">VEXORA / 003</div>
+<h3>HOODIES</h3>
+<div class="arrow">→</div>
 </div>
 
 </div>
 
-</div>
-
-<div
-class="category"
-data-cat="accessories"
->
-
-<span class="cat-no">
-04
-</span>
+<div class="category" data-cat="accessories">
+<span class="cat-no">04</span>
 
 <div>
-
-<div class="cat-mini">
-VEXORA / 004
-</div>
-
-<h3>
-ACCESSORIES
-</h3>
-
-<div class="arrow">
-→
-</div>
-
+<div class="cat-mini">VEXORA / 004</div>
+<h3>ACCESSORIES</h3>
+<div class="arrow">→</div>
 </div>
 
 </div>
@@ -1683,71 +1598,41 @@ ACCESSORIES
 
 </section>
 
-<section
-class="statement"
-id="about"
->
+<section class="statement" id="about">
 
 <h2>
-
 <span>NOT MADE</span><br>
-
 TO FOLLOW.<br>
-
 MADE TO DEFINE.
-
 </h2>
 
 </section>
 
 </main>
 
-<!-- SHOP -->
-
-<section
-class="page"
-id="shopPage"
->
+<section class="page" id="shopPage">
 
 <div class="shop-head">
 
-<button
-class="back"
-id="backShop"
->
+<button class="back" id="backShop">
 ← BACK TO HOME
 </button>
 
-<div
-class="shop-kicker"
-id="shopKicker"
->
+<div class="shop-kicker" id="shopKicker">
 VEXORA / T-SHIRTS
 </div>
 
-<h1
-class="shop-title"
-id="shopTitle"
->
+<h1 class="shop-title" id="shopTitle">
 PRINT OVERSIZED T-SHIRTS.
 </h1>
 
 </div>
 
-<div
-class="tshirt-grid"
-id="tshirtGrid"
-></div>
+<div class="tshirt-grid" id="tshirtGrid"></div>
 
-<div
-class="product-area"
-id="productArea"
->
+<div class="product-area" id="productArea">
 
-<button
-class="arrowbtn prev"
-id="prev"
->
+<button class="arrowbtn prev" id="prev">
 ←
 </button>
 
@@ -1755,68 +1640,41 @@ id="prev"
 
 <div class="visual">
 
-<span
-class="visual-no"
-id="visualNo"
->
+<span class="visual-no" id="visualNo">
 01
 </span>
 
-<span
-class="status in"
-id="status"
->
+<span class="status in" id="status">
 IN STOCK
 </span>
 
-<span
-class="visual-placeholder"
-id="placeholder"
->
+<span class="visual-placeholder" id="placeholder">
 VEXORA / PRODUCT IMAGE
 </span>
 
-<img
-id="productImage"
-alt="VEXORA product"
->
+<img id="productImage" alt="VEXORA product">
 
 </div>
 
 <div>
 
-<div
-class="p-index"
-id="pIndex"
->
+<div class="p-index" id="pIndex">
 01 / 04
 </div>
 
-<h2
-class="p-name"
-id="pName"
->
+<h2 class="p-name" id="pName">
 VEXORA DESIGN 01
 </h2>
 
-<p
-class="p-desc"
-id="pDesc"
->
+<p class="p-desc" id="pDesc">
 Heavyweight oversized VEXORA T-shirt.
 </p>
 
-<div
-class="price"
-id="price"
->
+<div class="price" id="price">
 Rs. 5,900
 </div>
 
-<div
-class="stock-text green"
-id="stockText"
->
+<div class="stock-text green" id="stockText">
 IN STOCK
 </div>
 
@@ -1824,16 +1682,9 @@ IN STOCK
 SELECT SIZE
 </div>
 
-<div
-class="sizes"
-id="sizes"
-></div>
+<div class="sizes" id="sizes"></div>
 
-<button
-class="add"
-id="add"
-disabled
->
+<button class="add" id="add" disabled>
 SELECT SIZE
 </button>
 
@@ -1841,24 +1692,15 @@ SELECT SIZE
 
 </div>
 
-<button
-class="arrowbtn next"
-id="next"
->
+<button class="arrowbtn next" id="next">
 →
 </button>
 
 <div class="counter">
 
-<span id="current">
-01
-</span>
-
+<span id="current">01</span>
 /
-
-<span id="total">
-04
-</span>
+<span id="total">04</span>
 
 </div>
 
@@ -1866,12 +1708,7 @@ id="next"
 
 </section>
 
-<!-- BAG -->
-
-<section
-class="page bag-page"
-id="bagPage"
->
+<section class="page bag-page" id="bagPage">
 
 <div class="bag-wrap">
 
@@ -1880,8 +1717,7 @@ VEXORA / BAG
 </div>
 
 <h1 class="bag-title">
-YOUR<br>
-BAG.
+YOUR<br>BAG.
 </h1>
 
 <div id="bagContent"></div>
@@ -1890,12 +1726,7 @@ BAG.
 
 </section>
 
-<!-- CHECKOUT -->
-
-<section
-class="page order"
-id="orderPage"
->
+<section class="page order" id="orderPage">
 
 <div class="order-wrap">
 
@@ -1904,8 +1735,7 @@ VEXORA / CHECKOUT
 </div>
 
 <h1 class="order-title">
-COMPLETE<br>
-YOUR ORDER.
+COMPLETE<br>YOUR ORDER.
 </h1>
 
 <div class="order-grid">
@@ -1915,39 +1745,18 @@ YOUR ORDER.
 <div id="orderItems"></div>
 
 <div class="summary-row">
-
-<span>
-SUBTOTAL
-</span>
-
-<span id="checkoutSubtotal">
-Rs. 0
-</span>
-
+<span>SUBTOTAL</span>
+<span id="checkoutSubtotal">Rs. 0</span>
 </div>
 
 <div class="summary-row">
-
-<span>
-DELIVERY
-</span>
-
-<span id="checkoutDelivery">
-Rs. 0
-</span>
-
+<span>DELIVERY</span>
+<span id="checkoutDelivery">Rs. 0</span>
 </div>
 
 <div class="summary-row total">
-
-<span>
-TOTAL
-</span>
-
-<span id="checkoutTotal">
-Rs. 0
-</span>
-
+<span>TOTAL</span>
+<span id="checkoutTotal">Rs. 0</span>
 </div>
 
 </div>
@@ -1959,58 +1768,27 @@ DELIVERY DETAILS
 </div>
 
 <div class="field">
+<label>FULL NAME</label>
+<input id="name" type="text" placeholder="Your full name">
+</div>
 
-<label>
-FULL NAME
-</label>
+<div class="field">
+<label>CONTACT NUMBER</label>
+<input id="phone" type="tel" placeholder="07X XXX XXXX">
+</div>
 
-<input
-id="name"
-type="text"
-placeholder="Your full name"
->
-
+<div class="field">
+<label>ADDRESS</label>
+<textarea id="address" placeholder="Delivery address"></textarea>
 </div>
 
 <div class="field">
 
-<label>
-CONTACT NUMBER
-</label>
-
-<input
-id="phone"
-type="tel"
-placeholder="07X XXX XXXX"
->
-
-</div>
-
-<div class="field">
-
-<label>
-ADDRESS
-</label>
-
-<textarea
-id="address"
-placeholder="Delivery address"
-></textarea>
-
-</div>
-
-<div class="field">
-
-<label>
-DISTRICT
-</label>
+<label>DISTRICT</label>
 
 <select id="district">
 
-<option value="">
-Select district
-</option>
-
+<option value="">Select district</option>
 <option>Colombo</option>
 <option>Gampaha</option>
 <option>Kalutara</option>
@@ -2043,24 +1821,15 @@ Select district
 
 <div class="field">
 
-<label>
-PAYMENT
-</label>
+<label>PAYMENT</label>
 
 <select id="payment">
-
-<option>
-Cash on Delivery
-</option>
-
+<option>Cash on Delivery</option>
 </select>
 
 </div>
 
-<button
-class="confirm"
-id="confirm"
->
+<button class="confirm" id="confirm">
 CONFIRM ORDER
 </button>
 
@@ -2072,12 +1841,7 @@ CONFIRM ORDER
 
 </section>
 
-<!-- SUCCESS -->
-
-<section
-class="success"
-id="success"
->
+<section class="success" id="success">
 
 <div>
 
@@ -2090,8 +1854,7 @@ VEXORA / ORDER CONFIRMED
 </small>
 
 <h1>
-ORDER<br>
-COMPLETE.
+ORDER<br>COMPLETE.
 </h1>
 
 <p>
@@ -2099,25 +1862,18 @@ Your order has been successfully received.
 We will contact you through WhatsApp to confirm your delivery.
 </p>
 
-<div
-id="successId"
-style="font-size:8px;letter-spacing:.3em;color:#777"
->
+<div id="successId"
+style="font-size:8px;letter-spacing:.3em;color:#777">
 ORDER #VX-0000
 </div>
 
-<button
-class="continue"
-id="continue"
->
+<button class="continue" id="continue">
 CONTINUE SHOPPING
 </button>
 
 </div>
 
 </section>
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -2133,21 +1889,10 @@ VEXORA
 
 <h4>SHOP</h4>
 
-<a href="#categories">
-T-Shirts
-</a>
-
-<a href="#categories">
-Pants
-</a>
-
-<a href="#categories">
-Hoodies
-</a>
-
-<a href="#categories">
-Accessories
-</a>
+<a href="#categories">T-Shirts</a>
+<a href="#categories">Pants</a>
+<a href="#categories">Hoodies</a>
+<a href="#categories">Accessories</a>
 
 </div>
 
@@ -2155,17 +1900,9 @@ Accessories
 
 <h4>INFO</h4>
 
-<a href="#about">
-About
-</a>
-
-<a href="#">
-Shipping
-</a>
-
-<a href="#">
-Returns
-</a>
+<a href="#about">About</a>
+<a href="#">Shipping</a>
+<a href="#">Returns</a>
 
 </div>
 
@@ -2173,24 +1910,15 @@ Returns
 
 <h4>SOCIAL</h4>
 
-<a
-href="https://www.instagram.com/vexora.x999"
-target="_blank"
->
+<a href="https://www.instagram.com/vexora.x999" target="_blank">
 Instagram
 </a>
 
-<a
-href="https://www.tiktok.com/@vexora_clothing"
-target="_blank"
->
+<a href="https://www.tiktok.com/@vexora_clothing" target="_blank">
 TikTok
 </a>
 
-<a
-href="https://www.facebook.com/share/1Brn7FM4cu/"
-target="_blank"
->
+<a href="https://www.facebook.com/share/1Brn7FM4cu/" target="_blank">
 Facebook
 </a>
 
@@ -2202,13 +1930,9 @@ Facebook
 
 <div class="foot-bottom">
 
-<span>
-© 2026 VEXORA
-</span>
+<span>© 2026 VEXORA</span>
 
-<span>
-ALL RIGHTS RESERVED
-</span>
+<span>ALL RIGHTS RESERVED</span>
 
 </div>
 
@@ -2216,9 +1940,7 @@ ALL RIGHTS RESERVED
 
 <script>
 
-/* =========================
-   PRODUCTS
-========================= */
+/* PRODUCTS */
 
 const products={
 
@@ -2227,16 +1949,6 @@ tshirts:[
 {
 name:"VEXORA DESIGN 01",
 price:5900,
-
-/*
-DESIGN 01 PHOTOS
-1 = FRONT
-2 = BACK
-3 = PRINT CLOSE-UP
-5 = VEXORA / DETAIL
-
-tee01_4.jpg intentionally removed
-*/
 
 image:"tee01_1.jpg",
 
@@ -2264,12 +1976,7 @@ price:5900,
 image:"",
 gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{
-S:5,
-M:8,
-L:5,
-XL:3
-}
+sizes:{S:5,M:8,L:5,XL:3}
 },
 
 {
@@ -2278,12 +1985,7 @@ price:5900,
 image:"",
 gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{
-S:5,
-M:8,
-L:5,
-XL:3
-}
+sizes:{S:5,M:8,L:5,XL:3}
 },
 
 {
@@ -2292,12 +1994,7 @@ price:5900,
 image:"",
 gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{
-S:5,
-M:8,
-L:5,
-XL:3
-}
+sizes:{S:5,M:8,L:5,XL:3}
 },
 
 {
@@ -2306,12 +2003,7 @@ price:5900,
 image:"",
 gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{
-S:5,
-M:8,
-L:5,
-XL:3
-}
+sizes:{S:5,M:8,L:5,XL:3}
 },
 
 {
@@ -2320,12 +2012,7 @@ price:5900,
 image:"",
 gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{
-S:5,
-M:8,
-L:5,
-XL:3
-}
+sizes:{S:5,M:8,L:5,XL:3}
 },
 
 {
@@ -2334,12 +2021,7 @@ price:5900,
 image:"",
 gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{
-S:5,
-M:8,
-L:5,
-XL:3
-}
+sizes:{S:5,M:8,L:5,XL:3}
 },
 
 {
@@ -2348,12 +2030,7 @@ price:5900,
 image:"",
 gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{
-S:5,
-M:8,
-L:5,
-XL:3
-}
+sizes:{S:5,M:8,L:5,XL:3}
 },
 
 {
@@ -2362,12 +2039,7 @@ price:5900,
 image:"",
 gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{
-S:5,
-M:8,
-L:5,
-XL:3
-}
+sizes:{S:5,M:8,L:5,XL:3}
 },
 
 {
@@ -2376,12 +2048,7 @@ price:5900,
 image:"",
 gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{
-S:5,
-M:8,
-L:5,
-XL:3
-}
+sizes:{S:5,M:8,L:5,XL:3}
 },
 
 {
@@ -2390,12 +2057,7 @@ price:5900,
 image:"",
 gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{
-S:5,
-M:8,
-L:5,
-XL:3
-}
+sizes:{S:5,M:8,L:5,XL:3}
 },
 
 {
@@ -2404,12 +2066,7 @@ price:5900,
 image:"",
 gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{
-S:5,
-M:8,
-L:5,
-XL:3
-}
+sizes:{S:5,M:8,L:5,XL:3}
 },
 
 {
@@ -2418,12 +2075,7 @@ price:5900,
 image:"",
 gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{
-S:5,
-M:8,
-L:5,
-XL:3
-}
+sizes:{S:5,M:8,L:5,XL:3}
 },
 
 {
@@ -2432,12 +2084,7 @@ price:5900,
 image:"",
 gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{
-S:5,
-M:8,
-L:5,
-XL:3
-}
+sizes:{S:5,M:8,L:5,XL:3}
 },
 
 {
@@ -2446,12 +2093,7 @@ price:5900,
 image:"",
 gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{
-S:5,
-M:8,
-L:5,
-XL:3
-}
+sizes:{S:5,M:8,L:5,XL:3}
 },
 
 {
@@ -2460,12 +2102,7 @@ price:5900,
 image:"",
 gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{
-S:5,
-M:8,
-L:5,
-XL:3
-}
+sizes:{S:5,M:8,L:5,XL:3}
 }
 
 ],
@@ -2478,12 +2115,7 @@ price:8900,
 image:"",
 gallery:[],
 desc:"Relaxed wide-leg silhouette with a clean architectural finish.",
-sizes:{
-S:2,
-M:4,
-L:5,
-XL:1
-}
+sizes:{S:2,M:4,L:5,XL:1}
 },
 
 {
@@ -2492,12 +2124,7 @@ price:9500,
 image:"",
 gallery:[],
 desc:"Functional utility-inspired pants.",
-sizes:{
-S:0,
-M:0,
-L:0,
-XL:0
-}
+sizes:{S:0,M:0,L:0,XL:0}
 }
 
 ],
@@ -2510,12 +2137,7 @@ price:9900,
 image:"",
 gallery:[],
 desc:"Heavyweight hoodie with an oversized VEXORA silhouette.",
-sizes:{
-S:1,
-M:3,
-L:4,
-XL:2
-}
+sizes:{S:1,M:3,L:4,XL:2}
 },
 
 {
@@ -2524,12 +2146,7 @@ price:10900,
 image:"",
 gallery:[],
 desc:"Premium heavyweight hoodie with a monochrome aesthetic.",
-sizes:{
-S:0,
-M:0,
-L:0,
-XL:0
-}
+sizes:{S:0,M:0,L:0,XL:0}
 }
 
 ],
@@ -2542,9 +2159,7 @@ price:3900,
 image:"",
 gallery:[],
 desc:"Minimal structured cap finished with the VEXORA signature.",
-sizes:{
-FREE:12
-}
+sizes:{FREE:12}
 },
 
 {
@@ -2553,51 +2168,28 @@ price:5900,
 image:"",
 gallery:[],
 desc:"Compact crossbody silhouette for everyday essentials.",
-sizes:{
-FREE:3
-}
+sizes:{FREE:3}
 }
 
 ]
 
 };
 
-/* =========================
-   STATE
-========================= */
-
 let category="tshirts";
-
 let productIndex=0;
-
 let galleryIndex=0;
-
 let selectedSize="";
-
 let bag=[];
-
-/* =========================
-   HELPERS
-========================= */
 
 const $=id=>document.getElementById(id);
 
 function money(value){
-
-return "Rs. "+
-Number(value).toLocaleString("en-LK");
-
+return "Rs. "+Number(value).toLocaleString("en-LK");
 }
 
 function getTotalStock(product){
-
 return Object.values(product.sizes)
-.reduce(
-(total,stock)=>
-total+Number(stock),
-0
-);
-
+.reduce((total,stock)=>total+Number(stock),0);
 }
 
 function getGallery(product){
@@ -2611,58 +2203,36 @@ return [product.image];
 }
 
 return [];
-
 }
 
-/* =========================
-   INTRO
-========================= */
+/* INTRO */
 
 $("intro").onclick=()=>{
-
 $("intro").classList.add("hide");
-
 };
 
 setTimeout(()=>{
-
 $("intro").classList.add("hide");
-
 },3000);
 
-/* =========================
-   NAV
-========================= */
+/* NAV */
 
 window.addEventListener("scroll",()=>{
-
-$("nav").classList.toggle(
-"scrolled",
-window.scrollY>30
-);
-
+$("nav").classList.toggle("scrolled",window.scrollY>30);
 });
 
 $("homeBtn").onclick=e=>{
-
 e.preventDefault();
-
 showHome();
-
 };
 
-/* =========================
-   PAGE CONTROL
-========================= */
+/* PAGE CONTROL */
 
 function hidePages(){
 
 $("shopPage").classList.remove("active");
-
 $("bagPage").classList.remove("active");
-
 $("orderPage").classList.remove("active");
-
 $("success").classList.remove("active");
 
 }
@@ -2672,9 +2242,7 @@ function showHome(){
 hidePages();
 
 $("home").style.display="block";
-
 $("tshirtGrid").style.display="none";
-
 $("productArea").style.display="grid";
 
 window.scrollTo({
@@ -2684,20 +2252,14 @@ behavior:"smooth"
 
 }
 
-/* =========================
-   CATEGORY
-========================= */
+/* CATEGORY */
 
-document
-.querySelectorAll(".category")
-.forEach(card=>{
+document.querySelectorAll(".category").forEach(card=>{
 
 card.onclick=()=>{
 
 category=card.dataset.cat;
-
 productIndex=0;
-
 galleryIndex=0;
 
 $("home").style.display="none";
@@ -2707,20 +2269,14 @@ hidePages();
 $("shopPage").classList.add("active");
 
 const titles={
-
 tshirts:"PRINT OVERSIZED T-SHIRTS.",
-
 pants:"PANTS.",
-
 hoodies:"HOODIES.",
-
 accessories:"ACCESSORIES."
-
 };
 
 $("shopKicker").textContent=
-"VEXORA / "+
-category.toUpperCase();
+"VEXORA / "+category.toUpperCase();
 
 $("shopTitle").textContent=
 titles[category];
@@ -2728,7 +2284,6 @@ titles[category];
 if(category==="tshirts"){
 
 $("tshirtGrid").style.display="grid";
-
 $("productArea").style.display="none";
 
 renderTshirtGrid();
@@ -2736,7 +2291,6 @@ renderTshirtGrid();
 }else{
 
 $("tshirtGrid").style.display="none";
-
 $("productArea").style.display="grid";
 
 renderProduct();
@@ -2751,9 +2305,7 @@ window.scrollTo(0,0);
 
 $("backShop").onclick=showHome;
 
-/* =========================
-   T-SHIRT GRID
-========================= */
+/* T-SHIRT GRID */
 
 function renderTshirtGrid(){
 
@@ -2765,18 +2317,42 @@ grid.innerHTML=list.map((product,index)=>{
 
 const stock=getTotalStock(product);
 
-const image=
-product.image
-?
-`
+let imageHTML="";
+
+if(index===0){
+
+imageHTML=`
+
+<div class="design01-auto">
+
+<img
+src="tee01_1.jpg"
+class="active"
+alt="VEXORA DESIGN 01 FRONT"
+>
+
+<img
+src="tee01_2.jpg"
+alt="VEXORA DESIGN 01 BACK"
+>
+
+</div>
+
+`;
+
+}else if(product.image){
+
+imageHTML=`
+
 <img
 src="${product.image}"
 alt="${product.name}"
 onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
 >
-`
-:
-"";
+
+`;
+
+}
 
 return `
 
@@ -2787,11 +2363,11 @@ data-index="${index}"
 
 <div class="tshirt-card-image">
 
-${image}
+${imageHTML}
 
 <span
 class="tshirt-placeholder"
-style="${product.image?'display:none':''}"
+style="${index===0||product.image?'display:none':''}"
 >
 VEXORA / DESIGN ${String(index+1).padStart(2,"0")}
 </span>
@@ -2828,8 +2404,35 @@ VIEW PRODUCT →
 
 }).join("");
 
-document
-.querySelectorAll(".tshirt-card")
+/* DESIGN 01 AUTO SLIDESHOW */
+
+const design01=document.querySelector(
+".design01-auto"
+);
+
+if(design01){
+
+const imgs=
+design01.querySelectorAll("img");
+
+let current=0;
+
+setInterval(()=>{
+
+imgs[current].classList.remove("active");
+
+current=
+current===0?1:0;
+
+imgs[current].classList.add("active");
+
+},2000);
+
+}
+
+/* CARD CLICK */
+
+document.querySelectorAll(".tshirt-card")
 .forEach(card=>{
 
 card.onclick=()=>{
@@ -2858,9 +2461,7 @@ behavior:"smooth"
 
 }
 
-/* =========================
-   PRODUCT RENDER
-========================= */
+/* PRODUCT */
 
 function renderProduct(){
 
@@ -2896,7 +2497,11 @@ String(gallery.length).padStart(2,"0")
 "00";
 
 $("visualNo").textContent=
-String(galleryIndex+1).padStart(2,"0");
+gallery.length
+?
+String(galleryIndex+1).padStart(2,"0")
+:
+"00";
 
 $("pName").textContent=p.name;
 
@@ -2905,13 +2510,11 @@ $("pDesc").textContent=p.desc;
 $("price").textContent=money(p.price);
 
 const status=$("status");
-
 const stockText=$("stockText");
 
 if(totalStock>0){
 
 status.textContent="IN STOCK";
-
 status.className="status in";
 
 stockText.textContent=
@@ -2923,7 +2526,6 @@ stockText.className=
 }else{
 
 status.textContent="OUT OF STOCK";
-
 status.className="status out";
 
 stockText.textContent="SOLD OUT";
@@ -2934,13 +2536,11 @@ stockText.className=
 }
 
 const img=$("productImage");
-
 const placeholder=$("placeholder");
 
 if(gallery.length){
 
 img.src=gallery[galleryIndex];
-
 img.style.display="block";
 
 placeholder.style.display="none";
@@ -2948,7 +2548,6 @@ placeholder.style.display="none";
 }else{
 
 img.removeAttribute("src");
-
 img.style.display="none";
 
 placeholder.style.display="block";
@@ -2959,9 +2558,7 @@ renderSizes(p);
 
 }
 
-/* =========================
-   SMOOTH GALLERY
-========================= */
+/* SMOOTH GALLERY */
 
 function changeGallery(direction){
 
@@ -2970,9 +2567,7 @@ const p=products[category][productIndex];
 const gallery=getGallery(p);
 
 if(gallery.length<=1){
-
 return;
-
 }
 
 galleryIndex=
@@ -3000,7 +2595,9 @@ img.onload=()=>{
 
 requestAnimationFrame(()=>{
 
-img.classList.remove("gallery-changing");
+img.classList.remove(
+"gallery-changing"
+);
 
 });
 
@@ -3010,25 +2607,15 @@ img.classList.remove("gallery-changing");
 
 }
 
-/* =========================
-   ARROWS
-========================= */
-
 $("next").onclick=()=>{
-
 changeGallery(1);
-
 };
 
 $("prev").onclick=()=>{
-
 changeGallery(-1);
-
 };
 
-/* =========================
-   SIZES
-========================= */
+/* SIZES */
 
 function renderSizes(product){
 
@@ -3039,22 +2626,18 @@ container.innerHTML="";
 selectedSize="";
 
 $("add").disabled=true;
-
 $("add").textContent="SELECT SIZE";
 
 Object.entries(product.sizes)
 .forEach(([size,stock])=>{
 
 const wrap=document.createElement("div");
-
 const button=document.createElement("button");
-
 const label=document.createElement("span");
 
 wrap.className="size-wrap";
 
 button.className="size";
-
 button.textContent=size;
 
 label.className="size-stock";
@@ -3062,32 +2645,25 @@ label.className="size-stock";
 if(stock>0){
 
 button.classList.add("available");
-
 label.classList.add("available");
 
-label.textContent=
-stock+" LEFT";
+label.textContent=stock+" LEFT";
 
 button.onclick=()=>{
-
 selectSize(size);
-
 };
 
 }else{
 
 button.disabled=true;
-
 button.classList.add("sold");
 
 label.classList.add("sold");
-
 label.textContent="SOLD OUT";
 
 }
 
 wrap.appendChild(button);
-
 wrap.appendChild(label);
 
 container.appendChild(wrap);
@@ -3102,15 +2678,12 @@ const p=
 products[category][productIndex];
 
 if(Number(p.sizes[size]||0)<=0){
-
 return;
-
 }
 
 selectedSize=size;
 
-document
-.querySelectorAll(".size")
+document.querySelectorAll(".size")
 .forEach(button=>{
 
 button.classList.toggle(
@@ -3127,9 +2700,7 @@ $("add").textContent=
 
 }
 
-/* =========================
-   CART
-========================= */
+/* CART */
 
 $("add").onclick=()=>{
 
@@ -3184,13 +2755,9 @@ existing.quantity++;
 bag.push({
 
 name:p.name,
-
 price:p.price,
-
 image:p.image,
-
 size:selectedSize,
-
 quantity:1
 
 });
@@ -3198,7 +2765,6 @@ quantity:1
 }
 
 updateBagCount();
-
 openBag();
 
 };
@@ -3225,7 +2791,6 @@ $("home").style.display="none";
 hidePages();
 
 $("tshirtGrid").style.display="none";
-
 $("productArea").style.display="grid";
 
 $("bagPage").classList.add("active");
@@ -3246,9 +2811,7 @@ container.innerHTML=`
 
 <div class="empty">
 
-<h2>
-YOUR BAG IS EMPTY.
-</h2>
+<h2>YOUR BAG IS EMPTY.</h2>
 
 <p style="margin-top:15px">
 Add something from the VEXORA collection.
@@ -3268,8 +2831,7 @@ let html=`<div class="bag-items">`;
 
 bag.forEach((item,index)=>{
 
-subtotal+=
-item.price*item.quantity;
+subtotal+=item.price*item.quantity;
 
 html+=`
 
@@ -3308,19 +2870,13 @@ REMOVE
 
 <div class="qty">
 
-<button
-onclick="changeQty(${index},-1)"
->
+<button onclick="changeQty(${index},-1)">
 −
 </button>
 
-<span>
-${item.quantity}
-</span>
+<span>${item.quantity}</span>
 
-<button
-onclick="changeQty(${index},1)"
->
+<button onclick="changeQty(${index},1)">
 +
 </button>
 
@@ -3341,47 +2897,27 @@ html+=`</div>`;
 const delivery=
 subtotal>=10000?0:350;
 
-const total=
-subtotal+delivery;
+const total=subtotal+delivery;
 
 html+=`
 
 <div class="bag-summary">
 
 <div class="summary-row">
-
-<span>
-SUBTOTAL
-</span>
-
-<span>
-${money(subtotal)}
-</span>
-
+<span>SUBTOTAL</span>
+<span>${money(subtotal)}</span>
 </div>
 
 <div class="summary-row">
-
-<span>
-DELIVERY
-</span>
-
+<span>DELIVERY</span>
 <span>
 ${delivery===0?"FREE":money(delivery)}
 </span>
-
 </div>
 
 <div class="summary-row total">
-
-<span>
-TOTAL
-</span>
-
-<span>
-${money(total)}
-</span>
-
+<span>TOTAL</span>
+<span>${money(total)}</span>
 </div>
 
 <button
@@ -3399,10 +2935,6 @@ container.innerHTML=html;
 
 }
 
-/* =========================
-   FIND PRODUCT
-========================= */
-
 function findProduct(name){
 
 for(const key in products){
@@ -3419,10 +2951,6 @@ if(product)return product;
 return null;
 
 }
-
-/* =========================
-   QUANTITY
-========================= */
 
 function changeQty(index,change){
 
@@ -3445,8 +2973,7 @@ alert(
 "ONLY "+
 stock+
 " AVAILABLE IN SIZE "+
-item.size+
-"."
+item.size+"."
 );
 
 }else{
@@ -3456,7 +2983,6 @@ item.quantity=next;
 }
 
 updateBagCount();
-
 renderBag();
 
 }
@@ -3466,14 +2992,11 @@ function removeItem(index){
 bag.splice(index,1);
 
 updateBagCount();
-
 renderBag();
 
 }
 
-/* =========================
-   CHECKOUT
-========================= */
+/* CHECKOUT */
 
 function checkout(){
 
@@ -3530,8 +3053,7 @@ ${money(item.price*item.quantity)}
 const delivery=
 subtotal>=10000?0:350;
 
-const total=
-subtotal+delivery;
+const total=subtotal+delivery;
 
 $("orderItems").innerHTML=html;
 
@@ -3546,58 +3068,40 @@ money(total);
 
 }
 
-/* =========================
-   CONFIRM ORDER
-========================= */
+/* CONFIRM */
 
 $("confirm").onclick=()=>{
 
 const name=$("name").value.trim();
-
 const phone=$("phone").value.trim();
-
 const address=$("address").value.trim();
-
 const district=$("district").value;
-
 const payment=$("payment").value;
 
 if(!name){
 
-alert(
-"PLEASE ENTER YOUR NAME."
-);
-
+alert("PLEASE ENTER YOUR NAME.");
 return;
 
 }
 
 if(!phone){
 
-alert(
-"PLEASE ENTER YOUR CONTACT NUMBER."
-);
-
+alert("PLEASE ENTER YOUR CONTACT NUMBER.");
 return;
 
 }
 
 if(!address){
 
-alert(
-"PLEASE ENTER YOUR ADDRESS."
-);
-
+alert("PLEASE ENTER YOUR ADDRESS.");
 return;
 
 }
 
 if(!district){
 
-alert(
-"PLEASE SELECT YOUR DISTRICT."
-);
-
+alert("PLEASE SELECT YOUR DISTRICT.");
 return;
 
 }
@@ -3627,7 +3131,6 @@ return;
 }
 
 let subtotal=0;
-
 let orderLines="";
 
 bag.forEach(item=>{
@@ -3648,8 +3151,7 @@ Price: ${money(item.price*item.quantity)}
 const delivery=
 subtotal>=10000?0:350;
 
-const total=
-subtotal+delivery;
+const total=subtotal+delivery;
 
 const orderId=
 "VX-"+
@@ -3720,24 +3222,15 @@ updateBagCount();
 
 };
 
-/* =========================
-   CONTINUE
-========================= */
+/* CONTINUE */
 
 $("continue").onclick=showHome;
 
-/* =========================
-   SEARCH
-========================= */
+/* SEARCH */
 
-const searchOverlay=
-$("searchOverlay");
-
-const searchInput=
-$("searchInput");
-
-const searchResults=
-$("searchResults");
+const searchOverlay=$("searchOverlay");
+const searchInput=$("searchInput");
+const searchResults=$("searchResults");
 
 $("openSearch").onclick=()=>{
 
@@ -3748,9 +3241,7 @@ searchInput.value="";
 renderSearch("");
 
 setTimeout(()=>{
-
 searchInput.focus();
-
 },250);
 
 };
@@ -3761,9 +3252,7 @@ searchOverlay.classList.remove("active");
 
 };
 
-searchOverlay.addEventListener(
-"click",
-e=>{
+searchOverlay.addEventListener("click",e=>{
 
 if(e.target===searchOverlay){
 
@@ -3773,9 +3262,7 @@ searchOverlay.classList.remove("active");
 
 });
 
-document.addEventListener(
-"keydown",
-e=>{
+document.addEventListener("keydown",e=>{
 
 if(e.key==="Escape"){
 
@@ -3785,9 +3272,7 @@ searchOverlay.classList.remove("active");
 
 });
 
-searchInput.addEventListener(
-"input",
-()=>{
+searchInput.addEventListener("input",()=>{
 
 renderSearch(
 searchInput.value.trim()
@@ -3795,25 +3280,18 @@ searchInput.value.trim()
 
 });
 
-/* =========================
-   ALL PRODUCTS
-========================= */
-
 function allProducts(){
 
 const result=[];
 
 for(const key in products){
 
-products[key].forEach(
-(product,index)=>{
+products[key].forEach((product,index)=>{
 
 result.push({
 
 ...product,
-
 category:key,
-
 index:index
 
 });
@@ -3826,10 +3304,6 @@ return result;
 
 }
 
-/* =========================
-   SEARCH RENDER
-========================= */
-
 function renderSearch(query){
 
 const all=allProducts();
@@ -3841,23 +3315,13 @@ q
 ?
 all.filter(product=>{
 
-return (
+return(
 
-product.name
-.toLowerCase()
-.includes(q)
-
+product.name.toLowerCase().includes(q)
 ||
-
-product.category
-.toLowerCase()
-.includes(q)
-
+product.category.toLowerCase().includes(q)
 ||
-
-product.desc
-.toLowerCase()
-.includes(q)
+product.desc.toLowerCase().includes(q)
 
 );
 
@@ -3912,9 +3376,7 @@ alt="${product.name}"
 `
 :
 `
-<span>
-VEXORA / PRODUCT
-</span>
+<span>VEXORA / PRODUCT</span>
 `
 }
 
@@ -3923,10 +3385,7 @@ VEXORA / PRODUCT
 <div class="search-card-info">
 
 <div class="search-category">
-
-VEXORA /
-${product.category.toUpperCase()}
-
+VEXORA / ${product.category.toUpperCase()}
 </div>
 
 <div class="search-name">
@@ -3937,9 +3396,7 @@ ${product.name}
 ${money(product.price)}
 </div>
 
-<div
-class="search-stock ${stock>0?"in":"out"}"
->
+<div class="search-stock ${stock>0?"in":"out"}">
 
 ${
 stock>0
@@ -3965,17 +3422,14 @@ document
 
 card.onclick=()=>{
 
-category=
-card.dataset.category;
+category=card.dataset.category;
 
 productIndex=
 Number(card.dataset.index);
 
 galleryIndex=0;
 
-searchOverlay.classList.remove(
-"active"
-);
+searchOverlay.classList.remove("active");
 
 $("home").style.display="none";
 
@@ -3985,17 +3439,10 @@ $("shopPage").classList.add("active");
 
 const titles={
 
-tshirts:
-"PRINT OVERSIZED T-SHIRTS.",
-
-pants:
-"PANTS.",
-
-hoodies:
-"HOODIES.",
-
-accessories:
-"ACCESSORIES."
+tshirts:"PRINT OVERSIZED T-SHIRTS.",
+pants:"PANTS.",
+hoodies:"HOODIES.",
+accessories:"ACCESSORIES."
 
 };
 
@@ -4008,21 +3455,15 @@ titles[category];
 
 if(category==="tshirts"){
 
-$("tshirtGrid").style.display=
-"grid";
-
-$("productArea").style.display=
-"none";
+$("tshirtGrid").style.display="grid";
+$("productArea").style.display="none";
 
 renderTshirtGrid();
 
 }else{
 
-$("tshirtGrid").style.display=
-"none";
-
-$("productArea").style.display=
-"grid";
+$("tshirtGrid").style.display="none";
+$("productArea").style.display="grid";
 
 renderProduct();
 
@@ -4036,9 +3477,7 @@ window.scrollTo(0,0);
 
 }
 
-/* =========================
-   INITIAL
-========================= */
+/* INITIAL */
 
 updateBagCount();
 
