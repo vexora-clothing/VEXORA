@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
 --bg:#050505;
 --card:#0b0b0b;
@@ -19,37 +20,37 @@
 --muted:#666;
 --line:#202020;
 --green:#35df88;
---red:#ff4b55
+--red:#ff4b55;
 }
 
 *{
 box-sizing:border-box;
 margin:0;
-padding:0
+padding:0;
 }
 
 html{
-scroll-behavior:smooth
+scroll-behavior:smooth;
 }
 
 body{
 background:var(--bg);
 color:var(--white);
 font-family:Manrope,sans-serif;
-overflow-x:hidden
+overflow-x:hidden;
 }
 
 button,input,textarea,select{
-font:inherit
+font:inherit;
 }
 
 button{
-cursor:pointer
+cursor:pointer;
 }
 
 a{
 color:inherit;
-text-decoration:none
+text-decoration:none;
 }
 
 /* INTRO */
@@ -61,36 +62,36 @@ z-index:9999;
 background:#000;
 display:grid;
 place-items:center;
-transition:1s
+transition:1s;
 }
 
 #intro.hide{
 opacity:0;
-visibility:hidden
+visibility:hidden;
 }
 
 .intro{
-text-align:center
+text-align:center;
 }
 
 .intro small{
 color:#555;
 font-size:8px;
-letter-spacing:.4em
+letter-spacing:.4em;
 }
 
 .intro h1{
 margin:20px 0;
 font-size:clamp(65px,13vw,150px);
 font-weight:500;
-letter-spacing:.16em
+letter-spacing:.16em;
 }
 
 .intro-line{
 width:180px;
 height:1px;
 background:#333;
-margin:auto
+margin:auto;
 }
 
 /* NAV */
@@ -106,32 +107,32 @@ z-index:1000;
 display:flex;
 justify-content:space-between;
 align-items:center;
-transition:.35s
+transition:.35s;
 }
 
 .nav.scrolled{
 height:65px;
 background:rgba(5,5,5,.86);
 backdrop-filter:blur(20px);
-border-bottom:1px solid #191919
+border-bottom:1px solid #191919;
 }
 
 .logo{
 font-size:17px;
 letter-spacing:.3em;
-font-weight:600
+font-weight:600;
 }
 
 .nav-right{
 display:flex;
 align-items:center;
-gap:28px
+gap:28px;
 }
 
 .navlinks{
 display:flex;
 gap:30px;
-list-style:none
+list-style:none;
 }
 
 .navlinks a,
@@ -139,22 +140,22 @@ list-style:none
 font-size:8px;
 color:#777;
 letter-spacing:.2em;
-transition:.25s
+transition:.25s;
 }
 
 .navlinks a:hover,
 .bag-btn:hover{
-color:#fff
+color:#fff;
 }
 
 .bag-btn{
 background:none;
 border:0;
-color:#fff
+color:#fff;
 }
 
 .bag-count{
-margin-left:5px
+margin-left:5px;
 }
 
 .search-btn{
@@ -166,12 +167,12 @@ color:#fff;
 display:grid;
 place-items:center;
 font-size:15px;
-transition:.25s
+transition:.25s;
 }
 
 .search-btn:hover{
 background:#fff;
-color:#000
+color:#000;
 }
 
 /* SEARCH */
@@ -186,25 +187,25 @@ opacity:0;
 visibility:hidden;
 transition:.35s;
 padding:120px 7vw 50px;
-overflow-y:auto
+overflow-y:auto;
 }
 
 .search-overlay.active{
 opacity:1;
-visibility:visible
+visibility:visible;
 }
 
 .search-top{
 display:flex;
 align-items:center;
 justify-content:space-between;
-gap:20px
+gap:20px;
 }
 
 .search-label{
 color:#555;
 font-size:8px;
-letter-spacing:.35em
+letter-spacing:.35em;
 }
 
 .close-search{
@@ -213,14 +214,14 @@ height:42px;
 background:#111;
 border:1px solid #2a2a2a;
 color:#fff;
-font-size:18px
+font-size:18px;
 }
 
 .search-input-wrap{
 margin-top:35px;
 border-bottom:1px solid #333;
 display:flex;
-align-items:center
+align-items:center;
 }
 
 .search-input{
@@ -232,18 +233,18 @@ outline:0;
 color:#fff;
 font-size:clamp(28px,5vw,65px);
 font-weight:400;
-letter-spacing:-.05em
+letter-spacing:-.05em;
 }
 
 .search-input::placeholder{
-color:#292929
+color:#292929;
 }
 
 .search-results{
 margin-top:40px;
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:12px
+gap:12px;
 }
 
 .search-card{
@@ -251,12 +252,12 @@ background:#0b0b0b;
 border:1px solid #1c1c1c;
 padding:12px;
 cursor:pointer;
-transition:.3s
+transition:.3s;
 }
 
 .search-card:hover{
 border-color:#555;
-transform:translateY(-5px)
+transform:translateY(-5px);
 }
 
 .search-image{
@@ -264,59 +265,59 @@ aspect-ratio:4/5;
 background:radial-gradient(circle at 50% 35%,#202020,#080808 65%);
 display:grid;
 place-items:center;
-overflow:hidden
+overflow:hidden;
 }
 
 .search-image img{
 width:100%;
 height:100%;
-object-fit:cover
+object-fit:cover;
 }
 
 .search-image span{
 font-size:7px;
 letter-spacing:.2em;
-color:#444
+color:#444;
 }
 
 .search-card-info{
-padding:15px 3px 5px
+padding:15px 3px 5px;
 }
 
 .search-category{
 font-size:6px;
 letter-spacing:.25em;
-color:#555
+color:#555;
 }
 
 .search-name{
 font-size:10px;
-margin-top:7px
+margin-top:7px;
 }
 
 .search-price{
 font-size:9px;
-margin-top:9px
+margin-top:9px;
 }
 
 .search-stock{
 font-size:6px;
-margin-top:7px
+margin-top:7px;
 }
 
 .search-stock.in{
-color:var(--green)
+color:var(--green);
 }
 
 .search-stock.out{
-color:var(--red)
+color:var(--red);
 }
 
 .no-results{
 grid-column:1/-1;
 padding:80px 20px;
 text-align:center;
-color:#555
+color:#555;
 }
 
 .no-results strong{
@@ -324,7 +325,7 @@ display:block;
 color:#fff;
 font-size:28px;
 font-weight:500;
-margin-bottom:10px
+margin-bottom:10px;
 }
 
 /* HERO */
@@ -338,7 +339,7 @@ position:relative;
 overflow:hidden;
 background:
 radial-gradient(circle at 80% 25%,rgba(255,255,255,.07),transparent 25%),
-#050505
+#050505;
 }
 
 .hero:after{
@@ -349,26 +350,26 @@ height:65vw;
 right:-30vw;
 top:10vh;
 border:1px solid #1b1b1b;
-border-radius:50%
+border-radius:50%;
 }
 
 .hero-copy{
 position:relative;
-z-index:2
+z-index:2;
 }
 
 .eyebrow{
 font-size:8px;
 color:#555;
 letter-spacing:.4em;
-margin-bottom:25px
+margin-bottom:25px;
 }
 
 .hero h1{
 font-size:clamp(70px,13vw,185px);
 line-height:.8;
 font-weight:500;
-letter-spacing:-.075em
+letter-spacing:-.075em;
 }
 
 .hero p{
@@ -376,7 +377,7 @@ max-width:470px;
 color:#666;
 font-size:10px;
 line-height:2;
-margin:35px 0
+margin:35px 0;
 }
 
 .cta{
@@ -388,13 +389,13 @@ color:#000;
 font-size:8px;
 font-weight:600;
 letter-spacing:.2em;
-transition:.3s
+transition:.3s;
 }
 
 .cta:hover{
 background:transparent;
 color:#fff;
-border:1px solid #555
+border:1px solid #555;
 }
 
 /* MARQUEE */
@@ -404,37 +405,37 @@ overflow:hidden;
 white-space:nowrap;
 border-top:1px solid #181818;
 border-bottom:1px solid #181818;
-padding:19px 0
+padding:19px 0;
 }
 
 .track{
 display:inline-flex;
 gap:45px;
-animation:move 25s linear infinite
+animation:move 25s linear infinite;
 }
 
 .track span{
 color:#555;
 font-size:7px;
-letter-spacing:.3em
+letter-spacing:.3em;
 }
 
 @keyframes move{
 to{
-transform:translateX(-50%)
+transform:translateX(-50%);
 }
 }
 
 /* SECTIONS */
 
 .section{
-padding:120px 6vw
+padding:120px 6vw;
 }
 
 .label{
 color:#555;
 font-size:8px;
-letter-spacing:.35em
+letter-spacing:.35em;
 }
 
 .title{
@@ -442,16 +443,14 @@ margin-top:18px;
 font-size:clamp(48px,7vw,95px);
 line-height:.86;
 font-weight:500;
-letter-spacing:-.065em
+letter-spacing:-.065em;
 }
-
-/* CATEGORY */
 
 .category-grid{
 margin-top:60px;
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:10px
+gap:10px;
 }
 
 .category{
@@ -463,12 +462,12 @@ position:relative;
 display:flex;
 align-items:flex-end;
 transition:.35s;
-cursor:pointer
+cursor:pointer;
 }
 
 .category:hover{
 transform:translateY(-7px);
-border-color:#444
+border-color:#444;
 }
 
 .cat-no{
@@ -476,27 +475,25 @@ position:absolute;
 top:17px;
 right:18px;
 color:#444;
-font-size:7px
+font-size:7px;
 }
 
 .cat-mini{
 color:#555;
 font-size:6px;
-letter-spacing:.25em
+letter-spacing:.25em;
 }
 
 .category h3{
 margin-top:8px;
 font-size:17px;
-font-weight:500
+font-weight:500;
 }
 
 .arrow{
 margin-top:12px;
-color:#555
+color:#555;
 }
-
-/* STATEMENT */
 
 .statement{
 min-height:65vh;
@@ -504,18 +501,18 @@ display:grid;
 place-items:center;
 text-align:center;
 border-top:1px solid #181818;
-padding:100px 6vw
+padding:100px 6vw;
 }
 
 .statement h2{
 font-size:clamp(45px,8vw,105px);
 line-height:.85;
 font-weight:500;
-letter-spacing:-.07em
+letter-spacing:-.07em;
 }
 
 .statement span{
-color:#555
+color:#555;
 }
 
 /* PAGES */
@@ -523,17 +520,17 @@ color:#555
 .page{
 display:none;
 min-height:100vh;
-padding-top:80px
+padding-top:80px;
 }
 
 .page.active{
-display:block
+display:block;
 }
 
 /* SHOP */
 
 .shop-head{
-padding:90px 6vw 30px
+padding:90px 6vw 30px;
 }
 
 .back{
@@ -541,14 +538,14 @@ background:none;
 border:0;
 color:#555;
 font-size:8px;
-letter-spacing:.2em
+letter-spacing:.2em;
 }
 
 .shop-kicker{
 margin-top:50px;
 color:#555;
 font-size:8px;
-letter-spacing:.35em
+letter-spacing:.35em;
 }
 
 .shop-title{
@@ -556,16 +553,14 @@ margin-top:15px;
 font-size:clamp(48px,8vw,100px);
 line-height:.85;
 font-weight:500;
-letter-spacing:-.07em
+letter-spacing:-.07em;
 }
-
-/* TSHIRT GRID */
 
 .tshirt-grid{
 padding:40px 6vw 70px;
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:14px
+gap:14px;
 }
 
 .tshirt-card{
@@ -573,12 +568,12 @@ background:#0b0b0b;
 border:1px solid #1c1c1c;
 padding:12px;
 cursor:pointer;
-transition:.35s
+transition:.35s;
 }
 
 .tshirt-card:hover{
 transform:translateY(-7px);
-border-color:#555
+border-color:#555;
 }
 
 .tshirt-card-image{
@@ -586,66 +581,66 @@ aspect-ratio:4/5;
 background:radial-gradient(circle at 50% 35%,#202020,#080808 65%);
 display:grid;
 place-items:center;
-overflow:hidden
+overflow:hidden;
 }
 
 .tshirt-card-image img{
 width:100%;
 height:100%;
 object-fit:cover;
-transition:.45s
+transition:.45s;
 }
 
 .tshirt-card:hover .tshirt-card-image img{
-transform:scale(1.04)
+transform:scale(1.04);
 }
 
 .tshirt-placeholder{
 color:#444;
 font-size:7px;
-letter-spacing:.2em
+letter-spacing:.2em;
 }
 
 .tshirt-card-info{
-padding:15px 3px 7px
+padding:15px 3px 7px;
 }
 
 .tshirt-number{
 color:#555;
 font-size:6px;
-letter-spacing:.25em
+letter-spacing:.25em;
 }
 
 .tshirt-card-name{
 margin-top:7px;
 font-size:10px;
-line-height:1.4
+line-height:1.4;
 }
 
 .tshirt-card-price{
 margin-top:9px;
-font-size:9px
+font-size:9px;
 }
 
 .tshirt-stock{
 margin-top:7px;
 font-size:6px;
-letter-spacing:.15em
+letter-spacing:.15em;
 }
 
 .tshirt-stock.in{
-color:var(--green)
+color:var(--green);
 }
 
 .tshirt-stock.out{
-color:var(--red)
+color:var(--red);
 }
 
 .tshirt-view{
 margin-top:12px;
 color:#777;
 font-size:7px;
-letter-spacing:.2em
+letter-spacing:.2em;
 }
 
 /* PRODUCT */
@@ -655,7 +650,7 @@ min-height:calc(100vh - 220px);
 padding:40px 8vw 100px;
 display:grid;
 place-items:center;
-position:relative
+position:relative;
 }
 
 .product{
@@ -663,7 +658,7 @@ width:min(1150px,100%);
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:90px;
-align-items:center
+align-items:center;
 }
 
 .visual{
@@ -673,19 +668,32 @@ border:1px solid #1d1d1d;
 position:relative;
 overflow:hidden;
 display:grid;
-place-items:center
+place-items:center;
 }
+
+/* SMOOTH IMAGE */
 
 .visual img{
 width:100%;
 height:100%;
-object-fit:cover
+object-fit:cover;
+opacity:1;
+transform:scale(1);
+transition:
+opacity .38s ease,
+transform .55s cubic-bezier(.22,.61,.36,1);
+will-change:opacity,transform;
+}
+
+.visual img.gallery-changing{
+opacity:0;
+transform:scale(1.035);
 }
 
 .visual-placeholder{
 color:#444;
 font-size:8px;
-letter-spacing:.3em
+letter-spacing:.3em;
 }
 
 .visual-no{
@@ -694,7 +702,7 @@ top:20px;
 left:20px;
 z-index:2;
 color:#777;
-font-size:7px
+font-size:7px;
 }
 
 .status{
@@ -706,21 +714,21 @@ padding:8px 11px;
 border:1px solid currentColor;
 font-size:7px;
 letter-spacing:.18em;
-font-weight:600
+font-weight:600;
 }
 
 .status.in{
-color:var(--green)
+color:var(--green);
 }
 
 .status.out{
-color:var(--red)
+color:var(--red);
 }
 
 .p-index{
 color:#555;
 font-size:7px;
-letter-spacing:.3em
+letter-spacing:.3em;
 }
 
 .p-name{
@@ -728,7 +736,7 @@ margin-top:16px;
 font-size:clamp(35px,4vw,60px);
 line-height:.9;
 font-weight:500;
-letter-spacing:-.06em
+letter-spacing:-.06em;
 }
 
 .p-desc{
@@ -736,47 +744,47 @@ max-width:430px;
 margin-top:25px;
 color:#666;
 font-size:10px;
-line-height:2
+line-height:2;
 }
 
 .price{
 margin-top:25px;
-font-size:16px
+font-size:16px;
 }
 
 .stock-text{
 margin-top:13px;
 font-size:8px;
-letter-spacing:.12em
+letter-spacing:.12em;
 }
 
 .stock-text.green{
-color:var(--green)
+color:var(--green);
 }
 
 .stock-text.red{
-color:var(--red)
+color:var(--red);
 }
 
 .size-label{
 margin-top:30px;
 color:#555;
 font-size:7px;
-letter-spacing:.3em
+letter-spacing:.3em;
 }
 
 .sizes{
 display:flex;
 flex-wrap:wrap;
 gap:8px;
-margin-top:12px
+margin-top:12px;
 }
 
 .size-wrap{
 display:flex;
 flex-direction:column;
 align-items:center;
-gap:5px
+gap:5px;
 }
 
 .size{
@@ -786,44 +794,44 @@ background:#080808;
 border:1px solid #262626;
 color:#fff;
 font-size:8px;
-transition:.25s
+transition:.25s;
 }
 
 .size:hover:not(:disabled){
 background:#fff;
 color:#000;
-border-color:#fff
+border-color:#fff;
 }
 
 .size.selected{
 background:#fff;
 color:#000;
-border-color:#fff
+border-color:#fff;
 }
 
 .size.available{
-border-color:#2d493b
+border-color:#2d493b;
 }
 
 .size.sold{
 color:#555;
 border-color:#272020;
 text-decoration:line-through;
-cursor:not-allowed
+cursor:not-allowed;
 }
 
 .size-stock{
 font-size:6px;
 letter-spacing:.1em;
-white-space:nowrap
+white-space:nowrap;
 }
 
 .size-stock.available{
-color:var(--green)
+color:var(--green);
 }
 
 .size-stock.sold{
-color:var(--red)
+color:var(--red);
 }
 
 .add{
@@ -837,19 +845,19 @@ border:1px solid #fff;
 font-size:8px;
 font-weight:600;
 letter-spacing:.25em;
-transition:.3s
+transition:.3s;
 }
 
 .add:hover:not(:disabled){
 background:#111;
-color:#fff
+color:#fff;
 }
 
 .add:disabled{
 background:#171717;
 color:#555;
 border-color:#222;
-cursor:not-allowed
+cursor:not-allowed;
 }
 
 /* ARROWS */
@@ -863,20 +871,30 @@ height:50px;
 border:1px solid #242424;
 background:#090909;
 color:#fff;
-z-index:5
+z-index:5;
+transition:
+background .25s ease,
+color .25s ease,
+transform .25s ease,
+border-color .25s ease;
 }
 
 .arrowbtn:hover{
 background:#fff;
-color:#000
+color:#000;
+border-color:#fff;
+}
+
+.arrowbtn:active{
+transform:translateY(-50%) scale(.94);
 }
 
 .prev{
-left:18px
+left:18px;
 }
 
 .next{
-right:18px
+right:18px;
 }
 
 .counter{
@@ -886,31 +904,31 @@ left:50%;
 transform:translateX(-50%);
 color:#555;
 font-size:8px;
-letter-spacing:.3em
+letter-spacing:.3em;
 }
 
 /* BAG */
 
 .bag-page{
 min-height:100vh;
-padding:120px 6vw 80px
+padding:120px 6vw 80px;
 }
 
 .bag-wrap{
 max-width:1100px;
-margin:auto
+margin:auto;
 }
 
 .bag-title{
 font-size:clamp(55px,8vw,105px);
 line-height:.85;
 font-weight:500;
-letter-spacing:-.07em
+letter-spacing:-.07em;
 }
 
 .bag-items{
 margin-top:55px;
-border-top:1px solid #202020
+border-top:1px solid #202020;
 }
 
 .bag-item{
@@ -919,7 +937,7 @@ display:grid;
 grid-template-columns:90px 1fr auto auto;
 gap:22px;
 align-items:center;
-border-bottom:1px solid #202020
+border-bottom:1px solid #202020;
 }
 
 .bag-thumb{
@@ -929,23 +947,23 @@ background:#111;
 display:grid;
 place-items:center;
 color:#444;
-overflow:hidden
+overflow:hidden;
 }
 
 .bag-thumb img{
 width:100%;
 height:100%;
-object-fit:cover
+object-fit:cover;
 }
 
 .bag-name{
-font-size:13px
+font-size:13px;
 }
 
 .bag-meta{
 margin-top:6px;
 color:#555;
-font-size:8px
+font-size:8px;
 }
 
 .remove{
@@ -954,13 +972,13 @@ background:none;
 border:0;
 color:#555;
 font-size:7px;
-letter-spacing:.15em
+letter-spacing:.15em;
 }
 
 .qty{
 display:flex;
 align-items:center;
-gap:10px
+gap:10px;
 }
 
 .qty button{
@@ -968,17 +986,17 @@ width:28px;
 height:28px;
 background:#090909;
 color:#fff;
-border:1px solid #252525
+border:1px solid #252525;
 }
 
 .bag-price{
-font-size:13px
+font-size:13px;
 }
 
 .bag-summary{
 margin-top:40px;
 margin-left:auto;
-max-width:420px
+max-width:420px;
 }
 
 .summary-row{
@@ -986,7 +1004,7 @@ display:flex;
 justify-content:space-between;
 padding:10px 0;
 color:#666;
-font-size:9px
+font-size:9px;
 }
 
 .summary-row.total{
@@ -994,7 +1012,7 @@ border-top:1px solid #222;
 margin-top:10px;
 padding-top:18px;
 color:#fff;
-font-size:14px
+font-size:14px;
 }
 
 .checkout{
@@ -1006,30 +1024,30 @@ color:#000;
 border:0;
 font-size:8px;
 font-weight:600;
-letter-spacing:.25em
+letter-spacing:.25em;
 }
 
 .empty{
 padding:100px 20px;
 text-align:center;
-color:#555
+color:#555;
 }
 
 .empty h2{
 color:#fff;
 font-size:35px;
-font-weight:500
+font-weight:500;
 }
 
-/* ORDER */
+/* CHECKOUT */
 
 .order{
-padding:120px 6vw 80px
+padding:120px 6vw 80px;
 }
 
 .order-wrap{
 max-width:1100px;
-margin:auto
+margin:auto;
 }
 
 .order-title{
@@ -1037,20 +1055,20 @@ margin-top:15px;
 font-size:clamp(55px,8vw,100px);
 line-height:.84;
 font-weight:500;
-letter-spacing:-.07em
+letter-spacing:-.07em;
 }
 
 .order-grid{
 margin-top:55px;
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:80px
+gap:80px;
 }
 
 .order-card{
 border:1px solid #1c1c1c;
 background:#090909;
-padding:20px
+padding:20px;
 }
 
 .order-item-line{
@@ -1059,22 +1077,22 @@ justify-content:space-between;
 gap:15px;
 padding:12px 0;
 border-bottom:1px solid #1d1d1d;
-font-size:9px
+font-size:9px;
 }
 
 .order-item-line small{
-color:#555
+color:#555;
 }
 
 .form-label{
 margin-bottom:25px;
 color:#555;
 font-size:8px;
-letter-spacing:.3em
+letter-spacing:.3em;
 }
 
 .field{
-margin-bottom:16px
+margin-bottom:16px;
 }
 
 .field label{
@@ -1082,7 +1100,7 @@ display:block;
 margin-bottom:8px;
 color:#666;
 font-size:7px;
-letter-spacing:.2em
+letter-spacing:.2em;
 }
 
 .field input,
@@ -1094,12 +1112,12 @@ background:#070707;
 color:#fff;
 border:1px solid #222;
 outline:none;
-font-size:9px
+font-size:9px;
 }
 
 .field textarea{
 min-height:85px;
-resize:vertical
+resize:vertical;
 }
 
 .confirm{
@@ -1111,7 +1129,7 @@ color:#000;
 border:1px solid #fff;
 font-size:8px;
 font-weight:600;
-letter-spacing:.25em
+letter-spacing:.25em;
 }
 
 /* SUCCESS */
@@ -1121,11 +1139,11 @@ min-height:100vh;
 display:none;
 place-items:center;
 text-align:center;
-padding:100px 20px
+padding:100px 20px;
 }
 
 .success.active{
-display:grid
+display:grid;
 }
 
 .check{
@@ -1137,7 +1155,7 @@ border-radius:50%;
 display:grid;
 place-items:center;
 color:var(--green);
-font-size:40px
+font-size:40px;
 }
 
 .success small{
@@ -1145,7 +1163,7 @@ display:block;
 margin-top:30px;
 color:var(--green);
 font-size:8px;
-letter-spacing:.35em
+letter-spacing:.35em;
 }
 
 .success h1{
@@ -1153,7 +1171,7 @@ margin-top:15px;
 font-size:clamp(55px,9vw,110px);
 line-height:.84;
 font-weight:500;
-letter-spacing:-.07em
+letter-spacing:-.07em;
 }
 
 .success p{
@@ -1161,7 +1179,7 @@ max-width:440px;
 margin:25px auto;
 color:#666;
 font-size:10px;
-line-height:2
+line-height:2;
 }
 
 .continue{
@@ -1171,44 +1189,44 @@ background:transparent;
 color:var(--green);
 border:1px solid var(--green);
 font-size:8px;
-letter-spacing:.2em
+letter-spacing:.2em;
 }
 
 /* FOOTER */
 
 footer{
 padding:70px 6vw 25px;
-border-top:1px solid #181818
+border-top:1px solid #181818;
 }
 
 .foot-top{
 display:flex;
 justify-content:space-between;
-padding-bottom:60px
+padding-bottom:60px;
 }
 
 .foot-logo{
 font-size:24px;
-letter-spacing:.25em
+letter-spacing:.25em;
 }
 
 .foot-cols{
 display:flex;
-gap:80px
+gap:80px;
 }
 
 .foot-col h4{
 color:#555;
 font-size:7px;
 letter-spacing:.3em;
-margin-bottom:18px
+margin-bottom:18px;
 }
 
 .foot-col a{
 display:block;
 color:#666;
 font-size:8px;
-margin-bottom:10px
+margin-bottom:10px;
 }
 
 .foot-bottom{
@@ -1218,7 +1236,7 @@ display:flex;
 justify-content:space-between;
 color:#444;
 font-size:7px;
-letter-spacing:.2em
+letter-spacing:.2em;
 }
 
 /* MOBILE */
@@ -1226,158 +1244,157 @@ letter-spacing:.2em
 @media(max-width:800px){
 
 .nav{
-padding:0 20px
+padding:0 20px;
 }
 
 .navlinks{
-display:none
+display:none;
 }
 
 .nav-right{
-gap:10px
+gap:10px;
 }
 
 .hero{
-padding:0 22px 65px
+padding:0 22px 65px;
 }
 
 .hero h1{
-font-size:18vw
+font-size:18vw;
 }
 
 .section{
-padding:90px 22px
+padding:90px 22px;
 }
 
 .category-grid{
 grid-template-columns:repeat(2,1fr);
-gap:8px
+gap:8px;
 }
 
 .category{
 height:145px;
-padding:15px
+padding:15px;
 }
 
 .category h3{
-font-size:14px
+font-size:14px;
 }
 
 .shop-head{
-padding:100px 22px 20px
+padding:100px 22px 20px;
 }
 
 .tshirt-grid{
 grid-template-columns:repeat(2,1fr);
 padding:25px 22px 70px;
-gap:8px
+gap:8px;
 }
 
 .tshirt-card{
-padding:8px
+padding:8px;
 }
 
 .tshirt-card-info{
-padding:12px 2px 5px
+padding:12px 2px 5px;
 }
 
 .tshirt-card-name{
-font-size:8px
+font-size:8px;
 }
 
 .tshirt-card-price{
-font-size:8px
+font-size:8px;
 }
 
 .tshirt-number{
-font-size:5px
+font-size:5px;
 }
 
 .tshirt-view{
-font-size:6px
+font-size:6px;
 }
 
 .product-area{
-padding:30px 22px 90px
+padding:30px 22px 90px;
 }
 
 .product{
 grid-template-columns:1fr;
-gap:30px
+gap:30px;
 }
 
 .arrowbtn{
 width:42px;
-height:42px
+height:42px;
 }
 
 .prev{
-left:6px
+left:6px;
 }
 
 .next{
-right:6px
+right:6px;
 }
 
 .bag-page,
 .order{
-padding:100px 22px 70px
+padding:100px 22px 70px;
 }
 
 .bag-item{
 grid-template-columns:70px 1fr;
-gap:15px
+gap:15px;
 }
 
 .bag-thumb{
-width:70px
+width:70px;
 }
 
 .qty,
 .bag-price{
-grid-column:2
+grid-column:2;
 }
 
 .order-grid{
 grid-template-columns:1fr;
-gap:40px
+gap:40px;
 }
 
 .foot-top{
 flex-direction:column;
-gap:45px
+gap:45px;
 }
 
 .foot-cols{
 gap:35px;
-flex-wrap:wrap
+flex-wrap:wrap;
 }
 
 .foot-bottom{
 flex-direction:column;
-gap:10px
+gap:10px;
 }
 
 .search-overlay{
-padding:95px 22px 40px
+padding:95px 22px 40px;
 }
 
 .search-results{
 grid-template-columns:repeat(2,1fr);
-gap:8px
+gap:8px;
 }
 
 .search-input{
-font-size:38px
+font-size:38px;
 }
 
 }
+
 </style>
 </head>
 
 <body>
-
-<!-- INTRO -->
 
 <div id="intro">
 
@@ -1393,8 +1410,6 @@ font-size:38px
 
 </div>
 
-<!-- NAV -->
-
 <header class="nav" id="nav">
 
 <a class="logo" href="#" id="homeBtn">
@@ -1406,11 +1421,15 @@ VEXORA
 <ul class="navlinks">
 
 <li>
-<a href="#categories">COLLECTION</a>
+<a href="#categories">
+COLLECTION
+</a>
 </li>
 
 <li>
-<a href="#about">ABOUT</a>
+<a href="#about">
+ABOUT
+</a>
 </li>
 
 </ul>
@@ -1423,11 +1442,12 @@ aria-label="Search"
 ⌕
 </button>
 
-<button class="bag-btn" id="bagBtn">
-
+<button
+class="bag-btn"
+id="bagBtn"
+>
 BAG
 <span class="bag-count" id="bagCount">0</span>
-
 </button>
 
 </div>
@@ -1670,15 +1690,9 @@ id="about"
 
 <h2>
 
-<span>
-NOT MADE
-</span>
+<span>NOT MADE</span><br>
 
-<br>
-
-TO FOLLOW.
-
-<br>
+TO FOLLOW.<br>
 
 MADE TO DEFINE.
 
@@ -1688,7 +1702,7 @@ MADE TO DEFINE.
 
 </main>
 
-<!-- SHOP PAGE -->
+<!-- SHOP -->
 
 <section
 class="page"
@@ -2117,9 +2131,7 @@ VEXORA
 
 <div class="foot-col">
 
-<h4>
-SHOP
-</h4>
+<h4>SHOP</h4>
 
 <a href="#categories">
 T-Shirts
@@ -2141,9 +2153,7 @@ Accessories
 
 <div class="foot-col">
 
-<h4>
-INFO
-</h4>
+<h4>INFO</h4>
 
 <a href="#about">
 About
@@ -2161,26 +2171,24 @@ Returns
 
 <div class="foot-col">
 
-<h4>
-SOCIAL
-</h4>
+<h4>SOCIAL</h4>
 
 <a
-href="https://www.instagram.com/vexora.x999?igsh=MWw1ajQzam9qa3lkYg%3D%3D&utm_source=qr"
+href="https://www.instagram.com/vexora.x999"
 target="_blank"
 >
 Instagram
 </a>
 
 <a
-href="https://www.tiktok.com/@vexora_clothing?_r=1&_t=ZS-98qttd8Mc9B"
+href="https://www.tiktok.com/@vexora_clothing"
 target="_blank"
 >
 TikTok
 </a>
 
 <a
-href="https://www.facebook.com/share/1Brn7FM4cu/?mibextid=wwXIfr"
+href="https://www.facebook.com/share/1Brn7FM4cu/"
 target="_blank"
 >
 Facebook
@@ -2208,9 +2216,9 @@ ALL RIGHTS RESERVED
 
 <script>
 
-/* =====================================================
+/* =========================
    PRODUCTS
-===================================================== */
+========================= */
 
 const products={
 
@@ -2220,17 +2228,22 @@ tshirts:[
 name:"VEXORA DESIGN 01",
 price:5900,
 
-/* MAIN PHOTO */
+/*
+DESIGN 01 PHOTOS
+1 = FRONT
+2 = BACK
+3 = PRINT CLOSE-UP
+5 = VEXORA / DETAIL
+
+tee01_4.jpg intentionally removed
+*/
 
 image:"tee01_1.jpg",
-
-/* DESIGN 01 GALLERY - 5 PHOTOS */
 
 gallery:[
 "tee01_1.jpg",
 "tee01_2.jpg",
 "tee01_3.jpg",
-"tee01_4.jpg",
 "tee01_5.jpg"
 ],
 
@@ -2249,6 +2262,7 @@ XL:3
 name:"VEXORA DESIGN 02",
 price:5900,
 image:"",
+gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
 sizes:{
 S:5,
@@ -2262,6 +2276,7 @@ XL:3
 name:"VEXORA DESIGN 03",
 price:5900,
 image:"",
+gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
 sizes:{
 S:5,
@@ -2275,6 +2290,7 @@ XL:3
 name:"VEXORA DESIGN 04",
 price:5900,
 image:"",
+gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
 sizes:{
 S:5,
@@ -2288,6 +2304,7 @@ XL:3
 name:"VEXORA DESIGN 05",
 price:5900,
 image:"",
+gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
 sizes:{
 S:5,
@@ -2301,6 +2318,7 @@ XL:3
 name:"VEXORA DESIGN 06",
 price:5900,
 image:"",
+gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
 sizes:{
 S:5,
@@ -2314,6 +2332,7 @@ XL:3
 name:"VEXORA DESIGN 07",
 price:5900,
 image:"",
+gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
 sizes:{
 S:5,
@@ -2327,6 +2346,7 @@ XL:3
 name:"VEXORA DESIGN 08",
 price:5900,
 image:"",
+gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
 sizes:{
 S:5,
@@ -2340,6 +2360,7 @@ XL:3
 name:"VEXORA DESIGN 09",
 price:5900,
 image:"",
+gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
 sizes:{
 S:5,
@@ -2353,6 +2374,7 @@ XL:3
 name:"VEXORA DESIGN 10",
 price:5900,
 image:"",
+gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
 sizes:{
 S:5,
@@ -2366,6 +2388,7 @@ XL:3
 name:"VEXORA DESIGN 11",
 price:5900,
 image:"",
+gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
 sizes:{
 S:5,
@@ -2379,6 +2402,7 @@ XL:3
 name:"VEXORA DESIGN 12",
 price:5900,
 image:"",
+gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
 sizes:{
 S:5,
@@ -2392,6 +2416,7 @@ XL:3
 name:"VEXORA DESIGN 13",
 price:5900,
 image:"",
+gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
 sizes:{
 S:5,
@@ -2405,6 +2430,7 @@ XL:3
 name:"VEXORA DESIGN 14",
 price:5900,
 image:"",
+gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
 sizes:{
 S:5,
@@ -2418,6 +2444,7 @@ XL:3
 name:"VEXORA DESIGN 15",
 price:5900,
 image:"",
+gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
 sizes:{
 S:5,
@@ -2431,6 +2458,7 @@ XL:3
 name:"VEXORA DESIGN 16",
 price:5900,
 image:"",
+gallery:[],
 desc:"Heavyweight oversized VEXORA T-shirt.",
 sizes:{
 S:5,
@@ -2448,6 +2476,7 @@ pants:[
 name:"VEXORA WIDE LEG PANTS",
 price:8900,
 image:"",
+gallery:[],
 desc:"Relaxed wide-leg silhouette with a clean architectural finish.",
 sizes:{
 S:2,
@@ -2461,6 +2490,7 @@ XL:1
 name:"VEXORA UTILITY PANTS",
 price:9500,
 image:"",
+gallery:[],
 desc:"Functional utility-inspired pants.",
 sizes:{
 S:0,
@@ -2478,6 +2508,7 @@ hoodies:[
 name:"VEXORA SIGNATURE HOODIE",
 price:9900,
 image:"",
+gallery:[],
 desc:"Heavyweight hoodie with an oversized VEXORA silhouette.",
 sizes:{
 S:1,
@@ -2491,6 +2522,7 @@ XL:2
 name:"VEXORA NOIR HOODIE",
 price:10900,
 image:"",
+gallery:[],
 desc:"Premium heavyweight hoodie with a monochrome aesthetic.",
 sizes:{
 S:0,
@@ -2508,6 +2540,7 @@ accessories:[
 name:"VEXORA SIGNATURE CAP",
 price:3900,
 image:"",
+gallery:[],
 desc:"Minimal structured cap finished with the VEXORA signature.",
 sizes:{
 FREE:12
@@ -2518,6 +2551,7 @@ FREE:12
 name:"VEXORA CROSSBODY BAG",
 price:5900,
 image:"",
+gallery:[],
 desc:"Compact crossbody silhouette for everyday essentials.",
 sizes:{
 FREE:3
@@ -2528,29 +2562,23 @@ FREE:3
 
 };
 
-
-/* =====================================================
-   VARIABLES
-===================================================== */
+/* =========================
+   STATE
+========================= */
 
 let category="tshirts";
 
 let productIndex=0;
 
-/* CURRENT PHOTO INSIDE PRODUCT GALLERY */
-
 let galleryIndex=0;
-
-let lastGalleryProduct=-1;
 
 let selectedSize="";
 
 let bag=[];
 
-
-/* =====================================================
-   HELPER
-===================================================== */
+/* =========================
+   HELPERS
+========================= */
 
 const $=id=>document.getElementById(id);
 
@@ -2572,10 +2600,23 @@ total+Number(stock),
 
 }
 
+function getGallery(product){
 
-/* =====================================================
+if(product.gallery && product.gallery.length){
+return product.gallery;
+}
+
+if(product.image){
+return [product.image];
+}
+
+return [];
+
+}
+
+/* =========================
    INTRO
-===================================================== */
+========================= */
 
 $("intro").onclick=()=>{
 
@@ -2589,10 +2630,9 @@ $("intro").classList.add("hide");
 
 },3000);
 
-
-/* =====================================================
-   NAV SCROLL
-===================================================== */
+/* =========================
+   NAV
+========================= */
 
 window.addEventListener("scroll",()=>{
 
@@ -2603,11 +2643,6 @@ window.scrollY>30
 
 });
 
-
-/* =====================================================
-   HOME
-===================================================== */
-
 $("homeBtn").onclick=e=>{
 
 e.preventDefault();
@@ -2615,6 +2650,10 @@ e.preventDefault();
 showHome();
 
 };
+
+/* =========================
+   PAGE CONTROL
+========================= */
 
 function hidePages(){
 
@@ -2645,10 +2684,9 @@ behavior:"smooth"
 
 }
 
-
-/* =====================================================
-   CATEGORY CLICK
-===================================================== */
+/* =========================
+   CATEGORY
+========================= */
 
 document
 .querySelectorAll(".category")
@@ -2661,8 +2699,6 @@ category=card.dataset.cat;
 productIndex=0;
 
 galleryIndex=0;
-
-lastGalleryProduct=-1;
 
 $("home").style.display="none";
 
@@ -2713,17 +2749,11 @@ window.scrollTo(0,0);
 
 });
 
-
-/* =====================================================
-   BACK
-===================================================== */
-
 $("backShop").onclick=showHome;
 
-
-/* =====================================================
-   TSHIRT GRID
-===================================================== */
+/* =========================
+   T-SHIRT GRID
+========================= */
 
 function renderTshirtGrid(){
 
@@ -2735,16 +2765,7 @@ grid.innerHTML=list.map((product,index)=>{
 
 const stock=getTotalStock(product);
 
-return `
-
-<div
-class="tshirt-card"
-data-index="${index}"
->
-
-<div class="tshirt-card-image">
-
-${
+const image=
 product.image
 ?
 `
@@ -2755,8 +2776,18 @@ onerror="this.style.display='none';this.nextElementSibling.style.display='block'
 >
 `
 :
-""
-}
+"";
+
+return `
+
+<div
+class="tshirt-card"
+data-index="${index}"
+>
+
+<div class="tshirt-card-image">
+
+${image}
 
 <span
 class="tshirt-placeholder"
@@ -2781,16 +2812,8 @@ ${product.name}
 ${money(product.price)}
 </div>
 
-<div
-class="tshirt-stock ${stock>0?"in":"out"}"
->
-${
-stock>0
-?
-stock+" IN STOCK"
-:
-"SOLD OUT"
-}
+<div class="tshirt-stock ${stock>0?"in":"out"}">
+${stock>0?stock+" IN STOCK":"SOLD OUT"}
 </div>
 
 <div class="tshirt-view">
@@ -2805,7 +2828,6 @@ VIEW PRODUCT →
 
 }).join("");
 
-
 document
 .querySelectorAll(".tshirt-card")
 .forEach(card=>{
@@ -2818,8 +2840,6 @@ Number(card.dataset.index);
 category="tshirts";
 
 galleryIndex=0;
-
-lastGalleryProduct=-1;
 
 $("tshirtGrid").style.display="none";
 
@@ -2838,11 +2858,9 @@ behavior:"smooth"
 
 }
 
-
-/* =====================================================
-   PRODUCT PAGE
-   DESIGN 01 GALLERY WORKS HERE
-===================================================== */
+/* =========================
+   PRODUCT RENDER
+========================= */
 
 function renderProduct(){
 
@@ -2850,93 +2868,41 @@ const list=products[category];
 
 const p=list[productIndex];
 
+const totalStock=getTotalStock(p);
 
-/* RESET GALLERY WHEN CHANGING PRODUCT */
-
-if(
-category==="tshirts" &&
-lastGalleryProduct!==productIndex
-){
-
-galleryIndex=0;
-
-lastGalleryProduct=productIndex;
-
-}
-
-
-/* GET GALLERY */
-
-const gallery=
-p.gallery ||
-[p.image].filter(Boolean);
-
-
-/* KEEP INDEX VALID */
-
-if(gallery.length===0){
-
-galleryIndex=0;
-
-}
+const gallery=getGallery(p);
 
 if(galleryIndex>=gallery.length){
-
 galleryIndex=0;
-
 }
 
-
-/* COUNTER */
-
 $("pIndex").textContent=
-category==="tshirts"
-?
-String(galleryIndex+1).padStart(2,"0")
-+" / "+
-String(gallery.length).padStart(2,"0")
-:
 String(productIndex+1).padStart(2,"0")
 +" / "+
 String(list.length).padStart(2,"0");
 
-
 $("current").textContent=
-category==="tshirts"
+gallery.length
 ?
 String(galleryIndex+1).padStart(2,"0")
 :
-String(productIndex+1).padStart(2,"0");
-
+"00";
 
 $("total").textContent=
-category==="tshirts"
+gallery.length
 ?
 String(gallery.length).padStart(2,"0")
 :
-String(list.length).padStart(2,"0");
-
-
-/* PRODUCT NUMBER */
+"00";
 
 $("visualNo").textContent=
-String(productIndex+1).padStart(2,"0");
-
-
-/* PRODUCT INFO */
+String(galleryIndex+1).padStart(2,"0");
 
 $("pName").textContent=p.name;
 
 $("pDesc").textContent=p.desc;
 
-$("price").textContent=
-money(p.price);
-
-
-/* STOCK */
-
-const totalStock=
-getTotalStock(p);
+$("price").textContent=money(p.price);
 
 const status=$("status");
 
@@ -2949,8 +2915,7 @@ status.textContent="IN STOCK";
 status.className="status in";
 
 stockText.textContent=
-totalStock+
-" TOTAL IN STOCK";
+totalStock+" TOTAL IN STOCK";
 
 stockText.className=
 "stock-text green";
@@ -2961,39 +2926,24 @@ status.textContent="OUT OF STOCK";
 
 status.className="status out";
 
-stockText.textContent=
-"SOLD OUT";
+stockText.textContent="SOLD OUT";
 
 stockText.className=
 "stock-text red";
 
 }
 
-
-/* PRODUCT PHOTO */
-
 const img=$("productImage");
 
 const placeholder=$("placeholder");
 
-const currentImage=
-gallery[galleryIndex];
+if(gallery.length){
 
-if(currentImage){
-
-img.src=currentImage;
+img.src=gallery[galleryIndex];
 
 img.style.display="block";
 
 placeholder.style.display="none";
-
-img.onerror=()=>{
-
-img.style.display="none";
-
-placeholder.style.display="block";
-
-};
 
 }else{
 
@@ -3005,17 +2955,80 @@ placeholder.style.display="block";
 
 }
 
-
-/* SIZES */
-
 renderSizes(p);
 
 }
 
+/* =========================
+   SMOOTH GALLERY
+========================= */
 
-/* =====================================================
-   SIZE SELECT
-===================================================== */
+function changeGallery(direction){
+
+const p=products[category][productIndex];
+
+const gallery=getGallery(p);
+
+if(gallery.length<=1){
+
+return;
+
+}
+
+galleryIndex=
+(galleryIndex+direction+gallery.length)
+%gallery.length;
+
+const img=$("productImage");
+
+img.classList.add("gallery-changing");
+
+setTimeout(()=>{
+
+img.src=gallery[galleryIndex];
+
+$("current").textContent=
+String(galleryIndex+1).padStart(2,"0");
+
+$("total").textContent=
+String(gallery.length).padStart(2,"0");
+
+$("visualNo").textContent=
+String(galleryIndex+1).padStart(2,"0");
+
+img.onload=()=>{
+
+requestAnimationFrame(()=>{
+
+img.classList.remove("gallery-changing");
+
+});
+
+};
+
+},180);
+
+}
+
+/* =========================
+   ARROWS
+========================= */
+
+$("next").onclick=()=>{
+
+changeGallery(1);
+
+};
+
+$("prev").onclick=()=>{
+
+changeGallery(-1);
+
+};
+
+/* =========================
+   SIZES
+========================= */
 
 function renderSizes(product){
 
@@ -3027,22 +3040,16 @@ selectedSize="";
 
 $("add").disabled=true;
 
-$("add").textContent=
-"SELECT SIZE";
-
+$("add").textContent="SELECT SIZE";
 
 Object.entries(product.sizes)
 .forEach(([size,stock])=>{
 
-const wrap=
-document.createElement("div");
+const wrap=document.createElement("div");
 
-const button=
-document.createElement("button");
+const button=document.createElement("button");
 
-const label=
-document.createElement("span");
-
+const label=document.createElement("span");
 
 wrap.className="size-wrap";
 
@@ -3052,20 +3059,14 @@ button.textContent=size;
 
 label.className="size-stock";
 
-
 if(stock>0){
 
-button.classList.add(
-"available"
-);
+button.classList.add("available");
 
-label.classList.add(
-"available"
-);
+label.classList.add("available");
 
 label.textContent=
 stock+" LEFT";
-
 
 button.onclick=()=>{
 
@@ -3077,19 +3078,13 @@ selectSize(size);
 
 button.disabled=true;
 
-button.classList.add(
-"sold"
-);
+button.classList.add("sold");
 
-label.classList.add(
-"sold"
-);
+label.classList.add("sold");
 
-label.textContent=
-"SOLD OUT";
+label.textContent="SOLD OUT";
 
 }
-
 
 wrap.appendChild(button);
 
@@ -3101,15 +3096,12 @@ container.appendChild(wrap);
 
 }
 
-
 function selectSize(size){
 
 const p=
 products[category][productIndex];
 
-if(
-Number(p.sizes[size]||0)<=0
-){
+if(Number(p.sizes[size]||0)<=0){
 
 return;
 
@@ -3135,112 +3127,9 @@ $("add").textContent=
 
 }
 
-
-/* =====================================================
-   PRODUCT ARROWS
-===================================================== */
-
-$("next").onclick=()=>{
-
-/*
-DESIGN 01 / T-SHIRTS
-ARROW CHANGES PHOTO
-*/
-
-if(category==="tshirts"){
-
-const p=
-products.tshirts[productIndex];
-
-const gallery=
-p.gallery ||
-[p.image].filter(Boolean);
-
-
-if(gallery.length){
-
-galleryIndex=
-(galleryIndex+1)
-%gallery.length;
-
-}
-
-renderProduct();
-
-return;
-
-}
-
-
-/*
-OTHER CATEGORIES
-ARROW CHANGES PRODUCT
-*/
-
-productIndex=
-(productIndex+1)
-%products[category].length;
-
-renderProduct();
-
-};
-
-
-$("prev").onclick=()=>{
-
-/*
-DESIGN 01 / T-SHIRTS
-ARROW CHANGES PHOTO
-*/
-
-if(category==="tshirts"){
-
-const p=
-products.tshirts[productIndex];
-
-const gallery=
-p.gallery ||
-[p.image].filter(Boolean);
-
-
-if(gallery.length){
-
-galleryIndex=
-(
-galleryIndex-1+
-gallery.length
-)
-%gallery.length;
-
-}
-
-renderProduct();
-
-return;
-
-}
-
-
-/*
-OTHER CATEGORIES
-*/
-
-productIndex=
-(
-productIndex-1+
-products[category].length
-)
-%
-products[category].length;
-
-renderProduct();
-
-};
-
-
-/* =====================================================
-   ADD TO CART
-===================================================== */
+/* =========================
+   CART
+========================= */
 
 $("add").onclick=()=>{
 
@@ -3258,15 +3147,11 @@ return;
 }
 
 const stock=
-Number(
-p.sizes[selectedSize]||0
-);
+Number(p.sizes[selectedSize]||0);
 
 if(stock<=0){
 
-alert(
-"THIS SIZE IS SOLD OUT."
-);
+alert("THIS SIZE IS SOLD OUT.");
 
 renderProduct();
 
@@ -3274,13 +3159,11 @@ return;
 
 }
 
-
 const existing=
 bag.find(item=>
 item.name===p.name &&
 item.size===selectedSize
 );
-
 
 if(existing){
 
@@ -3320,11 +3203,6 @@ openBag();
 
 };
 
-
-/* =====================================================
-   BAG
-===================================================== */
-
 function updateBagCount(){
 
 const count=
@@ -3338,9 +3216,7 @@ $("bagCount").textContent=count;
 
 }
 
-
 $("bagBtn").onclick=openBag;
-
 
 function openBag(){
 
@@ -3360,12 +3236,9 @@ window.scrollTo(0,0);
 
 }
 
-
 function renderBag(){
 
-const container=
-$("bagContent");
-
+const container=$("bagContent");
 
 if(!bag.length){
 
@@ -3389,18 +3262,14 @@ return;
 
 }
 
-
 let subtotal=0;
 
-let html=
-`<div class="bag-items">`;
-
+let html=`<div class="bag-items">`;
 
 bag.forEach((item,index)=>{
 
 subtotal+=
 item.price*item.quantity;
-
 
 html+=`
 
@@ -3411,12 +3280,7 @@ html+=`
 ${
 item.image
 ?
-`
-<img
-src="${item.image}"
-alt=""
->
-`
+`<img src="${item.image}" alt="">`
 :
 "VEXORA"
 }
@@ -3472,21 +3336,13 @@ ${money(item.price*item.quantity)}
 
 });
 
-
-html+=
-`</div>`;
-
+html+=`</div>`;
 
 const delivery=
-subtotal>=10000
-?
-0
-:
-350;
+subtotal>=10000?0:350;
 
 const total=
 subtotal+delivery;
-
 
 html+=`
 
@@ -3539,15 +3395,13 @@ PROCEED TO CHECKOUT
 
 `;
 
-
 container.innerHTML=html;
 
 }
 
-
-/* =====================================================
+/* =========================
    FIND PRODUCT
-===================================================== */
+========================= */
 
 function findProduct(name){
 
@@ -3566,26 +3420,20 @@ return null;
 
 }
 
-
-/* =====================================================
+/* =========================
    QUANTITY
-===================================================== */
+========================= */
 
 function changeQty(index,change){
 
 const item=bag[index];
 
-const product=
-findProduct(item.name);
+const product=findProduct(item.name);
 
 const stock=
-Number(
-product.sizes[item.size]||0
-);
+Number(product.sizes[item.size]||0);
 
-const next=
-item.quantity+change;
-
+const next=item.quantity+change;
 
 if(next<1){
 
@@ -3613,7 +3461,6 @@ renderBag();
 
 }
 
-
 function removeItem(index){
 
 bag.splice(index,1);
@@ -3624,10 +3471,9 @@ renderBag();
 
 }
 
-
-/* =====================================================
+/* =========================
    CHECKOUT
-===================================================== */
+========================= */
 
 function checkout(){
 
@@ -3635,9 +3481,7 @@ if(!bag.length)return;
 
 hidePages();
 
-$("orderPage").classList.add(
-"active"
-);
+$("orderPage").classList.add("active");
 
 renderCheckout();
 
@@ -3645,19 +3489,16 @@ window.scrollTo(0,0);
 
 }
 
-
 function renderCheckout(){
 
 let subtotal=0;
 
 let html="";
 
-
 bag.forEach(item=>{
 
 subtotal+=
 item.price*item.quantity;
-
 
 html+=`
 
@@ -3686,58 +3527,40 @@ ${money(item.price*item.quantity)}
 
 });
 
-
 const delivery=
-subtotal>=10000
-?
-0
-:
-350;
+subtotal>=10000?0:350;
 
 const total=
 subtotal+delivery;
 
-
-$("orderItems").innerHTML=
-html;
+$("orderItems").innerHTML=html;
 
 $("checkoutSubtotal").textContent=
 money(subtotal);
 
 $("checkoutDelivery").textContent=
-delivery===0
-?
-"FREE"
-:
-money(delivery);
+delivery===0?"FREE":money(delivery);
 
 $("checkoutTotal").textContent=
 money(total);
 
 }
 
-
-/* =====================================================
+/* =========================
    CONFIRM ORDER
-===================================================== */
+========================= */
 
 $("confirm").onclick=()=>{
 
-const name=
-$("name").value.trim();
+const name=$("name").value.trim();
 
-const phone=
-$("phone").value.trim();
+const phone=$("phone").value.trim();
 
-const address=
-$("address").value.trim();
+const address=$("address").value.trim();
 
-const district=
-$("district").value;
+const district=$("district").value;
 
-const payment=
-$("payment").value;
-
+const payment=$("payment").value;
 
 if(!name){
 
@@ -3779,18 +3602,12 @@ return;
 
 }
 
-
-/* CHECK STOCK */
-
 for(const item of bag){
 
-const product=
-findProduct(item.name);
+const product=findProduct(item.name);
 
 const stock=
-Number(
-product.sizes[item.size]||0
-);
+Number(product.sizes[item.size]||0);
 
 if(item.quantity>stock){
 
@@ -3809,17 +3626,14 @@ return;
 
 }
 
-
 let subtotal=0;
 
 let orderLines="";
-
 
 bag.forEach(item=>{
 
 subtotal+=
 item.price*item.quantity;
-
 
 orderLines+=
 `${item.name}
@@ -3831,17 +3645,11 @@ Price: ${money(item.price*item.quantity)}
 
 });
 
-
 const delivery=
-subtotal>=10000
-?
-0
-:
-350;
+subtotal>=10000?0:350;
 
 const total=
 subtotal+delivery;
-
 
 const orderId=
 "VX-"+
@@ -3851,7 +3659,6 @@ Math.floor(
 1000+
 Math.random()*9000
 );
-
 
 const message=
 
@@ -3877,13 +3684,9 @@ Payment: ${payment}
 
 ORDER STATUS: CONFIRMED`;
 
-
-/* REDUCE STOCK */
-
 bag.forEach(item=>{
 
-const product=
-findProduct(item.name);
+const product=findProduct(item.name);
 
 product.sizes[item.size]=
 Math.max(
@@ -3894,21 +3697,14 @@ item.quantity
 
 });
 
+$("orderPage").classList.remove("active");
 
-$("orderPage").classList.remove(
-"active"
-);
-
-$("success").classList.add(
-"active"
-);
+$("success").classList.add("active");
 
 $("successId").textContent=
-"ORDER #"+
-orderId;
+"ORDER #"+orderId;
 
 window.scrollTo(0,0);
-
 
 setTimeout(()=>{
 
@@ -3918,24 +3714,21 @@ encodeURIComponent(message);
 
 },1000);
 
-
 bag=[];
 
 updateBagCount();
 
 };
 
-
-/* =====================================================
+/* =========================
    CONTINUE
-===================================================== */
+========================= */
 
 $("continue").onclick=showHome;
 
-
-/* =====================================================
+/* =========================
    SEARCH
-===================================================== */
+========================= */
 
 const searchOverlay=
 $("searchOverlay");
@@ -3946,12 +3739,9 @@ $("searchInput");
 const searchResults=
 $("searchResults");
 
-
 $("openSearch").onclick=()=>{
 
-searchOverlay.classList.add(
-"active"
-);
+searchOverlay.classList.add("active");
 
 searchInput.value="";
 
@@ -3965,15 +3755,11 @@ searchInput.focus();
 
 };
 
-
 $("closeSearch").onclick=()=>{
 
-searchOverlay.classList.remove(
-"active"
-);
+searchOverlay.classList.remove("active");
 
 };
-
 
 searchOverlay.addEventListener(
 "click",
@@ -3981,14 +3767,11 @@ e=>{
 
 if(e.target===searchOverlay){
 
-searchOverlay.classList.remove(
-"active"
-);
+searchOverlay.classList.remove("active");
 
 }
 
 });
-
 
 document.addEventListener(
 "keydown",
@@ -3996,14 +3779,11 @@ e=>{
 
 if(e.key==="Escape"){
 
-searchOverlay.classList.remove(
-"active"
-);
+searchOverlay.classList.remove("active");
 
 }
 
 });
-
 
 searchInput.addEventListener(
 "input",
@@ -4015,15 +3795,13 @@ searchInput.value.trim()
 
 });
 
-
-/* =====================================================
+/* =========================
    ALL PRODUCTS
-===================================================== */
+========================= */
 
 function allProducts(){
 
 const result=[];
-
 
 for(const key in products){
 
@@ -4044,24 +3822,19 @@ index:index
 
 }
 
-
 return result;
 
 }
 
-
-/* =====================================================
-   SEARCH RESULTS
-===================================================== */
+/* =========================
+   SEARCH RENDER
+========================= */
 
 function renderSearch(query){
 
-const all=
-allProducts();
+const all=allProducts();
 
-const q=
-query.toLowerCase();
-
+const q=query.toLowerCase();
 
 const results=
 q
@@ -4092,7 +3865,6 @@ product.desc
 :
 all;
 
-
 if(!results.length){
 
 searchResults.innerHTML=`
@@ -4113,13 +3885,11 @@ return;
 
 }
 
-
 searchResults.innerHTML=
 results.map(product=>{
 
 const stock=
 getTotalStock(product);
-
 
 return `
 
@@ -4189,7 +3959,6 @@ stock+" IN STOCK"
 
 }).join("");
 
-
 document
 .querySelectorAll(".search-card")
 .forEach(card=>{
@@ -4204,8 +3973,6 @@ Number(card.dataset.index);
 
 galleryIndex=0;
 
-lastGalleryProduct=-1;
-
 searchOverlay.classList.remove(
 "active"
 );
@@ -4214,10 +3981,7 @@ $("home").style.display="none";
 
 hidePages();
 
-$("shopPage").classList.add(
-"active"
-);
-
+$("shopPage").classList.add("active");
 
 const titles={
 
@@ -4235,7 +3999,6 @@ accessories:
 
 };
 
-
 $("shopKicker").textContent=
 "VEXORA / "+
 category.toUpperCase();
@@ -4243,21 +4006,15 @@ category.toUpperCase();
 $("shopTitle").textContent=
 titles[category];
 
-
 if(category==="tshirts"){
 
-/*
-SEARCH RESULT FOR T-SHIRT
-SHOW PRODUCT DIRECTLY
-*/
-
 $("tshirtGrid").style.display=
-"none";
-
-$("productArea").style.display=
 "grid";
 
-renderProduct();
+$("productArea").style.display=
+"none";
+
+renderTshirtGrid();
 
 }else{
 
@@ -4271,7 +4028,6 @@ renderProduct();
 
 }
 
-
 window.scrollTo(0,0);
 
 };
@@ -4280,16 +4036,17 @@ window.scrollTo(0,0);
 
 }
 
-
-/* =====================================================
+/* =========================
    INITIAL
-===================================================== */
+========================= */
 
 updateBagCount();
 
 $("tshirtGrid").style.display="none";
 
 $("productArea").style.display="grid";
+
+galleryIndex=0;
 
 renderProduct();
 
