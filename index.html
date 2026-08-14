@@ -52,6 +52,8 @@ color:inherit;
 text-decoration:none
 }
 
+/* INTRO */
+
 #intro{
 position:fixed;
 inset:0;
@@ -90,6 +92,8 @@ height:1px;
 background:#333;
 margin:auto
 }
+
+/* NAV */
 
 .nav{
 position:fixed;
@@ -130,14 +134,16 @@ gap:30px;
 list-style:none
 }
 
-.navlinks a,.bag-btn{
+.navlinks a,
+.bag-btn{
 font-size:8px;
 color:#777;
 letter-spacing:.2em;
 transition:.25s
 }
 
-.navlinks a:hover,.bag-btn:hover{
+.navlinks a:hover,
+.bag-btn:hover{
 color:#fff
 }
 
@@ -167,6 +173,8 @@ transition:.25s
 background:#fff;
 color:#000
 }
+
+/* SEARCH */
 
 .search-overlay{
 position:fixed;
@@ -319,6 +327,8 @@ font-weight:500;
 margin-bottom:10px
 }
 
+/* HERO */
+
 .hero{
 min-height:100vh;
 padding:0 6vw 9vh;
@@ -387,6 +397,8 @@ color:#fff;
 border:1px solid #555
 }
 
+/* MARQUEE */
+
 .marquee{
 overflow:hidden;
 white-space:nowrap;
@@ -413,6 +425,8 @@ transform:translateX(-50%)
 }
 }
 
+/* SECTIONS */
+
 .section{
 padding:120px 6vw
 }
@@ -430,6 +444,8 @@ line-height:.86;
 font-weight:500;
 letter-spacing:-.065em
 }
+
+/* CATEGORY */
 
 .category-grid{
 margin-top:60px;
@@ -480,6 +496,8 @@ margin-top:12px;
 color:#555
 }
 
+/* STATEMENT */
+
 .statement{
 min-height:65vh;
 display:grid;
@@ -500,6 +518,8 @@ letter-spacing:-.07em
 color:#555
 }
 
+/* PAGES */
+
 .page{
 display:none;
 min-height:100vh;
@@ -509,6 +529,8 @@ padding-top:80px
 .page.active{
 display:block
 }
+
+/* SHOP */
 
 .shop-head{
 padding:90px 6vw 30px
@@ -536,6 +558,8 @@ line-height:.85;
 font-weight:500;
 letter-spacing:-.07em
 }
+
+/* TSHIRT GRID */
 
 .tshirt-grid{
 padding:40px 6vw 70px;
@@ -623,6 +647,8 @@ color:#777;
 font-size:7px;
 letter-spacing:.2em
 }
+
+/* PRODUCT */
 
 .product-area{
 min-height:calc(100vh - 220px);
@@ -826,6 +852,8 @@ border-color:#222;
 cursor:not-allowed
 }
 
+/* ARROWS */
+
 .arrowbtn{
 position:absolute;
 top:50%;
@@ -860,6 +888,8 @@ color:#555;
 font-size:8px;
 letter-spacing:.3em
 }
+
+/* BAG */
 
 .bag-page{
 min-height:100vh;
@@ -991,6 +1021,8 @@ font-size:35px;
 font-weight:500
 }
 
+/* ORDER */
+
 .order{
 padding:120px 6vw 80px
 }
@@ -1082,6 +1114,8 @@ font-weight:600;
 letter-spacing:.25em
 }
 
+/* SUCCESS */
+
 .success{
 min-height:100vh;
 display:none;
@@ -1140,6 +1174,8 @@ font-size:8px;
 letter-spacing:.2em
 }
 
+/* FOOTER */
+
 footer{
 padding:70px 6vw 25px;
 border-top:1px solid #181818
@@ -1184,6 +1220,8 @@ color:#444;
 font-size:7px;
 letter-spacing:.2em
 }
+
+/* MOBILE */
 
 @media(max-width:800px){
 
@@ -1339,33 +1377,64 @@ font-size:38px
 
 <body>
 
+<!-- INTRO -->
+
 <div id="intro">
+
 <div class="intro">
+
 <small>THE NEW STANDARD</small>
+
 <h1>VEXORA</h1>
+
 <div class="intro-line"></div>
+
 </div>
+
 </div>
+
+<!-- NAV -->
 
 <header class="nav" id="nav">
 
-<a class="logo" href="#" id="homeBtn">VEXORA</a>
+<a class="logo" href="#" id="homeBtn">
+VEXORA
+</a>
 
 <div class="nav-right">
 
 <ul class="navlinks">
-<li><a href="#categories">COLLECTION</a></li>
-<li><a href="#about">ABOUT</a></li>
+
+<li>
+<a href="#categories">COLLECTION</a>
+</li>
+
+<li>
+<a href="#about">ABOUT</a>
+</li>
+
 </ul>
 
-<button class="search-btn" id="openSearch" aria-label="Search">⌕</button>
+<button
+class="search-btn"
+id="openSearch"
+aria-label="Search"
+>
+⌕
+</button>
 
 <button class="bag-btn" id="bagBtn">
-BAG <span class="bag-count" id="bagCount">0</span>
+
+BAG
+<span class="bag-count" id="bagCount">0</span>
+
 </button>
 
 </div>
+
 </header>
+
+<!-- SEARCH -->
 
 <div class="search-overlay" id="searchOverlay">
 
@@ -1375,7 +1444,12 @@ BAG <span class="bag-count" id="bagCount">0</span>
 VEXORA / SEARCH
 </div>
 
-<button class="close-search" id="closeSearch">×</button>
+<button
+class="close-search"
+id="closeSearch"
+>
+×
+</button>
 
 </div>
 
@@ -1391,9 +1465,14 @@ placeholder="Search products..."
 
 </div>
 
-<div class="search-results" id="searchResults"></div>
+<div
+class="search-results"
+id="searchResults"
+></div>
 
 </div>
+
+<!-- HOME -->
 
 <main id="home">
 
@@ -1411,10 +1490,14 @@ VEXORA.
 </h1>
 
 <p>
-Modern silhouettes. Strong identity. Designed for those who don't follow the standard.
+Modern silhouettes. Strong identity.
+Designed for those who don't follow the standard.
 </p>
 
-<a href="#categories" class="cta">
+<a
+href="#categories"
+class="cta"
+>
 EXPLORE COLLECTION →
 </a>
 
@@ -1452,7 +1535,10 @@ EXPLORE COLLECTION →
 
 </div>
 
-<section class="section" id="categories">
+<section
+class="section"
+id="categories"
+>
 
 <div class="label">
 01 / SHOP
@@ -1465,92 +1551,189 @@ YOUR CATEGORY.
 
 <div class="category-grid">
 
-<div class="category" data-cat="tshirts">
+<div
+class="category"
+data-cat="tshirts"
+>
 
-<span class="cat-no">01</span>
-
-<div>
-<div class="cat-mini">VEXORA / 001</div>
-<h3>T-SHIRTS</h3>
-<div class="arrow">→</div>
-</div>
-
-</div>
-
-<div class="category" data-cat="pants">
-
-<span class="cat-no">02</span>
+<span class="cat-no">
+01
+</span>
 
 <div>
-<div class="cat-mini">VEXORA / 002</div>
-<h3>PANTS</h3>
-<div class="arrow">→</div>
+
+<div class="cat-mini">
+VEXORA / 001
+</div>
+
+<h3>
+T-SHIRTS
+</h3>
+
+<div class="arrow">
+→
 </div>
 
 </div>
 
-<div class="category" data-cat="hoodies">
+</div>
 
-<span class="cat-no">03</span>
+<div
+class="category"
+data-cat="pants"
+>
+
+<span class="cat-no">
+02
+</span>
 
 <div>
-<div class="cat-mini">VEXORA / 003</div>
-<h3>HOODIES</h3>
-<div class="arrow">→</div>
+
+<div class="cat-mini">
+VEXORA / 002
+</div>
+
+<h3>
+PANTS
+</h3>
+
+<div class="arrow">
+→
 </div>
 
 </div>
 
-<div class="category" data-cat="accessories">
+</div>
 
-<span class="cat-no">04</span>
+<div
+class="category"
+data-cat="hoodies"
+>
+
+<span class="cat-no">
+03
+</span>
 
 <div>
-<div class="cat-mini">VEXORA / 004</div>
-<h3>ACCESSORIES</h3>
-<div class="arrow">→</div>
+
+<div class="cat-mini">
+VEXORA / 003
+</div>
+
+<h3>
+HOODIES
+</h3>
+
+<div class="arrow">
+→
 </div>
 
 </div>
 
 </div>
+
+<div
+class="category"
+data-cat="accessories"
+>
+
+<span class="cat-no">
+04
+</span>
+
+<div>
+
+<div class="cat-mini">
+VEXORA / 004
+</div>
+
+<h3>
+ACCESSORIES
+</h3>
+
+<div class="arrow">
+→
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="statement" id="about">
+<section
+class="statement"
+id="about"
+>
 
 <h2>
-<span>NOT MADE</span><br>
-TO FOLLOW.<br>
+
+<span>
+NOT MADE
+</span>
+
+<br>
+
+TO FOLLOW.
+
+<br>
+
 MADE TO DEFINE.
+
 </h2>
 
 </section>
 
 </main>
 
-<section class="page" id="shopPage">
+<!-- SHOP PAGE -->
+
+<section
+class="page"
+id="shopPage"
+>
 
 <div class="shop-head">
 
-<button class="back" id="backShop">
+<button
+class="back"
+id="backShop"
+>
 ← BACK TO HOME
 </button>
 
-<div class="shop-kicker" id="shopKicker">
+<div
+class="shop-kicker"
+id="shopKicker"
+>
 VEXORA / T-SHIRTS
 </div>
 
-<h1 class="shop-title" id="shopTitle">
+<h1
+class="shop-title"
+id="shopTitle"
+>
 PRINT OVERSIZED T-SHIRTS.
 </h1>
 
 </div>
 
-<div class="tshirt-grid" id="tshirtGrid"></div>
+<div
+class="tshirt-grid"
+id="tshirtGrid"
+></div>
 
-<div class="product-area" id="productArea">
+<div
+class="product-area"
+id="productArea"
+>
 
-<button class="arrowbtn prev" id="prev">
+<button
+class="arrowbtn prev"
+id="prev"
+>
 ←
 </button>
 
@@ -1558,41 +1741,68 @@ PRINT OVERSIZED T-SHIRTS.
 
 <div class="visual">
 
-<span class="visual-no" id="visualNo">
+<span
+class="visual-no"
+id="visualNo"
+>
 01
 </span>
 
-<span class="status in" id="status">
+<span
+class="status in"
+id="status"
+>
 IN STOCK
 </span>
 
-<span class="visual-placeholder" id="placeholder">
+<span
+class="visual-placeholder"
+id="placeholder"
+>
 VEXORA / PRODUCT IMAGE
 </span>
 
-<img id="productImage" alt="VEXORA product">
+<img
+id="productImage"
+alt="VEXORA product"
+>
 
 </div>
 
 <div>
 
-<div class="p-index" id="pIndex">
-01 / 16
+<div
+class="p-index"
+id="pIndex"
+>
+01 / 04
 </div>
 
-<h2 class="p-name" id="pName">
+<h2
+class="p-name"
+id="pName"
+>
 VEXORA DESIGN 01
 </h2>
 
-<p class="p-desc" id="pDesc">
+<p
+class="p-desc"
+id="pDesc"
+>
 Heavyweight oversized VEXORA T-shirt.
 </p>
 
-<div class="price" id="price">
+<div
+class="price"
+id="price"
+>
 Rs. 5,900
 </div>
 
-<div class="stock-text green" id="stockText">
+<div
+class="stock-text green"
+id="stockText"
+>
 IN STOCK
 </div>
 
@@ -1600,24 +1810,41 @@ IN STOCK
 SELECT SIZE
 </div>
 
-<div class="sizes" id="sizes"></div>
+<div
+class="sizes"
+id="sizes"
+></div>
 
-<button class="add" id="add" disabled>
+<button
+class="add"
+id="add"
+disabled
+>
 SELECT SIZE
 </button>
 
 </div>
+
 </div>
 
-<button class="arrowbtn next" id="next">
+<button
+class="arrowbtn next"
+id="next"
+>
 →
 </button>
 
 <div class="counter">
 
-<span id="current">01</span>
+<span id="current">
+01
+</span>
+
 /
-<span id="total">16</span>
+
+<span id="total">
+04
+</span>
 
 </div>
 
@@ -1625,7 +1852,12 @@ SELECT SIZE
 
 </section>
 
-<section class="page bag-page" id="bagPage">
+<!-- BAG -->
+
+<section
+class="page bag-page"
+id="bagPage"
+>
 
 <div class="bag-wrap">
 
@@ -1644,7 +1876,12 @@ BAG.
 
 </section>
 
-<section class="page order" id="orderPage">
+<!-- CHECKOUT -->
+
+<section
+class="page order"
+id="orderPage"
+>
 
 <div class="order-wrap">
 
@@ -1664,18 +1901,39 @@ YOUR ORDER.
 <div id="orderItems"></div>
 
 <div class="summary-row">
-<span>SUBTOTAL</span>
-<span id="checkoutSubtotal">Rs. 0</span>
+
+<span>
+SUBTOTAL
+</span>
+
+<span id="checkoutSubtotal">
+Rs. 0
+</span>
+
 </div>
 
 <div class="summary-row">
-<span>DELIVERY</span>
-<span id="checkoutDelivery">Rs. 0</span>
+
+<span>
+DELIVERY
+</span>
+
+<span id="checkoutDelivery">
+Rs. 0
+</span>
+
 </div>
 
 <div class="summary-row total">
-<span>TOTAL</span>
-<span id="checkoutTotal">Rs. 0</span>
+
+<span>
+TOTAL
+</span>
+
+<span id="checkoutTotal">
+Rs. 0
+</span>
+
 </div>
 
 </div>
@@ -1687,27 +1945,58 @@ DELIVERY DETAILS
 </div>
 
 <div class="field">
-<label>FULL NAME</label>
-<input id="name" type="text" placeholder="Your full name">
+
+<label>
+FULL NAME
+</label>
+
+<input
+id="name"
+type="text"
+placeholder="Your full name"
+>
+
 </div>
 
 <div class="field">
-<label>CONTACT NUMBER</label>
-<input id="phone" type="tel" placeholder="07X XXX XXXX">
+
+<label>
+CONTACT NUMBER
+</label>
+
+<input
+id="phone"
+type="tel"
+placeholder="07X XXX XXXX"
+>
+
 </div>
 
 <div class="field">
-<label>ADDRESS</label>
-<textarea id="address" placeholder="Delivery address"></textarea>
+
+<label>
+ADDRESS
+</label>
+
+<textarea
+id="address"
+placeholder="Delivery address"
+></textarea>
+
 </div>
 
 <div class="field">
 
-<label>DISTRICT</label>
+<label>
+DISTRICT
+</label>
 
 <select id="district">
 
-<option value="">Select district</option>
+<option value="">
+Select district
+</option>
+
 <option>Colombo</option>
 <option>Gampaha</option>
 <option>Kalutara</option>
@@ -1740,15 +2029,24 @@ DELIVERY DETAILS
 
 <div class="field">
 
-<label>PAYMENT</label>
+<label>
+PAYMENT
+</label>
 
 <select id="payment">
-<option>Cash on Delivery</option>
+
+<option>
+Cash on Delivery
+</option>
+
 </select>
 
 </div>
 
-<button class="confirm" id="confirm">
+<button
+class="confirm"
+id="confirm"
+>
 CONFIRM ORDER
 </button>
 
@@ -1760,7 +2058,12 @@ CONFIRM ORDER
 
 </section>
 
-<section class="success" id="success">
+<!-- SUCCESS -->
+
+<section
+class="success"
+id="success"
+>
 
 <div>
 
@@ -1782,17 +2085,25 @@ Your order has been successfully received.
 We will contact you through WhatsApp to confirm your delivery.
 </p>
 
-<div id="successId" style="font-size:8px;letter-spacing:.3em;color:#777">
+<div
+id="successId"
+style="font-size:8px;letter-spacing:.3em;color:#777"
+>
 ORDER #VX-0000
 </div>
 
-<button class="continue" id="continue">
+<button
+class="continue"
+id="continue"
+>
 CONTINUE SHOPPING
 </button>
 
 </div>
 
 </section>
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -1806,38 +2117,72 @@ VEXORA
 
 <div class="foot-col">
 
-<h4>SHOP</h4>
+<h4>
+SHOP
+</h4>
 
-<a href="#categories">T-Shirts</a>
-<a href="#categories">Pants</a>
-<a href="#categories">Hoodies</a>
-<a href="#categories">Accessories</a>
+<a href="#categories">
+T-Shirts
+</a>
+
+<a href="#categories">
+Pants
+</a>
+
+<a href="#categories">
+Hoodies
+</a>
+
+<a href="#categories">
+Accessories
+</a>
 
 </div>
 
 <div class="foot-col">
 
-<h4>INFO</h4>
+<h4>
+INFO
+</h4>
 
-<a href="#about">About</a>
-<a href="#">Shipping</a>
-<a href="#">Returns</a>
+<a href="#about">
+About
+</a>
+
+<a href="#">
+Shipping
+</a>
+
+<a href="#">
+Returns
+</a>
 
 </div>
 
 <div class="foot-col">
 
-<h4>SOCIAL</h4>
+<h4>
+SOCIAL
+</h4>
 
-<a href="https://www.instagram.com/vexora.x999/" target="_blank">
+<a
+href="https://www.instagram.com/vexora.x999?igsh=MWw1ajQzam9qa3lkYg%3D%3D&utm_source=qr"
+target="_blank"
+>
 Instagram
 </a>
 
-<a href="https://www.tiktok.com/@vexora_clothing" target="_blank">
+<a
+href="https://www.tiktok.com/@vexora_clothing?_r=1&_t=ZS-98qttd8Mc9B"
+target="_blank"
+>
 TikTok
 </a>
 
-<a href="https://www.facebook.com/" target="_blank">
+<a
+href="https://www.facebook.com/share/1Brn7FM4cu/?mibextid=wwXIfr"
+target="_blank"
+>
 Facebook
 </a>
 
@@ -1863,6 +2208,10 @@ ALL RIGHTS RESERVED
 
 <script>
 
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
 const products={
 
 tshirts:[
@@ -1870,9 +2219,30 @@ tshirts:[
 {
 name:"VEXORA DESIGN 01",
 price:5900,
-image:"IMG-20260814-WA0108.jpg",
+
+/* MAIN PHOTO */
+
+image:"tee01_1.jpg",
+
+/* DESIGN 01 GALLERY - 5 PHOTOS */
+
+gallery:[
+"tee01_1.jpg",
+"tee01_2.jpg",
+"tee01_3.jpg",
+"tee01_4.jpg",
+"tee01_5.jpg"
+],
+
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
+
 },
 
 {
@@ -1880,7 +2250,12 @@ name:"VEXORA DESIGN 02",
 price:5900,
 image:"",
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
 },
 
 {
@@ -1888,7 +2263,12 @@ name:"VEXORA DESIGN 03",
 price:5900,
 image:"",
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
 },
 
 {
@@ -1896,7 +2276,12 @@ name:"VEXORA DESIGN 04",
 price:5900,
 image:"",
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
 },
 
 {
@@ -1904,7 +2289,12 @@ name:"VEXORA DESIGN 05",
 price:5900,
 image:"",
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
 },
 
 {
@@ -1912,7 +2302,12 @@ name:"VEXORA DESIGN 06",
 price:5900,
 image:"",
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
 },
 
 {
@@ -1920,7 +2315,12 @@ name:"VEXORA DESIGN 07",
 price:5900,
 image:"",
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
 },
 
 {
@@ -1928,7 +2328,12 @@ name:"VEXORA DESIGN 08",
 price:5900,
 image:"",
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
 },
 
 {
@@ -1936,7 +2341,12 @@ name:"VEXORA DESIGN 09",
 price:5900,
 image:"",
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
 },
 
 {
@@ -1944,7 +2354,12 @@ name:"VEXORA DESIGN 10",
 price:5900,
 image:"",
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
 },
 
 {
@@ -1952,7 +2367,12 @@ name:"VEXORA DESIGN 11",
 price:5900,
 image:"",
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
 },
 
 {
@@ -1960,7 +2380,12 @@ name:"VEXORA DESIGN 12",
 price:5900,
 image:"",
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
 },
 
 {
@@ -1968,7 +2393,12 @@ name:"VEXORA DESIGN 13",
 price:5900,
 image:"",
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
 },
 
 {
@@ -1976,7 +2406,12 @@ name:"VEXORA DESIGN 14",
 price:5900,
 image:"",
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
 },
 
 {
@@ -1984,7 +2419,12 @@ name:"VEXORA DESIGN 15",
 price:5900,
 image:"",
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
 },
 
 {
@@ -1992,7 +2432,12 @@ name:"VEXORA DESIGN 16",
 price:5900,
 image:"",
 desc:"Heavyweight oversized VEXORA T-shirt.",
-sizes:{S:5,M:8,L:5,XL:3}
+sizes:{
+S:5,
+M:8,
+L:5,
+XL:3
+}
 }
 
 ],
@@ -2004,7 +2449,12 @@ name:"VEXORA WIDE LEG PANTS",
 price:8900,
 image:"",
 desc:"Relaxed wide-leg silhouette with a clean architectural finish.",
-sizes:{S:2,M:4,L:5,XL:1}
+sizes:{
+S:2,
+M:4,
+L:5,
+XL:1
+}
 },
 
 {
@@ -2012,7 +2462,12 @@ name:"VEXORA UTILITY PANTS",
 price:9500,
 image:"",
 desc:"Functional utility-inspired pants.",
-sizes:{S:0,M:0,L:0,XL:0}
+sizes:{
+S:0,
+M:0,
+L:0,
+XL:0
+}
 }
 
 ],
@@ -2024,7 +2479,12 @@ name:"VEXORA SIGNATURE HOODIE",
 price:9900,
 image:"",
 desc:"Heavyweight hoodie with an oversized VEXORA silhouette.",
-sizes:{S:1,M:3,L:4,XL:2}
+sizes:{
+S:1,
+M:3,
+L:4,
+XL:2
+}
 },
 
 {
@@ -2032,7 +2492,12 @@ name:"VEXORA NOIR HOODIE",
 price:10900,
 image:"",
 desc:"Premium heavyweight hoodie with a monochrome aesthetic.",
-sizes:{S:0,M:0,L:0,XL:0}
+sizes:{
+S:0,
+M:0,
+L:0,
+XL:0
+}
 }
 
 ],
@@ -2044,7 +2509,9 @@ name:"VEXORA SIGNATURE CAP",
 price:3900,
 image:"",
 desc:"Minimal structured cap finished with the VEXORA signature.",
-sizes:{FREE:12}
+sizes:{
+FREE:12
+}
 },
 
 {
@@ -2052,54 +2519,111 @@ name:"VEXORA CROSSBODY BAG",
 price:5900,
 image:"",
 desc:"Compact crossbody silhouette for everyday essentials.",
-sizes:{FREE:3}
+sizes:{
+FREE:3
+}
 }
 
 ]
 
 };
 
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
 let category="tshirts";
+
 let productIndex=0;
+
+/* CURRENT PHOTO INSIDE PRODUCT GALLERY */
+
+let galleryIndex=0;
+
+let lastGalleryProduct=-1;
+
 let selectedSize="";
+
 let bag=[];
+
+
+/* =====================================================
+   HELPER
+===================================================== */
 
 const $=id=>document.getElementById(id);
 
 function money(value){
-return "Rs. "+Number(value).toLocaleString("en-LK");
+
+return "Rs. "+
+Number(value).toLocaleString("en-LK");
+
 }
 
 function getTotalStock(product){
+
 return Object.values(product.sizes)
-.reduce((total,stock)=>total+Number(stock),0);
+.reduce(
+(total,stock)=>
+total+Number(stock),
+0
+);
+
 }
 
+
+/* =====================================================
+   INTRO
+===================================================== */
+
 $("intro").onclick=()=>{
+
 $("intro").classList.add("hide");
+
 };
 
 setTimeout(()=>{
+
 $("intro").classList.add("hide");
+
 },3000);
 
+
+/* =====================================================
+   NAV SCROLL
+===================================================== */
+
 window.addEventListener("scroll",()=>{
+
 $("nav").classList.toggle(
 "scrolled",
 window.scrollY>30
 );
+
 });
 
+
+/* =====================================================
+   HOME
+===================================================== */
+
 $("homeBtn").onclick=e=>{
+
 e.preventDefault();
+
 showHome();
+
 };
 
 function hidePages(){
 
 $("shopPage").classList.remove("active");
+
 $("bagPage").classList.remove("active");
+
 $("orderPage").classList.remove("active");
+
 $("success").classList.remove("active");
 
 }
@@ -2121,6 +2645,11 @@ behavior:"smooth"
 
 }
 
+
+/* =====================================================
+   CATEGORY CLICK
+===================================================== */
+
 document
 .querySelectorAll(".category")
 .forEach(card=>{
@@ -2131,1096 +2660,9 @@ category=card.dataset.cat;
 
 productIndex=0;
 
-$("home").style.display="none";
+galleryIndex=0;
 
-hidePages();
-
-$("shopPage").classList.add("active");
-
-const titles={
-
-tshirts:"PRINT OVERSIZED T-SHIRTS.",
-pants:"PANTS.",
-hoodies:"HOODIES.",
-accessories:"ACCESSORIES."
-
-};
-
-$("shopKicker").textContent=
-"VEXORA / "+category.toUpperCase();
-
-$("shopTitle").textContent=
-titles[category];
-
-if(category==="tshirts"){
-
-$("tshirtGrid").style.display="grid";
-
-$("productArea").style.display="none";
-
-renderTshirtGrid();
-
-}else{
-
-$("tshirtGrid").style.display="none";
-
-$("productArea").style.display="grid";
-
-renderProduct();
-
-}
-
-window.scrollTo(0,0);
-
-};
-
-});
-
-$("backShop").onclick=showHome;
-
-function renderTshirtGrid(){
-
-const grid=$("tshirtGrid");
-
-const list=products.tshirts;
-
-grid.innerHTML=list.map((product,index)=>{
-
-const stock=getTotalStock(product);
-
-return `
-
-<div class="tshirt-card" data-index="${index}">
-
-<div class="tshirt-card-image">
-
-${
-product.image
-?
-`<img
-src="${product.image}"
-alt="${product.name}"
-onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
->`
-:
-""
-}
-
-<span
-class="tshirt-placeholder"
-style="${product.image?'display:none':''}"
->
-VEXORA / DESIGN ${String(index+1).padStart(2,"0")}
-</span>
-
-</div>
-
-<div class="tshirt-card-info">
-
-<div class="tshirt-number">
-VEXORA / DESIGN ${String(index+1).padStart(2,"0")}
-</div>
-
-<div class="tshirt-card-name">
-${product.name}
-</div>
-
-<div class="tshirt-card-price">
-${money(product.price)}
-</div>
-
-<div class="tshirt-stock ${stock>0?"in":"out"}">
-${stock>0?stock+" IN STOCK":"SOLD OUT"}
-</div>
-
-<div class="tshirt-view">
-VIEW PRODUCT →
-</div>
-
-</div>
-
-</div>
-
-`;
-
-}).join("");
-
-document
-.querySelectorAll(".tshirt-card")
-.forEach(card=>{
-
-card.onclick=()=>{
-
-productIndex=
-Number(card.dataset.index);
-
-category="tshirts";
-
-$("tshirtGrid").style.display="none";
-
-$("productArea").style.display="grid";
-
-renderProduct();
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-};
-
-});
-
-}
-
-function renderProduct(){
-
-const list=products[category];
-
-const p=list[productIndex];
-
-const totalStock=getTotalStock(p);
-
-$("pIndex").textContent=
-String(productIndex+1).padStart(2,"0")
-+" / "+
-String(list.length).padStart(2,"0");
-
-$("current").textContent=
-String(productIndex+1).padStart(2,"0");
-
-$("total").textContent=
-String(list.length).padStart(2,"0");
-
-$("visualNo").textContent=
-String(productIndex+1).padStart(2,"0");
-
-$("pName").textContent=p.name;
-
-$("pDesc").textContent=p.desc;
-
-$("price").textContent=money(p.price);
-
-const status=$("status");
-
-const stockText=$("stockText");
-
-if(totalStock>0){
-
-status.textContent="IN STOCK";
-
-status.className="status in";
-
-stockText.textContent=
-totalStock+" TOTAL IN STOCK";
-
-stockText.className="stock-text green";
-
-}else{
-
-status.textContent="OUT OF STOCK";
-
-status.className="status out";
-
-stockText.textContent="SOLD OUT";
-
-stockText.className="stock-text red";
-
-}
-
-const img=$("productImage");
-
-const placeholder=$("placeholder");
-
-if(p.image){
-
-img.src=p.image;
-
-img.style.display="block";
-
-placeholder.style.display="none";
-
-}else{
-
-img.removeAttribute("src");
-
-img.style.display="none";
-
-placeholder.style.display="block";
-
-}
-
-renderSizes(p);
-
-}
-
-function renderSizes(product){
-
-const container=$("sizes");
-
-container.innerHTML="";
-
-selectedSize="";
-
-$("add").disabled=true;
-
-$("add").textContent="SELECT SIZE";
-
-Object.entries(product.sizes)
-.forEach(([size,stock])=>{
-
-const wrap=document.createElement("div");
-
-const button=document.createElement("button");
-
-const label=document.createElement("span");
-
-wrap.className="size-wrap";
-
-button.className="size";
-
-button.textContent=size;
-
-label.className="size-stock";
-
-if(stock>0){
-
-button.classList.add("available");
-
-label.classList.add("available");
-
-label.textContent=
-stock+" LEFT";
-
-button.onclick=()=>{
-selectSize(size);
-};
-
-}else{
-
-button.disabled=true;
-
-button.classList.add("sold");
-
-label.classList.add("sold");
-
-label.textContent="SOLD OUT";
-
-}
-
-wrap.appendChild(button);
-
-wrap.appendChild(label);
-
-container.appendChild(wrap);
-
-});
-
-}
-
-function selectSize(size){
-
-const p=
-products[category][productIndex];
-
-if(Number(p.sizes[size]||0)<=0){
-return;
-}
-
-selectedSize=size;
-
-document
-.querySelectorAll(".size")
-.forEach(button=>{
-
-button.classList.toggle(
-"selected",
-button.textContent===size
-);
-
-});
-
-$("add").disabled=false;
-
-$("add").textContent=
-"ADD "+size+" TO CART";
-
-}
-
-$("next").onclick=()=>{
-
-productIndex=
-(productIndex+1)%
-products[category].length;
-
-renderProduct();
-
-};
-
-$("prev").onclick=()=>{
-
-productIndex=
-(productIndex-1+
-products[category].length)
-%
-products[category].length;
-
-renderProduct();
-
-};
-
-$("add").onclick=()=>{
-
-const p=
-products[category][productIndex];
-
-if(!selectedSize){
-
-alert("PLEASE SELECT AN AVAILABLE SIZE.");
-
-return;
-
-}
-
-const stock=
-Number(p.sizes[selectedSize]||0);
-
-if(stock<=0){
-
-alert("THIS SIZE IS SOLD OUT.");
-
-renderProduct();
-
-return;
-
-}
-
-const existing=
-bag.find(item=>
-item.name===p.name &&
-item.size===selectedSize
-);
-
-if(existing){
-
-if(existing.quantity>=stock){
-
-alert(
-"MAXIMUM AVAILABLE STOCK REACHED."
-);
-
-return;
-
-}
-
-existing.quantity++;
-
-}else{
-
-bag.push({
-
-name:p.name,
-price:p.price,
-image:p.image,
-size:selectedSize,
-quantity:1
-
-});
-
-}
-
-updateBagCount();
-
-openBag();
-
-};
-
-function updateBagCount(){
-
-const count=
-bag.reduce(
-(total,item)=>
-total+item.quantity,
-0
-);
-
-$("bagCount").textContent=count;
-
-}
-
-$("bagBtn").onclick=openBag;
-
-function openBag(){
-
-$("home").style.display="none";
-
-hidePages();
-
-$("tshirtGrid").style.display="none";
-
-$("productArea").style.display="grid";
-
-$("bagPage").classList.add("active");
-
-renderBag();
-
-window.scrollTo(0,0);
-
-}
-
-function renderBag(){
-
-const container=$("bagContent");
-
-if(!bag.length){
-
-container.innerHTML=`
-
-<div class="empty">
-
-<h2>YOUR BAG IS EMPTY.</h2>
-
-<p style="margin-top:15px">
-Add something from the VEXORA collection.
-</p>
-
-</div>
-
-`;
-
-return;
-
-}
-
-let subtotal=0;
-
-let html=`<div class="bag-items">`;
-
-bag.forEach((item,index)=>{
-
-subtotal+=
-item.price*item.quantity;
-
-html+=`
-
-<div class="bag-item">
-
-<div class="bag-thumb">
-
-${
-item.image
-?`<img src="${item.image}" alt="">`
-:"VEXORA"
-}
-
-</div>
-
-<div>
-
-<div class="bag-name">
-${item.name}
-</div>
-
-<div class="bag-meta">
-SIZE / ${item.size}
-</div>
-
-<button
-class="remove"
-onclick="removeItem(${index})"
->
-REMOVE
-</button>
-
-</div>
-
-<div class="qty">
-
-<button onclick="changeQty(${index},-1)">
-−
-</button>
-
-<span>${item.quantity}</span>
-
-<button onclick="changeQty(${index},1)">
-+
-</button>
-
-</div>
-
-<div class="bag-price">
-${money(item.price*item.quantity)}
-</div>
-
-</div>
-
-`;
-
-});
-
-html+=`</div>`;
-
-const delivery=
-subtotal>=10000?0:350;
-
-const total=
-subtotal+delivery;
-
-html+=`
-
-<div class="bag-summary">
-
-<div class="summary-row">
-
-<span>SUBTOTAL</span>
-
-<span>${money(subtotal)}</span>
-
-</div>
-
-<div class="summary-row">
-
-<span>DELIVERY</span>
-
-<span>
-${delivery===0?"FREE":money(delivery)}
-</span>
-
-</div>
-
-<div class="summary-row total">
-
-<span>TOTAL</span>
-
-<span>${money(total)}</span>
-
-</div>
-
-<button
-class="checkout"
-onclick="checkout()"
->
-PROCEED TO CHECKOUT
-</button>
-
-</div>
-
-`;
-
-container.innerHTML=html;
-
-}
-
-function findProduct(name){
-
-for(const key in products){
-
-const product=
-products[key].find(
-p=>p.name===name
-);
-
-if(product)return product;
-
-}
-
-return null;
-
-}
-
-function changeQty(index,change){
-
-const item=bag[index];
-
-const product=findProduct(item.name);
-
-const stock=
-Number(product.sizes[item.size]||0);
-
-const next=item.quantity+change;
-
-if(next<1){
-
-bag.splice(index,1);
-
-}else if(next>stock){
-
-alert(
-"ONLY "+stock+
-" AVAILABLE IN SIZE "+
-item.size+"."
-);
-
-}else{
-
-item.quantity=next;
-
-}
-
-updateBagCount();
-
-renderBag();
-
-}
-
-function removeItem(index){
-
-bag.splice(index,1);
-
-updateBagCount();
-
-renderBag();
-
-}
-
-function checkout(){
-
-if(!bag.length)return;
-
-hidePages();
-
-$("orderPage").classList.add("active");
-
-renderCheckout();
-
-window.scrollTo(0,0);
-
-}
-
-function renderCheckout(){
-
-let subtotal=0;
-
-let html="";
-
-bag.forEach(item=>{
-
-subtotal+=
-item.price*item.quantity;
-
-html+=`
-
-<div class="order-item-line">
-
-<span>
-
-${item.name}
-
-<br>
-
-<small>
-SIZE ${item.size}
-× ${item.quantity}
-</small>
-
-</span>
-
-<span>
-${money(item.price*item.quantity)}
-</span>
-
-</div>
-
-`;
-
-});
-
-const delivery=
-subtotal>=10000?0:350;
-
-const total=
-subtotal+delivery;
-
-$("orderItems").innerHTML=html;
-
-$("checkoutSubtotal").textContent=
-money(subtotal);
-
-$("checkoutDelivery").textContent=
-delivery===0?"FREE":money(delivery);
-
-$("checkoutTotal").textContent=
-money(total);
-
-}
-
-$("confirm").onclick=()=>{
-
-const name=$("name").value.trim();
-
-const phone=$("phone").value.trim();
-
-const address=$("address").value.trim();
-
-const district=$("district").value;
-
-const payment=$("payment").value;
-
-if(!name){
-
-alert("PLEASE ENTER YOUR NAME.");
-
-return;
-
-}
-
-if(!phone){
-
-alert("PLEASE ENTER YOUR CONTACT NUMBER.");
-
-return;
-
-}
-
-if(!address){
-
-alert("PLEASE ENTER YOUR ADDRESS.");
-
-return;
-
-}
-
-if(!district){
-
-alert("PLEASE SELECT YOUR DISTRICT.");
-
-return;
-
-}
-
-for(const item of bag){
-
-const product=findProduct(item.name);
-
-const stock=
-Number(product.sizes[item.size]||0);
-
-if(item.quantity>stock){
-
-alert(
-item.name+
-" — SIZE "+
-item.size+
-" DOES NOT HAVE ENOUGH STOCK."
-);
-
-openBag();
-
-return;
-
-}
-
-}
-
-let subtotal=0;
-
-let orderLines="";
-
-bag.forEach(item=>{
-
-subtotal+=
-item.price*item.quantity;
-
-orderLines+=
-`${item.name}
-Size: ${item.size}
-Quantity: ${item.quantity}
-Price: ${money(item.price*item.quantity)}
-
-`;
-
-});
-
-const delivery=
-subtotal>=10000?0:350;
-
-const total=
-subtotal+delivery;
-
-const orderId=
-"VX-"+
-new Date().getFullYear()+
-"-"+
-Math.floor(
-1000+
-Math.random()*9000
-);
-
-const message=
-
-`VEXORA — NEW ORDER
-
-ORDER ID: ${orderId}
-
-PRODUCTS
-
-${orderLines}
-SUBTOTAL: ${money(subtotal)}
-DELIVERY: ${delivery===0?"FREE":money(delivery)}
-TOTAL: ${money(total)}
-
-CUSTOMER DETAILS
-
-Name: ${name}
-Contact: ${phone}
-Address: ${address}
-District: ${district}
-
-Payment: ${payment}
-
-ORDER STATUS: CONFIRMED`;
-
-bag.forEach(item=>{
-
-const product=findProduct(item.name);
-
-product.sizes[item.size]=
-Math.max(
-0,
-Number(product.sizes[item.size])-
-item.quantity
-);
-
-});
-
-$("orderPage").classList.remove("active");
-
-$("success").classList.add("active");
-
-$("successId").textContent=
-"ORDER #"+orderId;
-
-window.scrollTo(0,0);
-
-setTimeout(()=>{
-
-window.location.href=
-"https://wa.me/94711680424?text="+
-encodeURIComponent(message);
-
-},1000);
-
-bag=[];
-
-updateBagCount();
-
-};
-
-$("continue").onclick=showHome;
-
-const searchOverlay=$("searchOverlay");
-
-const searchInput=$("searchInput");
-
-const searchResults=$("searchResults");
-
-$("openSearch").onclick=()=>{
-
-searchOverlay.classList.add("active");
-
-searchInput.value="";
-
-renderSearch("");
-
-setTimeout(()=>{
-
-searchInput.focus();
-
-},250);
-
-};
-
-$("closeSearch").onclick=()=>{
-
-searchOverlay.classList.remove("active");
-
-};
-
-searchOverlay.addEventListener("click",e=>{
-
-if(e.target===searchOverlay){
-
-searchOverlay.classList.remove("active");
-
-}
-
-});
-
-document.addEventListener("keydown",e=>{
-
-if(e.key==="Escape"){
-
-searchOverlay.classList.remove("active");
-
-}
-
-});
-
-searchInput.addEventListener("input",()=>{
-
-renderSearch(
-searchInput.value.trim()
-);
-
-});
-
-function allProducts(){
-
-const result=[];
-
-for(const key in products){
-
-products[key].forEach((product,index)=>{
-
-result.push({
-
-...product,
-category:key,
-index:index
-
-});
-
-});
-
-}
-
-return result;
-
-}
-
-function renderSearch(query){
-
-const all=allProducts();
-
-const q=query.toLowerCase();
-
-const results=
-q
-?
-all.filter(product=>{
-
-return (
-
-product.name
-.toLowerCase()
-.includes(q)
-
-||
-
-product.category
-.toLowerCase()
-.includes(q)
-
-||
-
-product.desc
-.toLowerCase()
-.includes(q)
-
-);
-
-})
-:
-all;
-
-if(!results.length){
-
-searchResults.innerHTML=`
-
-<div class="no-results">
-
-<strong>
-NO PRODUCTS FOUND.
-</strong>
-
-Try another search.
-
-</div>
-
-`;
-
-return;
-
-}
-
-searchResults.innerHTML=
-results.map(product=>{
-
-const stock=
-getTotalStock(product);
-
-return `
-
-<div
-class="search-card"
-data-category="${product.category}"
-data-index="${product.index}"
->
-
-<div class="search-image">
-
-${
-product.image
-?
-`<img
-src="${product.image}"
-alt="${product.name}"
->`
-:
-`<span>VEXORA / PRODUCT</span>`
-}
-
-</div>
-
-<div class="search-card-info">
-
-<div class="search-category">
-
-VEXORA /
-${product.category.toUpperCase()}
-
-</div>
-
-<div class="search-name">
-${product.name}
-</div>
-
-<div class="search-price">
-${money(product.price)}
-</div>
-
-<div class="search-stock ${stock>0?"in":"out"}">
-
-${
-stock>0
-?
-stock+" IN STOCK"
-:
-"SOLD OUT"
-}
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-}).join("");
-
-document
-.querySelectorAll(".search-card")
-.forEach(card=>{
-
-card.onclick=()=>{
-
-category=card.dataset.category;
-
-productIndex=
-Number(card.dataset.index);
-
-searchOverlay.classList.remove("active");
+lastGalleryProduct=-1;
 
 $("home").style.display="none";
 
@@ -3231,8 +2673,11 @@ $("shopPage").classList.add("active");
 const titles={
 
 tshirts:"PRINT OVERSIZED T-SHIRTS.",
+
 pants:"PANTS.",
+
 hoodies:"HOODIES.",
+
 accessories:"ACCESSORIES."
 
 };
@@ -3268,7 +2713,1577 @@ window.scrollTo(0,0);
 
 });
 
+
+/* =====================================================
+   BACK
+===================================================== */
+
+$("backShop").onclick=showHome;
+
+
+/* =====================================================
+   TSHIRT GRID
+===================================================== */
+
+function renderTshirtGrid(){
+
+const grid=$("tshirtGrid");
+
+const list=products.tshirts;
+
+grid.innerHTML=list.map((product,index)=>{
+
+const stock=getTotalStock(product);
+
+return `
+
+<div
+class="tshirt-card"
+data-index="${index}"
+>
+
+<div class="tshirt-card-image">
+
+${
+product.image
+?
+`
+<img
+src="${product.image}"
+alt="${product.name}"
+onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+>
+`
+:
+""
 }
+
+<span
+class="tshirt-placeholder"
+style="${product.image?'display:none':''}"
+>
+VEXORA / DESIGN ${String(index+1).padStart(2,"0")}
+</span>
+
+</div>
+
+<div class="tshirt-card-info">
+
+<div class="tshirt-number">
+VEXORA / DESIGN ${String(index+1).padStart(2,"0")}
+</div>
+
+<div class="tshirt-card-name">
+${product.name}
+</div>
+
+<div class="tshirt-card-price">
+${money(product.price)}
+</div>
+
+<div
+class="tshirt-stock ${stock>0?"in":"out"}"
+>
+${
+stock>0
+?
+stock+" IN STOCK"
+:
+"SOLD OUT"
+}
+</div>
+
+<div class="tshirt-view">
+VIEW PRODUCT →
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}).join("");
+
+
+document
+.querySelectorAll(".tshirt-card")
+.forEach(card=>{
+
+card.onclick=()=>{
+
+productIndex=
+Number(card.dataset.index);
+
+category="tshirts";
+
+galleryIndex=0;
+
+lastGalleryProduct=-1;
+
+$("tshirtGrid").style.display="none";
+
+$("productArea").style.display="grid";
+
+renderProduct();
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+};
+
+});
+
+}
+
+
+/* =====================================================
+   PRODUCT PAGE
+   DESIGN 01 GALLERY WORKS HERE
+===================================================== */
+
+function renderProduct(){
+
+const list=products[category];
+
+const p=list[productIndex];
+
+
+/* RESET GALLERY WHEN CHANGING PRODUCT */
+
+if(
+category==="tshirts" &&
+lastGalleryProduct!==productIndex
+){
+
+galleryIndex=0;
+
+lastGalleryProduct=productIndex;
+
+}
+
+
+/* GET GALLERY */
+
+const gallery=
+p.gallery ||
+[p.image].filter(Boolean);
+
+
+/* KEEP INDEX VALID */
+
+if(gallery.length===0){
+
+galleryIndex=0;
+
+}
+
+if(galleryIndex>=gallery.length){
+
+galleryIndex=0;
+
+}
+
+
+/* COUNTER */
+
+$("pIndex").textContent=
+category==="tshirts"
+?
+String(galleryIndex+1).padStart(2,"0")
++" / "+
+String(gallery.length).padStart(2,"0")
+:
+String(productIndex+1).padStart(2,"0")
++" / "+
+String(list.length).padStart(2,"0");
+
+
+$("current").textContent=
+category==="tshirts"
+?
+String(galleryIndex+1).padStart(2,"0")
+:
+String(productIndex+1).padStart(2,"0");
+
+
+$("total").textContent=
+category==="tshirts"
+?
+String(gallery.length).padStart(2,"0")
+:
+String(list.length).padStart(2,"0");
+
+
+/* PRODUCT NUMBER */
+
+$("visualNo").textContent=
+String(productIndex+1).padStart(2,"0");
+
+
+/* PRODUCT INFO */
+
+$("pName").textContent=p.name;
+
+$("pDesc").textContent=p.desc;
+
+$("price").textContent=
+money(p.price);
+
+
+/* STOCK */
+
+const totalStock=
+getTotalStock(p);
+
+const status=$("status");
+
+const stockText=$("stockText");
+
+if(totalStock>0){
+
+status.textContent="IN STOCK";
+
+status.className="status in";
+
+stockText.textContent=
+totalStock+
+" TOTAL IN STOCK";
+
+stockText.className=
+"stock-text green";
+
+}else{
+
+status.textContent="OUT OF STOCK";
+
+status.className="status out";
+
+stockText.textContent=
+"SOLD OUT";
+
+stockText.className=
+"stock-text red";
+
+}
+
+
+/* PRODUCT PHOTO */
+
+const img=$("productImage");
+
+const placeholder=$("placeholder");
+
+const currentImage=
+gallery[galleryIndex];
+
+if(currentImage){
+
+img.src=currentImage;
+
+img.style.display="block";
+
+placeholder.style.display="none";
+
+img.onerror=()=>{
+
+img.style.display="none";
+
+placeholder.style.display="block";
+
+};
+
+}else{
+
+img.removeAttribute("src");
+
+img.style.display="none";
+
+placeholder.style.display="block";
+
+}
+
+
+/* SIZES */
+
+renderSizes(p);
+
+}
+
+
+/* =====================================================
+   SIZE SELECT
+===================================================== */
+
+function renderSizes(product){
+
+const container=$("sizes");
+
+container.innerHTML="";
+
+selectedSize="";
+
+$("add").disabled=true;
+
+$("add").textContent=
+"SELECT SIZE";
+
+
+Object.entries(product.sizes)
+.forEach(([size,stock])=>{
+
+const wrap=
+document.createElement("div");
+
+const button=
+document.createElement("button");
+
+const label=
+document.createElement("span");
+
+
+wrap.className="size-wrap";
+
+button.className="size";
+
+button.textContent=size;
+
+label.className="size-stock";
+
+
+if(stock>0){
+
+button.classList.add(
+"available"
+);
+
+label.classList.add(
+"available"
+);
+
+label.textContent=
+stock+" LEFT";
+
+
+button.onclick=()=>{
+
+selectSize(size);
+
+};
+
+}else{
+
+button.disabled=true;
+
+button.classList.add(
+"sold"
+);
+
+label.classList.add(
+"sold"
+);
+
+label.textContent=
+"SOLD OUT";
+
+}
+
+
+wrap.appendChild(button);
+
+wrap.appendChild(label);
+
+container.appendChild(wrap);
+
+});
+
+}
+
+
+function selectSize(size){
+
+const p=
+products[category][productIndex];
+
+if(
+Number(p.sizes[size]||0)<=0
+){
+
+return;
+
+}
+
+selectedSize=size;
+
+document
+.querySelectorAll(".size")
+.forEach(button=>{
+
+button.classList.toggle(
+"selected",
+button.textContent===size
+);
+
+});
+
+$("add").disabled=false;
+
+$("add").textContent=
+"ADD "+size+" TO CART";
+
+}
+
+
+/* =====================================================
+   PRODUCT ARROWS
+===================================================== */
+
+$("next").onclick=()=>{
+
+/*
+DESIGN 01 / T-SHIRTS
+ARROW CHANGES PHOTO
+*/
+
+if(category==="tshirts"){
+
+const p=
+products.tshirts[productIndex];
+
+const gallery=
+p.gallery ||
+[p.image].filter(Boolean);
+
+
+if(gallery.length){
+
+galleryIndex=
+(galleryIndex+1)
+%gallery.length;
+
+}
+
+renderProduct();
+
+return;
+
+}
+
+
+/*
+OTHER CATEGORIES
+ARROW CHANGES PRODUCT
+*/
+
+productIndex=
+(productIndex+1)
+%products[category].length;
+
+renderProduct();
+
+};
+
+
+$("prev").onclick=()=>{
+
+/*
+DESIGN 01 / T-SHIRTS
+ARROW CHANGES PHOTO
+*/
+
+if(category==="tshirts"){
+
+const p=
+products.tshirts[productIndex];
+
+const gallery=
+p.gallery ||
+[p.image].filter(Boolean);
+
+
+if(gallery.length){
+
+galleryIndex=
+(
+galleryIndex-1+
+gallery.length
+)
+%gallery.length;
+
+}
+
+renderProduct();
+
+return;
+
+}
+
+
+/*
+OTHER CATEGORIES
+*/
+
+productIndex=
+(
+productIndex-1+
+products[category].length
+)
+%
+products[category].length;
+
+renderProduct();
+
+};
+
+
+/* =====================================================
+   ADD TO CART
+===================================================== */
+
+$("add").onclick=()=>{
+
+const p=
+products[category][productIndex];
+
+if(!selectedSize){
+
+alert(
+"PLEASE SELECT AN AVAILABLE SIZE."
+);
+
+return;
+
+}
+
+const stock=
+Number(
+p.sizes[selectedSize]||0
+);
+
+if(stock<=0){
+
+alert(
+"THIS SIZE IS SOLD OUT."
+);
+
+renderProduct();
+
+return;
+
+}
+
+
+const existing=
+bag.find(item=>
+item.name===p.name &&
+item.size===selectedSize
+);
+
+
+if(existing){
+
+if(existing.quantity>=stock){
+
+alert(
+"MAXIMUM AVAILABLE STOCK REACHED."
+);
+
+return;
+
+}
+
+existing.quantity++;
+
+}else{
+
+bag.push({
+
+name:p.name,
+
+price:p.price,
+
+image:p.image,
+
+size:selectedSize,
+
+quantity:1
+
+});
+
+}
+
+updateBagCount();
+
+openBag();
+
+};
+
+
+/* =====================================================
+   BAG
+===================================================== */
+
+function updateBagCount(){
+
+const count=
+bag.reduce(
+(total,item)=>
+total+item.quantity,
+0
+);
+
+$("bagCount").textContent=count;
+
+}
+
+
+$("bagBtn").onclick=openBag;
+
+
+function openBag(){
+
+$("home").style.display="none";
+
+hidePages();
+
+$("tshirtGrid").style.display="none";
+
+$("productArea").style.display="grid";
+
+$("bagPage").classList.add("active");
+
+renderBag();
+
+window.scrollTo(0,0);
+
+}
+
+
+function renderBag(){
+
+const container=
+$("bagContent");
+
+
+if(!bag.length){
+
+container.innerHTML=`
+
+<div class="empty">
+
+<h2>
+YOUR BAG IS EMPTY.
+</h2>
+
+<p style="margin-top:15px">
+Add something from the VEXORA collection.
+</p>
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+let subtotal=0;
+
+let html=
+`<div class="bag-items">`;
+
+
+bag.forEach((item,index)=>{
+
+subtotal+=
+item.price*item.quantity;
+
+
+html+=`
+
+<div class="bag-item">
+
+<div class="bag-thumb">
+
+${
+item.image
+?
+`
+<img
+src="${item.image}"
+alt=""
+>
+`
+:
+"VEXORA"
+}
+
+</div>
+
+<div>
+
+<div class="bag-name">
+${item.name}
+</div>
+
+<div class="bag-meta">
+SIZE / ${item.size}
+</div>
+
+<button
+class="remove"
+onclick="removeItem(${index})"
+>
+REMOVE
+</button>
+
+</div>
+
+<div class="qty">
+
+<button
+onclick="changeQty(${index},-1)"
+>
+−
+</button>
+
+<span>
+${item.quantity}
+</span>
+
+<button
+onclick="changeQty(${index},1)"
+>
++
+</button>
+
+</div>
+
+<div class="bag-price">
+${money(item.price*item.quantity)}
+</div>
+
+</div>
+
+`;
+
+});
+
+
+html+=
+`</div>`;
+
+
+const delivery=
+subtotal>=10000
+?
+0
+:
+350;
+
+const total=
+subtotal+delivery;
+
+
+html+=`
+
+<div class="bag-summary">
+
+<div class="summary-row">
+
+<span>
+SUBTOTAL
+</span>
+
+<span>
+${money(subtotal)}
+</span>
+
+</div>
+
+<div class="summary-row">
+
+<span>
+DELIVERY
+</span>
+
+<span>
+${delivery===0?"FREE":money(delivery)}
+</span>
+
+</div>
+
+<div class="summary-row total">
+
+<span>
+TOTAL
+</span>
+
+<span>
+${money(total)}
+</span>
+
+</div>
+
+<button
+class="checkout"
+onclick="checkout()"
+>
+PROCEED TO CHECKOUT
+</button>
+
+</div>
+
+`;
+
+
+container.innerHTML=html;
+
+}
+
+
+/* =====================================================
+   FIND PRODUCT
+===================================================== */
+
+function findProduct(name){
+
+for(const key in products){
+
+const product=
+products[key].find(
+p=>p.name===name
+);
+
+if(product)return product;
+
+}
+
+return null;
+
+}
+
+
+/* =====================================================
+   QUANTITY
+===================================================== */
+
+function changeQty(index,change){
+
+const item=bag[index];
+
+const product=
+findProduct(item.name);
+
+const stock=
+Number(
+product.sizes[item.size]||0
+);
+
+const next=
+item.quantity+change;
+
+
+if(next<1){
+
+bag.splice(index,1);
+
+}else if(next>stock){
+
+alert(
+"ONLY "+
+stock+
+" AVAILABLE IN SIZE "+
+item.size+
+"."
+);
+
+}else{
+
+item.quantity=next;
+
+}
+
+updateBagCount();
+
+renderBag();
+
+}
+
+
+function removeItem(index){
+
+bag.splice(index,1);
+
+updateBagCount();
+
+renderBag();
+
+}
+
+
+/* =====================================================
+   CHECKOUT
+===================================================== */
+
+function checkout(){
+
+if(!bag.length)return;
+
+hidePages();
+
+$("orderPage").classList.add(
+"active"
+);
+
+renderCheckout();
+
+window.scrollTo(0,0);
+
+}
+
+
+function renderCheckout(){
+
+let subtotal=0;
+
+let html="";
+
+
+bag.forEach(item=>{
+
+subtotal+=
+item.price*item.quantity;
+
+
+html+=`
+
+<div class="order-item-line">
+
+<span>
+
+${item.name}
+
+<br>
+
+<small>
+SIZE ${item.size}
+× ${item.quantity}
+</small>
+
+</span>
+
+<span>
+${money(item.price*item.quantity)}
+</span>
+
+</div>
+
+`;
+
+});
+
+
+const delivery=
+subtotal>=10000
+?
+0
+:
+350;
+
+const total=
+subtotal+delivery;
+
+
+$("orderItems").innerHTML=
+html;
+
+$("checkoutSubtotal").textContent=
+money(subtotal);
+
+$("checkoutDelivery").textContent=
+delivery===0
+?
+"FREE"
+:
+money(delivery);
+
+$("checkoutTotal").textContent=
+money(total);
+
+}
+
+
+/* =====================================================
+   CONFIRM ORDER
+===================================================== */
+
+$("confirm").onclick=()=>{
+
+const name=
+$("name").value.trim();
+
+const phone=
+$("phone").value.trim();
+
+const address=
+$("address").value.trim();
+
+const district=
+$("district").value;
+
+const payment=
+$("payment").value;
+
+
+if(!name){
+
+alert(
+"PLEASE ENTER YOUR NAME."
+);
+
+return;
+
+}
+
+if(!phone){
+
+alert(
+"PLEASE ENTER YOUR CONTACT NUMBER."
+);
+
+return;
+
+}
+
+if(!address){
+
+alert(
+"PLEASE ENTER YOUR ADDRESS."
+);
+
+return;
+
+}
+
+if(!district){
+
+alert(
+"PLEASE SELECT YOUR DISTRICT."
+);
+
+return;
+
+}
+
+
+/* CHECK STOCK */
+
+for(const item of bag){
+
+const product=
+findProduct(item.name);
+
+const stock=
+Number(
+product.sizes[item.size]||0
+);
+
+if(item.quantity>stock){
+
+alert(
+item.name+
+" — SIZE "+
+item.size+
+" DOES NOT HAVE ENOUGH STOCK."
+);
+
+openBag();
+
+return;
+
+}
+
+}
+
+
+let subtotal=0;
+
+let orderLines="";
+
+
+bag.forEach(item=>{
+
+subtotal+=
+item.price*item.quantity;
+
+
+orderLines+=
+`${item.name}
+Size: ${item.size}
+Quantity: ${item.quantity}
+Price: ${money(item.price*item.quantity)}
+
+`;
+
+});
+
+
+const delivery=
+subtotal>=10000
+?
+0
+:
+350;
+
+const total=
+subtotal+delivery;
+
+
+const orderId=
+"VX-"+
+new Date().getFullYear()+
+"-"+
+Math.floor(
+1000+
+Math.random()*9000
+);
+
+
+const message=
+
+`VEXORA — NEW ORDER
+
+ORDER ID: ${orderId}
+
+PRODUCTS
+
+${orderLines}
+SUBTOTAL: ${money(subtotal)}
+DELIVERY: ${delivery===0?"FREE":money(delivery)}
+TOTAL: ${money(total)}
+
+CUSTOMER DETAILS
+
+Name: ${name}
+Contact: ${phone}
+Address: ${address}
+District: ${district}
+
+Payment: ${payment}
+
+ORDER STATUS: CONFIRMED`;
+
+
+/* REDUCE STOCK */
+
+bag.forEach(item=>{
+
+const product=
+findProduct(item.name);
+
+product.sizes[item.size]=
+Math.max(
+0,
+Number(product.sizes[item.size])-
+item.quantity
+);
+
+});
+
+
+$("orderPage").classList.remove(
+"active"
+);
+
+$("success").classList.add(
+"active"
+);
+
+$("successId").textContent=
+"ORDER #"+
+orderId;
+
+window.scrollTo(0,0);
+
+
+setTimeout(()=>{
+
+window.location.href=
+"https://wa.me/94711680424?text="+
+encodeURIComponent(message);
+
+},1000);
+
+
+bag=[];
+
+updateBagCount();
+
+};
+
+
+/* =====================================================
+   CONTINUE
+===================================================== */
+
+$("continue").onclick=showHome;
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+const searchOverlay=
+$("searchOverlay");
+
+const searchInput=
+$("searchInput");
+
+const searchResults=
+$("searchResults");
+
+
+$("openSearch").onclick=()=>{
+
+searchOverlay.classList.add(
+"active"
+);
+
+searchInput.value="";
+
+renderSearch("");
+
+setTimeout(()=>{
+
+searchInput.focus();
+
+},250);
+
+};
+
+
+$("closeSearch").onclick=()=>{
+
+searchOverlay.classList.remove(
+"active"
+);
+
+};
+
+
+searchOverlay.addEventListener(
+"click",
+e=>{
+
+if(e.target===searchOverlay){
+
+searchOverlay.classList.remove(
+"active"
+);
+
+}
+
+});
+
+
+document.addEventListener(
+"keydown",
+e=>{
+
+if(e.key==="Escape"){
+
+searchOverlay.classList.remove(
+"active"
+);
+
+}
+
+});
+
+
+searchInput.addEventListener(
+"input",
+()=>{
+
+renderSearch(
+searchInput.value.trim()
+);
+
+});
+
+
+/* =====================================================
+   ALL PRODUCTS
+===================================================== */
+
+function allProducts(){
+
+const result=[];
+
+
+for(const key in products){
+
+products[key].forEach(
+(product,index)=>{
+
+result.push({
+
+...product,
+
+category:key,
+
+index:index
+
+});
+
+});
+
+}
+
+
+return result;
+
+}
+
+
+/* =====================================================
+   SEARCH RESULTS
+===================================================== */
+
+function renderSearch(query){
+
+const all=
+allProducts();
+
+const q=
+query.toLowerCase();
+
+
+const results=
+q
+?
+all.filter(product=>{
+
+return (
+
+product.name
+.toLowerCase()
+.includes(q)
+
+||
+
+product.category
+.toLowerCase()
+.includes(q)
+
+||
+
+product.desc
+.toLowerCase()
+.includes(q)
+
+);
+
+})
+:
+all;
+
+
+if(!results.length){
+
+searchResults.innerHTML=`
+
+<div class="no-results">
+
+<strong>
+NO PRODUCTS FOUND.
+</strong>
+
+Try another search.
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+searchResults.innerHTML=
+results.map(product=>{
+
+const stock=
+getTotalStock(product);
+
+
+return `
+
+<div
+class="search-card"
+data-category="${product.category}"
+data-index="${product.index}"
+>
+
+<div class="search-image">
+
+${
+product.image
+?
+`
+<img
+src="${product.image}"
+alt="${product.name}"
+>
+`
+:
+`
+<span>
+VEXORA / PRODUCT
+</span>
+`
+}
+
+</div>
+
+<div class="search-card-info">
+
+<div class="search-category">
+
+VEXORA /
+${product.category.toUpperCase()}
+
+</div>
+
+<div class="search-name">
+${product.name}
+</div>
+
+<div class="search-price">
+${money(product.price)}
+</div>
+
+<div
+class="search-stock ${stock>0?"in":"out"}"
+>
+
+${
+stock>0
+?
+stock+" IN STOCK"
+:
+"SOLD OUT"
+}
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}).join("");
+
+
+document
+.querySelectorAll(".search-card")
+.forEach(card=>{
+
+card.onclick=()=>{
+
+category=
+card.dataset.category;
+
+productIndex=
+Number(card.dataset.index);
+
+galleryIndex=0;
+
+lastGalleryProduct=-1;
+
+searchOverlay.classList.remove(
+"active"
+);
+
+$("home").style.display="none";
+
+hidePages();
+
+$("shopPage").classList.add(
+"active"
+);
+
+
+const titles={
+
+tshirts:
+"PRINT OVERSIZED T-SHIRTS.",
+
+pants:
+"PANTS.",
+
+hoodies:
+"HOODIES.",
+
+accessories:
+"ACCESSORIES."
+
+};
+
+
+$("shopKicker").textContent=
+"VEXORA / "+
+category.toUpperCase();
+
+$("shopTitle").textContent=
+titles[category];
+
+
+if(category==="tshirts"){
+
+/*
+SEARCH RESULT FOR T-SHIRT
+SHOW PRODUCT DIRECTLY
+*/
+
+$("tshirtGrid").style.display=
+"none";
+
+$("productArea").style.display=
+"grid";
+
+renderProduct();
+
+}else{
+
+$("tshirtGrid").style.display=
+"none";
+
+$("productArea").style.display=
+"grid";
+
+renderProduct();
+
+}
+
+
+window.scrollTo(0,0);
+
+};
+
+});
+
+}
+
+
+/* =====================================================
+   INITIAL
+===================================================== */
 
 updateBagCount();
 
