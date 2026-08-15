@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VEXORA — Admin</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+background:#050505;
+color:#fff;
+font-family:Arial,sans-serif;
+min-height:100vh;
+}
+
+button,input,textarea,select{
+font:inherit;
+}
+
+button{
+cursor:pointer;
+}
+
+.hidden{
+display:none!important;
+}
+
+/* LOGIN */
+
+.login{
+min-height:100vh;
+display:grid;
+place-items:center;
+padding:25px;
+}
+
+.login-box{
+width:min(420px,100%);
+background:#0b0b0b;
+border:1px solid #222;
+padding:35px;
+}
+
+.logo{
+font-size:22px;
+letter-spacing:.3em;
+font-weight:600;
+margin-bottom:8px;
+}
+
+.kicker{
+font-size:9px;
+color:#666;
+letter-spacing:.25em;
+margin-bottom:30px;
+}
+
+label{
+display:block;
+font-size:9px;
+color:#777;
+letter-spacing:.15em;
+margin-bottom:8px;
+}
+
+input,textarea,select{
+width:100%;
+background:#080808;
+color:#fff;
+border:1px solid #292929;
+padding:14px;
+outline:none;
+margin-bottom:18px;
+}
+
+textarea{
+min-height:100px;
+resize:vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+border-color:#666;
+}
+
+.btn{
+width:100%;
+padding:15px;
+border:1px solid #fff;
+background:#fff;
+color:#000;
+font-weight:bold;
+letter-spacing:.15em;
+}
+
+.btn:hover{
+background:#ddd;
+}
+
+.error{
+color:#ff4b55;
+font-size:11px;
+margin-top:15px;
+line-height:1.5;
+}
+
+/* ADMIN */
+
+.admin{
+min-height:100vh;
+padding:25px;
+}
+
+.header{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #202020;
+padding-bottom:20px;
+}
+
+.brand{
+font-size:20px;
+letter-spacing:.25em;
+}
+
+.admin-label{
+color:#555;
+font-size:8px;
+letter-spacing:.25em;
+margin-top:6px;
+}
+
+.logout{
+background:#111;
+border:1px solid #292929;
+color:#fff;
+padding:10px 16px;
+font-size:8px;
+letter-spacing:.15em;
+}
+
+.container{
+max-width:1200px;
+margin:40px auto;
+}
+
+.top{
+display:flex;
+justify-content:space-between;
+align-items:end;
+margin-bottom:30px;
+gap:20px;
+}
+
+.title{
+font-size:45px;
+font-weight:500;
+letter-spacing:-.05em;
+}
+
+.sub{
+color:#666;
+font-size:10px;
+margin-top:8px;
+}
+
+.add-btn{
+background:#fff;
+color:#000;
+border:0;
+padding:13px 20px;
+font-size:9px;
+font-weight:bold;
+letter-spacing:.15em;
+}
+
+/* PRODUCTS */
+
+.products{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+}
+
+.card{
+background:#0b0b0b;
+border:1px solid #1d1d1d;
+padding:14px;
+}
+
+.image{
+aspect-ratio:4/5;
+background:#111;
+display:grid;
+place-items:center;
+overflow:hidden;
+margin-bottom:15px;
+}
+
+.image img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.no-image{
+color:#444;
+font-size:8px;
+letter-spacing:.2em;
+}
+
+.name{
+font-size:13px;
+margin-bottom:8px;
+}
+
+.meta{
+color:#777;
+font-size:9px;
+line-height:1.8;
+}
+
+.stock{
+color:#35df88;
+}
+
+.actions{
+display:flex;
+gap:8px;
+margin-top:15px;
+}
+
+.edit,
+.delete{
+flex:1;
+padding:11px;
+font-size:8px;
+letter-spacing:.1em;
+}
+
+.edit{
+background:#fff;
+color:#000;
+border:0;
+}
+
+.delete{
+background:#111;
+color:#ff4b55;
+border:1px solid #332020;
+}
+
+/* MODAL */
+
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.9);
+display:grid;
+place-items:center;
+padding:20px;
+z-index:100;
+}
+
+.modal-box{
+width:min(550px,100%);
+max-height:90vh;
+overflow:auto;
+background:#0b0b0b;
+border:1px solid #292929;
+padding:25px;
+}
+
+.modal-head{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.modal-title{
+font-size:22px;
+}
+
+.close{
+width:35px;
+height:35px;
+background:#111;
+border:1px solid #292929;
+color:#fff;
+font-size:18px;
+}
+
+.form-buttons{
+display:flex;
+gap:10px;
+}
+
+.save{
+flex:1;
+padding:15px;
+background:#fff;
+color:#000;
+border:0;
+font-weight:bold;
+}
+
+.cancel{
+flex:1;
+padding:15px;
+background:#111;
+color:#fff;
+border:1px solid #292929;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+.admin{
+padding:18px;
+}
+
+.header{
+align-items:flex-start;
+}
+
+.top{
+align-items:flex-start;
+flex-direction:column;
+}
+
+.title{
+font-size:38px;
+}
+
+.add-btn{
+width:100%;
+}
+
+.products{
+grid-template-columns:1fr 1fr;
+gap:8px;
+}
+
+.card{
+padding:8px;
+}
+
+.name{
+font-size:10px;
+}
+
+.actions{
+flex-direction:column;
+}
+
+.edit,
+.delete{
+width:100%;
+}
+
+}
+
+@media(max-width:500px){
+
+.products{
+grid-template-columns:1fr 1fr;
+}
+
+.brand{
+font-size:16px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+
+<section class="login" id="loginPage">
+
+<div class="login-box">
+
+<div class="logo">
+VEXORA
+</div>
+
+<div class="kicker">
+ADMIN PANEL / SECURE LOGIN
+</div>
+
+<label>EMAIL ADDRESS</label>
+
+<input
+id="loginEmail"
+type="email"
+placeholder="admin@email.com"
+>
+
+<label>PASSWORD</label>
+
+<input
+id="loginPassword"
+type="password"
+placeholder="Password"
+>
+
+<button
+class="btn"
+id="loginBtn"
+>
+LOGIN
+</button>
+
+<div
+class="error"
+id="loginError"
+></div>
+
+</div>
+
+</section>
+
+
+<!-- ADMIN -->
+
+<section
+class="admin hidden"
+id="adminPage"
+>
+
+<header class="header">
+
+<div>
+
+<div class="brand">
+VEXORA
+</div>
+
+<div class="admin-label">
+ADMIN / PRODUCT MANAGEMENT
+</div>
+
+</div>
+
+<button
+class="logout"
+id="logoutBtn"
+>
+LOGOUT
+</button>
+
+</header>
+
+
+<div class="container">
+
+<div class="top">
+
+<div>
+
+<h1 class="title">
+PRODUCTS
+</h1>
+
+<p class="sub">
+Add, edit and delete VEXORA products.
+</p>
+
+</div>
+
+<button
+class="add-btn"
+id="addBtn"
+>
++ ADD PRODUCT
+</button>
+
+</div>
+
+
+<div
+class="products"
+id="products"
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MODAL -->
+
+<div
+class="modal hidden"
+id="modal"
+>
+
+<div class="modal-box">
+
+<div class="modal-head">
+
+<h2
+class="modal-title"
+id="modalTitle"
+>
+ADD PRODUCT
+</h2>
+
+<button
+class="close"
+id="closeModal"
+>
+×
+</button>
+
+</div>
+
+
+<label>PRODUCT NAME</label>
+
+<input
+id="productName"
+type="text"
+placeholder="VEXORA DESIGN 01"
+>
+
+
+<label>PRICE</label>
+
+<input
+id="productPrice"
+type="number"
+placeholder="5900"
+>
+
+
+<label>CATEGORY</label>
+
+<select id="productCategory">
+
+<option value="tshirts">
+T-Shirts
+</option>
+
+<option value="pants">
+Pants
+</option>
+
+<option value="hoodies">
+Hoodies
+</option>
+
+<option value="accessories">
+Accessories
+</option>
+
+</select>
+
+
+<label>IMAGE URL / FILE NAME</label>
+
+<input
+id="productImage"
+type="text"
+placeholder="tee01_1.jpg"
+>
+
+
+<label>DESCRIPTION</label>
+
+<textarea
+id="productDescription"
+placeholder="Heavyweight oversized VEXORA T-shirt."
+></textarea>
+
+
+<label>SIZE S STOCK</label>
+
+<input
+id="stockS"
+type="number"
+min="0"
+value="0"
+>
+
+
+<label>SIZE M STOCK</label>
+
+<input
+id="stockM"
+type="number"
+min="0"
+value="0"
+>
+
+
+<label>SIZE L STOCK</label>
+
+<input
+id="stockL"
+type="number"
+min="0"
+value="0"
+>
+
+
+<label>SIZE XL STOCK</label>
+
+<input
+id="stockXL"
+type="number"
+min="0"
+value="0"
+>
+
+
+<div class="form-buttons">
+
+<button
+class="cancel"
+id="cancelBtn"
+>
+CANCEL
+</button>
+
+<button
+class="save"
+id="saveBtn"
+>
+SAVE PRODUCT
+</button>
+
+</div>
+
+<div
+class="error"
+id="formError"
+></div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================
+SUPABASE
+========================= */
+
+const SUPABASE_URL =
+"https://ltmeyfkdzxxvkruclohd.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_zPy_-To3Lbx_BXb9GEDUZw__Pz0vNQG";
+
+const client =
+supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
+);
+
+
+/* =========================
+STATE
+========================= */
+
+let editingId = null;
+
+
+/* =========================
+ELEMENTS
+========================= */
+
+const loginPage =
+document.getElementById("loginPage");
+
+const adminPage =
+document.getElementById("adminPage");
+
+const loginEmail =
+document.getElementById("loginEmail");
+
+const loginPassword =
+document.getElementById("loginPassword");
+
+const loginBtn =
+document.getElementById("loginBtn");
+
+const loginError =
+document.getElementById("loginError");
+
+const productsBox =
+document.getElementById("products");
+
+const modal =
+document.getElementById("modal");
+
+const modalTitle =
+document.getElementById("modalTitle");
+
+const formError =
+document.getElementById("formError");
+
+const productName =
+document.getElementById("productName");
+
+const productPrice =
+document.getElementById("productPrice");
+
+const productCategory =
+document.getElementById("productCategory");
+
+const productImage =
+document.getElementById("productImage");
+
+const productDescription =
+document.getElementById("productDescription");
+
+const stockS =
+document.getElementById("stockS");
+
+const stockM =
+document.getElementById("stockM");
+
+const stockL =
+document.getElementById("stockL");
+
+const stockXL =
+document.getElementById("stockXL");
+
+
+/* =========================
+CHECK LOGIN
+========================= */
+
+async function checkUser(){
+
+const {
+data:{
+session
+}
+} =
+await client.auth.getSession();
+
+if(session){
+
+const allowed =
+await isAdmin(
+session.user.id
+);
+
+if(allowed){
+
+showAdmin();
+
+}else{
+
+await client.auth.signOut();
+
+showLogin();
+
+loginError.textContent =
+"You are not authorized as an admin.";
+
+}
+
+}else{
+
+showLogin();
+
+}
+
+}
+
+
+function showLogin(){
+
+loginPage.classList.remove("hidden");
+
+adminPage.classList.add("hidden");
+
+}
+
+
+function showAdmin(){
+
+loginPage.classList.add("hidden");
+
+adminPage.classList.remove("hidden");
+
+loadProducts();
+
+}
+
+
+/* =========================
+ADMIN CHECK
+========================= */
+
+async function isAdmin(userId){
+
+const {
+data,
+error
+} =
+await client
+.from("admin_users")
+.select("user_id")
+.eq("user_id",userId)
+.maybeSingle();
+
+if(error){
+
+console.error(error);
+
+return false;
+
+}
+
+return !!data;
+
+}
+
+
+/* =========================
+LOGIN
+========================= */
+
+loginBtn.onclick =
+async function(){
+
+loginError.textContent = "";
+
+const email =
+loginEmail.value.trim();
+
+const password =
+loginPassword.value;
+
+if(!email || !password){
+
+loginError.textContent =
+"Please enter email and password.";
+
+return;
+
+}
+
+loginBtn.disabled = true;
+
+loginBtn.textContent =
+"LOGGING IN...";
+
+
+const {
+data,
+error
+} =
+await client.auth.signInWithPassword({
+
+email:email,
+
+password:password
+
+});
+
+
+if(error){
+
+loginError.textContent =
+error.message;
+
+loginBtn.disabled = false;
+
+loginBtn.textContent =
+"LOGIN";
+
+return;
+
+}
+
+
+const allowed =
+await isAdmin(data.user.id);
+
+
+if(!allowed){
+
+await client.auth.signOut();
+
+loginError.textContent =
+"This account is not an admin.";
+
+loginBtn.disabled = false;
+
+loginBtn.textContent =
+"LOGIN";
+
+return;
+
+}
+
+
+showAdmin();
+
+loginBtn.disabled = false;
+
+loginBtn.textContent =
+"LOGIN";
+
+};
+
+
+/* =========================
+LOGOUT
+========================= */
+
+document
+.getElementById("logoutBtn")
+.onclick =
+async function(){
+
+await client.auth.signOut();
+
+showLogin();
+
+};
+
+
+/* =========================
+LOAD PRODUCTS
+========================= */
+
+async function loadProducts(){
+
+productsBox.innerHTML =
+"<p style='color:#555'>Loading products...</p>";
+
+
+const {
+data,
+error
+} =
+await client
+.from("products")
+.select("*")
+.order("created_at",{ascending:false});
+
+
+if(error){
+
+productsBox.innerHTML =
+`
+<p style="color:#ff4b55">
+${error.message}
+</p>
+`;
+
+return;
+
+}
+
+
+if(!data || !data.length){
+
+productsBox.innerHTML =
+`
+<p style="color:#555">
+No products found.
+</p>
+`;
+
+return;
+
+}
+
+
+productsBox.innerHTML =
+data.map(product=>{
+
+const totalStock =
+Number(product.stock_s || 0) +
+Number(product.stock_m || 0) +
+Number(product.stock_l || 0) +
+Number(product.stock_xl || 0);
+
+
+return `
+
+<div class="card">
+
+<div class="image">
+
+${
+product.image
+?
+`<img
+src="${product.image}"
+alt=""
+onerror="this.style.display='none'"
+>`
+:
+`<span class="no-image">
+NO IMAGE
+</span>`
+}
+
+</div>
+
+<div class="name">
+${escapeHtml(product.name || "Unnamed Product")}
+</div>
+
+<div class="meta">
+
+CATEGORY /
+${escapeHtml(product.category || "")}
+
+<br>
+
+PRICE /
+Rs. ${Number(product.price || 0).toLocaleString("en-LK")}
+
+<br>
+
+STOCK /
+<span class="stock">
+${totalStock}
+</span>
+
+</div>
+
+<div class="actions">
+
+<button
+class="edit"
+onclick="editProduct('${product.id}')"
+>
+EDIT
+</button>
+
+<button
+class="delete"
+onclick="deleteProduct('${product.id}')"
+>
+DELETE
+</button>
+
+</div>
+
+</div>
+
+`;
+
+}).join("");
+
+}
+
+
+/* =========================
+ESCAPE HTML
+========================= */
+
+function escapeHtml(value){
+
+return String(value)
+.replaceAll("&","&amp;")
+.replaceAll("<","&lt;")
+.replaceAll(">","&gt;")
+.replaceAll('"',"&quot;")
+.replaceAll("'","&#039;");
+
+}
+
+
+/* =========================
+OPEN ADD
+========================= */
+
+document
+.getElementById("addBtn")
+.onclick =
+function(){
+
+editingId = null;
+
+modalTitle.textContent =
+"ADD PRODUCT";
+
+clearForm();
+
+modal.classList.remove("hidden");
+
+};
+
+
+/* =========================
+CLEAR FORM
+========================= */
+
+function clearForm(){
+
+productName.value = "";
+
+productPrice.value = "";
+
+productCategory.value =
+"tshirts";
+
+productImage.value = "";
+
+productDescription.value = "";
+
+stockS.value = 0;
+
+stockM.value = 0;
+
+stockL.value = 0;
+
+stockXL.value = 0;
+
+formError.textContent = "";
+
+}
+
+
+/* =========================
+EDIT PRODUCT
+========================= */
+
+async function editProduct(id){
+
+const {
+data,
+error
+} =
+await client
+.from("products")
+.select("*")
+.eq("id",id)
+.single();
+
+
+if(error){
+
+alert(error.message);
+
+return;
+
+}
+
+
+editingId = id;
+
+modalTitle.textContent =
+"EDIT PRODUCT";
+
+productName.value =
+data.name || "";
+
+productPrice.value =
+data.price || "";
+
+productCategory.value =
+data.category || "tshirts";
+
+productImage.value =
+data.image || "";
+
+productDescription.value =
+data.description || "";
+
+stockS.value =
+data.stock_s || 0;
+
+stockM.value =
+data.stock_m || 0;
+
+stockL.value =
+data.stock_l || 0;
+
+stockXL.value =
+data.stock_xl || 0;
+
+formError.textContent = "";
+
+modal.classList.remove("hidden");
+
+}
+
+
+/* =========================
+SAVE PRODUCT
+========================= */
+
+document
+.getElementById("saveBtn")
+.onclick =
+async function(){
+
+formError.textContent = "";
+
+const name =
+productName.value.trim();
+
+const price =
+Number(productPrice.value);
+
+const category =
+productCategory.value;
+
+const image =
+productImage.value.trim();
+
+const description =
+productDescription.value.trim();
+
+const s =
+Number(stockS.value || 0);
+
+const m =
+Number(stockM.value || 0);
+
+const l =
+Number(stockL.value || 0);
+
+const xl =
+Number(stockXL.value || 0);
+
+
+if(!name){
+
+formError.textContent =
+"Product name is required.";
+
+return;
+
+}
+
+if(!price || price < 0){
+
+formError.textContent =
+"Enter a valid price.";
+
+return;
+
+}
+
+
+const payload = {
+
+name:name,
+
+price:price,
+
+category:category,
+
+image:image,
+
+description:description,
+
+stock_s:s,
+
+stock_m:m,
+
+stock_l:l,
+
+stock_xl:xl
+
+};
+
+
+const saveBtn =
+document.getElementById("saveBtn");
+
+saveBtn.disabled = true;
+
+saveBtn.textContent =
+"SAVING...";
+
+
+let result;
+
+
+if(editingId){
+
+result =
+await client
+.from("products")
+.update(payload)
+.eq("id",editingId);
+
+}else{
+
+result =
+await client
+.from("products")
+.insert(payload);
+
+}
+
+
+if(result.error){
+
+formError.textContent =
+result.error.message;
+
+saveBtn.disabled = false;
+
+saveBtn.textContent =
+"SAVE PRODUCT";
+
+return;
+
+}
+
+
+modal.classList.add("hidden");
+
+saveBtn.disabled = false;
+
+saveBtn.textContent =
+"SAVE PRODUCT";
+
+loadProducts();
+
+};
+
+
+/* =========================
+DELETE
+========================= */
+
+async function deleteProduct(id){
+
+const ok =
+confirm(
+"Delete this product permanently?"
+);
+
+if(!ok){
+
+return;
+
+}
+
+
+const {
+error
+} =
+await client
+.from("products")
+.delete()
+.eq("id",id);
+
+
+if(error){
+
+alert(error.message);
+
+return;
+
+}
+
+
+loadProducts();
+
+}
+
+
+/* =========================
+MODAL BUTTONS
+========================= */
+
+document
+.getElementById("closeModal")
+.onclick =
+function(){
+
+modal.classList.add("hidden");
+
+};
+
+
+document
+.getElementById("cancelBtn")
+.onclick =
+function(){
+
+modal.classList.add("hidden");
+
+};
+
+
+modal.onclick =
+function(e){
+
+if(e.target === modal){
+
+modal.classList.add("hidden");
+
+}
+
+};
+
+
+/* =========================
+START
+========================= */
+
+checkUser();
+
+</script>
+
+</body>
+</html>
