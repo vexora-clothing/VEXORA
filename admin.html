@@ -2,116 +2,56 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>VEXORA — Admin</title>
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#050505;color:#fff;font-family:Arial,sans-serif;min-height:100vh}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+.hidden{display:none!important}
 
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
-
-body{
-background:#050505;
-color:#fff;
-font-family:Arial,sans-serif;
-min-height:100vh;
-}
-
-button,
-input,
-textarea,
-select{
-font:inherit;
-}
-
-button{
-cursor:pointer;
-}
-
-.hidden{
-display:none!important;
-}
-
-/* LOGIN */
-
-.login{
-min-height:100vh;
-display:grid;
-place-items:center;
-padding:25px;
-}
-
-.login-box{
-width:min(420px,100%);
-background:#0b0b0b;
-border:1px solid #222;
-padding:35px;
-}
-
-.logo{
-font-size:22px;
-letter-spacing:.3em;
-font-weight:600;
-margin-bottom:8px;
-}
-
-.kicker{
-font-size:9px;
-color:#666;
-letter-spacing:.25em;
-margin-bottom:30px;
-}
+.login{min-height:100vh;display:grid;place-items:center;padding:25px}
+.login-box{width:min(420px,100%);background:#0b0b0b;border:1px solid #222;padding:35px}
+.logo{font-size:22px;letter-spacing:.3em;margin-bottom:8px}
+.kicker{font-size:9px;color:#666;letter-spacing:.25em;margin-bottom:30px}
 
 label{
 display:block;
 font-size:9px;
 color:#777;
 letter-spacing:.15em;
-margin-bottom:8px;
+margin-bottom:8px
 }
 
-input,
-textarea,
-select{
+input,textarea,select{
 width:100%;
 background:#080808;
 color:#fff;
 border:1px solid #292929;
 padding:14px;
 outline:none;
-margin-bottom:18px;
-}
-
-input:focus,
-textarea:focus,
-select:focus{
-border-color:#666;
+margin-bottom:18px
 }
 
 textarea{
 min-height:100px;
-resize:vertical;
+resize:vertical
 }
 
-input[type="file"]{
-padding:12px;
-cursor:pointer;
+input[type=file]{
+padding:12px
 }
 
-input[type="file"]::file-selector-button{
+input[type=file]::file-selector-button{
 background:#fff;
 color:#000;
 border:0;
 padding:9px 12px;
 margin-right:10px;
-cursor:pointer;
-font-weight:bold;
+font-weight:bold
 }
 
 .btn{
@@ -121,25 +61,19 @@ border:1px solid #fff;
 background:#fff;
 color:#000;
 font-weight:bold;
-letter-spacing:.15em;
-}
-
-.btn:hover{
-background:#ddd;
+letter-spacing:.15em
 }
 
 .error{
 color:#ff4b55;
 font-size:11px;
 margin-top:15px;
-line-height:1.5;
+line-height:1.5
 }
-
-/* ADMIN */
 
 .admin{
 min-height:100vh;
-padding:25px;
+padding:25px
 }
 
 .header{
@@ -149,19 +83,19 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 border-bottom:1px solid #202020;
-padding-bottom:20px;
+padding-bottom:20px
 }
 
 .brand{
 font-size:20px;
-letter-spacing:.25em;
+letter-spacing:.25em
 }
 
 .admin-label{
 color:#555;
 font-size:8px;
 letter-spacing:.25em;
-margin-top:6px;
+margin-top:6px
 }
 
 .logout{
@@ -169,13 +103,12 @@ background:#111;
 border:1px solid #292929;
 color:#fff;
 padding:10px 16px;
-font-size:8px;
-letter-spacing:.15em;
+font-size:8px
 }
 
 .container{
 max-width:1200px;
-margin:40px auto;
+margin:40px auto
 }
 
 .top{
@@ -183,19 +116,18 @@ display:flex;
 justify-content:space-between;
 align-items:end;
 margin-bottom:30px;
-gap:20px;
+gap:20px
 }
 
 .title{
 font-size:45px;
-font-weight:500;
-letter-spacing:-.05em;
+font-weight:500
 }
 
 .sub{
 color:#666;
 font-size:10px;
-margin-top:8px;
+margin-top:8px
 }
 
 .add-btn{
@@ -205,21 +137,19 @@ border:0;
 padding:13px 20px;
 font-size:9px;
 font-weight:bold;
-letter-spacing:.15em;
+letter-spacing:.15em
 }
-
-/* PRODUCTS */
 
 .products{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:15px;
+gap:15px
 }
 
 .card{
 background:#0b0b0b;
 border:1px solid #1d1d1d;
-padding:14px;
+padding:14px
 }
 
 .image{
@@ -228,63 +158,58 @@ background:#111;
 display:grid;
 place-items:center;
 overflow:hidden;
-margin-bottom:15px;
+margin-bottom:15px
 }
 
 .image img{
 width:100%;
 height:100%;
-object-fit:cover;
+object-fit:cover
 }
 
 .no-image{
 color:#444;
-font-size:8px;
-letter-spacing:.2em;
+font-size:8px
 }
 
 .name{
 font-size:13px;
-margin-bottom:8px;
+margin-bottom:8px
 }
 
 .meta{
 color:#777;
 font-size:9px;
-line-height:1.8;
+line-height:1.8
 }
 
 .stock{
-color:#35df88;
+color:#35df88
 }
 
 .actions{
 display:flex;
 gap:8px;
-margin-top:15px;
+margin-top:15px
 }
 
-.edit,
-.delete{
+.edit,.delete{
 flex:1;
 padding:11px;
-font-size:8px;
-letter-spacing:.1em;
+font-size:8px
 }
 
 .edit{
 background:#fff;
 color:#000;
-border:0;
+border:0
 }
 
 .delete{
 background:#111;
 color:#ff4b55;
-border:1px solid #332020;
+border:1px solid #332020
 }
-
-/* MODAL */
 
 .modal{
 position:fixed;
@@ -293,27 +218,27 @@ background:rgba(0,0,0,.9);
 display:grid;
 place-items:center;
 padding:20px;
-z-index:100;
+z-index:100
 }
 
 .modal-box{
-width:min(550px,100%);
-max-height:90vh;
+width:min(600px,100%);
+max-height:92vh;
 overflow:auto;
 background:#0b0b0b;
 border:1px solid #292929;
-padding:25px;
+padding:25px
 }
 
 .modal-head{
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:25px;
+margin-bottom:25px
 }
 
 .modal-title{
-font-size:22px;
+font-size:22px
 }
 
 .close{
@@ -322,142 +247,126 @@ height:35px;
 background:#111;
 border:1px solid #292929;
 color:#fff;
-font-size:18px;
+font-size:18px
 }
 
 .form-buttons{
 display:flex;
-gap:10px;
+gap:10px
+}
+
+.save,.cancel{
+flex:1;
+padding:15px
 }
 
 .save{
-flex:1;
-padding:15px;
 background:#fff;
 color:#000;
 border:0;
-font-weight:bold;
+font-weight:bold
 }
 
 .cancel{
-flex:1;
-padding:15px;
 background:#111;
 color:#fff;
-border:1px solid #292929;
+border:1px solid #292929
 }
 
-/* IMAGE PREVIEW */
-
-.preview-box{
-width:100%;
-background:#111;
-border:1px solid #222;
-padding:10px;
-margin-top:-5px;
-margin-bottom:18px;
-display:none;
-}
-
-.preview-box img{
-display:block;
-width:100%;
-max-height:300px;
-object-fit:contain;
-}
-
-/* UPLOAD STATUS */
-
-.upload-status{
+.status{
 font-size:10px;
 color:#777;
 margin-top:-8px;
-margin-bottom:18px;
-line-height:1.5;
+margin-bottom:18px
 }
 
-.upload-status.success{
-color:#35df88;
+.status.success{
+color:#35df88
 }
 
-.upload-status.error{
-color:#ff4b55;
+.status.error{
+color:#ff4b55
 }
 
-/* MOBILE */
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:8px;
+margin:-5px 0 18px
+}
+
+.thumb{
+position:relative;
+aspect-ratio:1;
+background:#111;
+border:1px solid #222;
+overflow:hidden
+}
+
+.thumb img{
+width:100%;
+height:100%;
+object-fit:cover
+}
+
+.num{
+position:absolute;
+left:4px;
+bottom:4px;
+background:#000c;
+padding:4px 6px;
+font-size:8px
+}
 
 @media(max-width:800px){
 
 .admin{
-padding:18px;
-}
-
-.header{
-align-items:flex-start;
+padding:18px
 }
 
 .top{
-align-items:flex-start;
 flex-direction:column;
-}
-
-.title{
-font-size:38px;
+align-items:flex-start
 }
 
 .add-btn{
-width:100%;
+width:100%
 }
 
 .products{
 grid-template-columns:1fr 1fr;
-gap:8px;
+gap:8px
 }
 
 .card{
-padding:8px;
-}
-
-.name{
-font-size:10px;
+padding:8px
 }
 
 .actions{
-flex-direction:column;
+flex-direction:column
 }
 
-.edit,
-.delete{
-width:100%;
+.title{
+font-size:38px
 }
 
 }
 
 @media(max-width:500px){
 
-.products{
-grid-template-columns:1fr 1fr;
-}
-
-.brand{
-font-size:16px;
+.gallery{
+grid-template-columns:repeat(2,1fr)
 }
 
 .modal-box{
-padding:18px;
+padding:18px
 }
 
 }
-
 </style>
 </head>
 
 <body>
-
-
-<!-- =========================
-LOGIN
-========================= -->
 
 <section class="login" id="loginPage">
 
@@ -471,9 +380,7 @@ VEXORA
 ADMIN PANEL / SECURE LOGIN
 </div>
 
-<label>
-EMAIL ADDRESS
-</label>
+<label>EMAIL ADDRESS</label>
 
 <input
 id="loginEmail"
@@ -481,9 +388,7 @@ type="email"
 placeholder="admin@email.com"
 >
 
-<label>
-PASSWORD
-</label>
+<label>PASSWORD</label>
 
 <input
 id="loginPassword"
@@ -507,10 +412,6 @@ id="loginError"
 
 </section>
 
-
-<!-- =========================
-ADMIN
-========================= -->
 
 <section
 class="admin hidden"
@@ -578,10 +479,6 @@ id="products"
 </section>
 
 
-<!-- =========================
-MODAL
-========================= -->
-
 <div
 class="modal hidden"
 id="modal"
@@ -626,8 +523,8 @@ PRICE
 <input
 id="productPrice"
 type="number"
-placeholder="5900"
 min="0"
+placeholder="5900"
 >
 
 
@@ -635,7 +532,9 @@ min="0"
 CATEGORY
 </label>
 
-<select id="productCategory">
+<select
+id="productCategory"
+>
 
 <option value="tshirts">
 T-Shirts
@@ -656,36 +555,28 @@ Accessories
 </select>
 
 
-<!-- DIRECT PHOTO UPLOAD -->
-
 <label>
-PRODUCT PHOTO
+PRODUCT PHOTOS
 </label>
 
 <input
-id="productImageFile"
+id="productImageFiles"
 type="file"
 accept="image/*"
+multiple
 >
 
 <div
-class="upload-status"
+class="status"
 id="uploadStatus"
 >
-Choose a photo from your phone.
+Select 1 or more photos. First photo becomes the main photo.
 </div>
 
 <div
-class="preview-box"
-id="previewBox"
+class="gallery"
+id="gallery"
 >
-
-<img
-id="imagePreview"
-src=""
-alt="Preview"
->
-
 </div>
 
 
@@ -765,7 +656,6 @@ SAVE PRODUCT
 
 </div>
 
-
 <div
 class="error"
 id="formError"
@@ -777,10 +667,6 @@ id="formError"
 
 
 <script>
-
-/* =========================
-SUPABASE
-========================= */
 
 const SUPABASE_URL =
 "https://ltmeyfkdzxxvkruclohd.supabase.co";
@@ -794,180 +680,102 @@ SUPABASE_URL,
 SUPABASE_KEY
 );
 
-
-/* =========================
-STORAGE
-========================= */
-
-const STORAGE_BUCKET =
+const BUCKET =
 "products-image";
 
+let editingId =
+null;
 
-/* =========================
-STATE
-========================= */
-
-let editingId = null;
+let existingImages =
+[];
 
 
-/* =========================
-ELEMENTS
-========================= */
+const $ =
+id => document.getElementById(id);
+
 
 const loginPage =
-document.getElementById("loginPage");
+$("loginPage");
 
 const adminPage =
-document.getElementById("adminPage");
-
-const loginEmail =
-document.getElementById("loginEmail");
-
-const loginPassword =
-document.getElementById("loginPassword");
-
-const loginBtn =
-document.getElementById("loginBtn");
-
-const loginError =
-document.getElementById("loginError");
+$("adminPage");
 
 const productsBox =
-document.getElementById("products");
+$("products");
 
 const modal =
-document.getElementById("modal");
-
-const modalTitle =
-document.getElementById("modalTitle");
+$("modal");
 
 const formError =
-document.getElementById("formError");
+$("formError");
 
-const productName =
-document.getElementById("productName");
+const status =
+$("uploadStatus");
 
-const productPrice =
-document.getElementById("productPrice");
+const gallery =
+$("gallery");
 
-const productCategory =
-document.getElementById("productCategory");
+const nameEl =
+$("productName");
 
-const productImageFile =
-document.getElementById("productImageFile");
+const priceEl =
+$("productPrice");
 
-const productDescription =
-document.getElementById("productDescription");
+const categoryEl =
+$("productCategory");
 
-const stockS =
-document.getElementById("stockS");
+const filesEl =
+$("productImageFiles");
 
-const stockM =
-document.getElementById("stockM");
+const descEl =
+$("productDescription");
 
-const stockL =
-document.getElementById("stockL");
+const sEl =
+$("stockS");
 
-const stockXL =
-document.getElementById("stockXL");
+const mEl =
+$("stockM");
 
-const previewBox =
-document.getElementById("previewBox");
+const lEl =
+$("stockL");
 
-const imagePreview =
-document.getElementById("imagePreview");
-
-const uploadStatus =
-document.getElementById("uploadStatus");
+const xlEl =
+$("stockXL");
 
 
-/* =========================
-CHECK LOGIN
-========================= */
+function esc(v){
 
-async function checkUser(){
+return String(v ?? "")
 
-const {
-data:{
-session
-}
-} =
-await client.auth.getSession();
+.replaceAll("&","&amp;")
 
-if(session){
+.replaceAll("<","&lt;")
 
-const allowed =
-await isAdmin(
-session.user.id
-);
+.replaceAll(">","&gt;")
 
-if(allowed){
+.replaceAll('"',"&quot;")
 
-showAdmin();
-
-}else{
-
-await client.auth.signOut();
-
-showLogin();
-
-loginError.textContent =
-"You are not authorized as an admin.";
-
-}
-
-}else{
-
-showLogin();
-
-}
+.replaceAll("'","&#039;");
 
 }
 
 
-/* =========================
-SHOW LOGIN
-========================= */
-
-function showLogin(){
-
-loginPage.classList.remove("hidden");
-
-adminPage.classList.add("hidden");
-
-}
-
-
-/* =========================
-SHOW ADMIN
-========================= */
-
-function showAdmin(){
-
-loginPage.classList.add("hidden");
-
-adminPage.classList.remove("hidden");
-
-loadProducts();
-
-}
-
-
-/* =========================
-ADMIN CHECK
-========================= */
-
-async function isAdmin(userId){
+async function isAdmin(id){
 
 const {
 data,
 error
 } =
 await client
+
 .from("admin_users")
+
 .select("user_id")
-.eq("user_id",userId)
+
+.eq("user_id",id)
+
 .maybeSingle();
+
 
 if(error){
 
@@ -982,33 +790,98 @@ return !!data;
 }
 
 
-/* =========================
-LOGIN
-========================= */
+async function checkUser(){
 
-loginBtn.onclick =
-async function(){
+const {
+data:{
+session
+}
+} =
+await client.auth.getSession();
 
-loginError.textContent = "";
+
+if(
+session &&
+await isAdmin(session.user.id)
+){
+
+showAdmin();
+
+}else{
+
+showLogin();
+
+}
+
+}
+
+
+function showLogin(){
+
+loginPage.classList.remove(
+"hidden"
+);
+
+adminPage.classList.add(
+"hidden"
+);
+
+}
+
+
+function showAdmin(){
+
+loginPage.classList.add(
+"hidden"
+);
+
+adminPage.classList.remove(
+"hidden"
+);
+
+loadProducts();
+
+}
+
+
+$("loginBtn").onclick =
+async()=>{
+
+const err =
+$("loginError");
+
+err.textContent = "";
+
 
 const email =
-loginEmail.value.trim();
+$("loginEmail")
+.value
+.trim();
 
 const password =
-loginPassword.value;
+$("loginPassword")
+.value;
 
-if(!email || !password){
 
-loginError.textContent =
+if(
+!email ||
+!password
+){
+
+err.textContent =
 "Please enter email and password.";
 
 return;
 
 }
 
-loginBtn.disabled = true;
 
-loginBtn.textContent =
+const b =
+$("loginBtn");
+
+b.disabled = true;
+
+b.textContent =
 "LOGGING IN...";
 
 
@@ -1018,21 +891,21 @@ error
 } =
 await client.auth.signInWithPassword({
 
-email:email,
+email,
 
-password:password
+password
 
 });
 
 
 if(error){
 
-loginError.textContent =
+err.textContent =
 error.message;
 
-loginBtn.disabled = false;
+b.disabled = false;
 
-loginBtn.textContent =
+b.textContent =
 "LOGIN";
 
 return;
@@ -1040,20 +913,20 @@ return;
 }
 
 
-const allowed =
-await isAdmin(data.user.id);
-
-
-if(!allowed){
+if(
+!await isAdmin(
+data.user.id
+)
+){
 
 await client.auth.signOut();
 
-loginError.textContent =
+err.textContent =
 "This account is not an admin.";
 
-loginBtn.disabled = false;
+b.disabled = false;
 
-loginBtn.textContent =
+b.textContent =
 "LOGIN";
 
 return;
@@ -1063,22 +936,16 @@ return;
 
 showAdmin();
 
-loginBtn.disabled = false;
+b.disabled = false;
 
-loginBtn.textContent =
+b.textContent =
 "LOGIN";
 
 };
 
 
-/* =========================
-LOGOUT
-========================= */
-
-document
-.getElementById("logoutBtn")
-.onclick =
-async function(){
+$("logoutBtn").onclick =
+async()=>{
 
 await client.auth.signOut();
 
@@ -1086,10 +953,6 @@ showLogin();
 
 };
 
-
-/* =========================
-LOAD PRODUCTS
-========================= */
 
 async function loadProducts(){
 
@@ -1102,17 +965,25 @@ data,
 error
 } =
 await client
+
 .from("products")
+
 .select("*")
-.order("created_at",{ascending:false});
+
+.order(
+"created_at",
+{
+ascending:false
+}
+);
 
 
 if(error){
 
 productsBox.innerHTML =
 `
-<p style="color:#ff4b55">
-${escapeHtml(error.message)}
+<p class="error">
+${esc(error.message)}
 </p>
 `;
 
@@ -1121,14 +992,10 @@ return;
 }
 
 
-if(!data || !data.length){
+if(!data?.length){
 
 productsBox.innerHTML =
-`
-<p style="color:#555">
-No products found.
-</p>
-`;
+"<p style='color:#555'>No products found.</p>";
 
 return;
 
@@ -1136,31 +1003,27 @@ return;
 
 
 productsBox.innerHTML =
-data.map(product=>{
+data.map(
+p=>{
 
-const totalStock =
-Number(product.stock_s || 0) +
-Number(product.stock_m || 0) +
-Number(product.stock_l || 0) +
-Number(product.stock_xl || 0);
+const imgs =
+Array.isArray(p.images) &&
+p.images.length
+
+? p.images
+
+: (
+p.image
+? [p.image]
+: []
+);
 
 
-const image =
-product.image
-?
-`
-<img
-src="${escapeHtml(product.image)}"
-alt=""
-onerror="this.style.display='none'"
->
-`
-:
-`
-<span class="no-image">
-NO IMAGE
-</span>
-`;
+const total =
+Number(p.stock_s || 0) +
+Number(p.stock_m || 0) +
+Number(p.stock_l || 0) +
+Number(p.stock_xl || 0);
 
 
 return `
@@ -1169,45 +1032,81 @@ return `
 
 <div class="image">
 
-${image}
+${
+imgs[0]
+
+?
+
+`
+<img
+src="${esc(imgs[0])}"
+onerror="this.style.display='none'"
+>
+`
+
+:
+
+`
+<span class="no-image">
+NO IMAGE
+</span>
+`
+}
 
 </div>
+
 
 <div class="name">
-${escapeHtml(product.name || "Unnamed Product")}
+
+${esc(
+p.name ||
+"Unnamed Product"
+)}
+
 </div>
+
 
 <div class="meta">
 
 CATEGORY /
-${escapeHtml(product.category || "")}
+${esc(p.category || "")}
 
 <br>
 
 PRICE /
-Rs. ${Number(product.price || 0).toLocaleString("en-LK")}
+Rs.
+${Number(
+p.price || 0
+).toLocaleString("en-LK")}
 
 <br>
 
 STOCK /
+
 <span class="stock">
-${totalStock}
+${total}
 </span>
 
+<br>
+
+PHOTOS /
+${imgs.length}
+
 </div>
+
 
 <div class="actions">
 
 <button
 class="edit"
-onclick="editProduct('${escapeHtml(product.id)}')"
+onclick="editProduct('${esc(p.id)}')"
 >
 EDIT
 </button>
 
 <button
 class="delete"
-onclick="deleteProduct('${escapeHtml(product.id)}')"
+onclick="deleteProduct('${esc(p.id)}')"
 >
 DELETE
 </button>
@@ -1218,182 +1117,189 @@ DELETE
 
 `;
 
-}).join("");
+}
+).join("");
 
 }
 
 
-/* =========================
-ESCAPE HTML
-========================= */
+function resetForm(){
 
-function escapeHtml(value){
+editingId =
+null;
 
-return String(value)
-.replaceAll("&","&amp;")
-.replaceAll("<","&lt;")
-.replaceAll(">","&gt;")
-.replaceAll('"',"&quot;")
-.replaceAll("'","&#039;");
-
-}
+existingImages =
+[];
 
 
-/* =========================
-IMAGE PREVIEW
-========================= */
+nameEl.value =
+"";
 
-productImageFile.addEventListener(
-"change",
-function(){
+priceEl.value =
+"";
 
-const file =
-this.files[0];
-
-if(!file){
-
-previewBox.style.display =
-"none";
-
-imagePreview.src = "";
-
-uploadStatus.textContent =
-"Choose a photo from your phone.";
-
-uploadStatus.className =
-"upload-status";
-
-return;
-
-}
-
-
-if(!file.type.startsWith("image/")){
-
-this.value = "";
-
-previewBox.style.display =
-"none";
-
-uploadStatus.textContent =
-"Please select an image file.";
-
-uploadStatus.className =
-"upload-status error";
-
-return;
-
-}
-
-
-if(file.size > 10 * 1024 * 1024){
-
-this.value = "";
-
-previewBox.style.display =
-"none";
-
-uploadStatus.textContent =
-"Image must be smaller than 10MB.";
-
-uploadStatus.className =
-"upload-status error";
-
-return;
-
-}
-
-
-const reader =
-new FileReader();
-
-reader.onload =
-function(e){
-
-imagePreview.src =
-e.target.result;
-
-previewBox.style.display =
-"block";
-
-};
-
-reader.readAsDataURL(file);
-
-uploadStatus.textContent =
-"Photo selected: " + file.name;
-
-uploadStatus.className =
-"upload-status success";
-
-});
-
-
-/* =========================
-OPEN ADD
-========================= */
-
-document
-.getElementById("addBtn")
-.onclick =
-function(){
-
-editingId = null;
-
-modalTitle.textContent =
-"ADD PRODUCT";
-
-clearForm();
-
-modal.classList.remove("hidden");
-
-};
-
-
-/* =========================
-CLEAR FORM
-========================= */
-
-function clearForm(){
-
-productName.value = "";
-
-productPrice.value = "";
-
-productCategory.value =
+categoryEl.value =
 "tshirts";
 
-productImageFile.value = "";
+filesEl.value =
+"";
 
-productDescription.value = "";
+descEl.value =
+"";
 
-stockS.value = 0;
+sEl.value =
+0;
 
-stockM.value = 0;
+mEl.value =
+0;
 
-stockL.value = 0;
+lEl.value =
+0;
 
-stockXL.value = 0;
+xlEl.value =
+0;
 
-formError.textContent = "";
+gallery.innerHTML =
+"";
 
-uploadStatus.textContent =
-"Choose a photo from your phone.";
+formError.textContent =
+"";
 
-uploadStatus.className =
-"upload-status";
+status.textContent =
+"Select 1 or more photos. First photo becomes the main photo.";
 
-previewBox.style.display =
-"none";
-
-imagePreview.src = "";
+status.className =
+"status";
 
 }
 
 
-/* =========================
-EDIT PRODUCT
-========================= */
+$("addBtn").onclick =
+()=>{
+
+resetForm();
+
+$("modalTitle").textContent =
+"ADD PRODUCT";
+
+modal.classList.remove(
+"hidden"
+);
+
+};
+
+
+filesEl.onchange =
+()=>{
+
+gallery.innerHTML =
+"";
+
+
+const fs =
+[
+...filesEl.files
+];
+
+
+if(!fs.length){
+
+return;
+
+}
+
+
+if(
+fs.length > 10
+){
+
+filesEl.value =
+"";
+
+status.textContent =
+"Maximum 10 photos.";
+
+status.className =
+"status error";
+
+return;
+
+}
+
+
+for(
+const f of fs
+){
+
+if(
+!f.type.startsWith("image/") ||
+f.size > 10 * 1024 * 1024
+){
+
+filesEl.value =
+"";
+
+gallery.innerHTML =
+"";
+
+status.textContent =
+"Each photo must be an image under 10MB.";
+
+status.className =
+"status error";
+
+return;
+
+}
+
+
+const r =
+new FileReader();
+
+
+r.onload =
+e=>{
+
+const d =
+document.createElement(
+"div"
+);
+
+d.className =
+"thumb";
+
+
+d.innerHTML =
+
+`
+<img
+src="${e.target.result}"
+>
+
+<span class="num">
+${gallery.children.length + 1}
+</span>
+`;
+
+
+gallery.appendChild(d);
+
+};
+
+
+r.readAsDataURL(f);
+
+}
+
+
+status.textContent =
+`${fs.length} photo(s) selected.`;
+
+status.className =
+"status success";
+
+};
+
 
 async function editProduct(id){
 
@@ -1402,9 +1308,13 @@ data,
 error
 } =
 await client
+
 .from("products")
+
 .select("*")
+
 .eq("id",id)
+
 .single();
 
 
@@ -1417,220 +1327,233 @@ return;
 }
 
 
-editingId = id;
+editingId =
+id;
 
-modalTitle.textContent =
+
+existingImages =
+
+Array.isArray(data.images) &&
+data.images.length
+
+?
+
+data.images
+
+:
+
+(
+data.image
+? [data.image]
+: []
+);
+
+
+$("modalTitle").textContent =
 "EDIT PRODUCT";
 
-productName.value =
+
+nameEl.value =
 data.name || "";
 
-productPrice.value =
+priceEl.value =
 data.price || "";
 
-productCategory.value =
+categoryEl.value =
 data.category || "tshirts";
 
-productDescription.value =
+descEl.value =
 data.description || "";
 
-stockS.value =
+sEl.value =
 data.stock_s || 0;
 
-stockM.value =
+mEl.value =
 data.stock_m || 0;
 
-stockL.value =
+lEl.value =
 data.stock_l || 0;
 
-stockXL.value =
+xlEl.value =
 data.stock_xl || 0;
 
 
-/*
-Existing image preview
-*/
+filesEl.value =
+"";
 
-productImageFile.value = "";
 
-if(data.image){
+gallery.innerHTML =
+"";
 
-imagePreview.src =
-data.image;
 
-previewBox.style.display =
-"block";
+existingImages.forEach(
+(u,i)=>{
 
-uploadStatus.textContent =
-"Existing photo. Choose a new photo only if you want to replace it.";
+const d =
+document.createElement(
+"div"
+);
 
-uploadStatus.className =
-"upload-status";
+d.className =
+"thumb";
 
-}else{
 
-previewBox.style.display =
-"none";
+d.innerHTML =
 
-uploadStatus.textContent =
-"No existing photo.";
+`
+<img
+src="${esc(u)}"
+>
 
-uploadStatus.className =
-"upload-status";
+<span class="num">
+${i + 1}
+</span>
+`;
+
+
+gallery.appendChild(d);
+
+}
+);
+
+
+status.textContent =
+
+existingImages.length
+
+?
+
+`Existing gallery: ${existingImages.length} photo(s). Choose new photos to replace it.`
+
+:
+
+"No existing photos.";
+
+
+status.className =
+"status";
+
+
+formError.textContent =
+"";
+
+
+modal.classList.remove(
+"hidden"
+);
 
 }
 
 
-formError.textContent = "";
+async function uploadOne(file){
 
-modal.classList.remove("hidden");
+const ext =
 
-}
-
-
-/* =========================
-UPLOAD IMAGE
-========================= */
-
-async function uploadImage(file){
-
-if(!file){
-
-return {
-url:null,
-error:null
-};
-
-}
-
-
-const {
-data:{
-user
-}
-} =
-await client.auth.getUser();
-
-
-if(!user){
-
-return {
-url:null,
-error:new Error(
-"Please login again before uploading."
-)
-};
-
-}
-
-
-/*
-Create unique filename
-*/
-
-const extension =
+(
 file.name
 .split(".")
-.pop()
+.pop() ||
+"jpg"
+)
+
 .toLowerCase()
-.replace(/[^a-z0-9]/g,"");
 
-const safeExtension =
-extension || "jpg";
+.replace(
+/[^a-z0-9]/g,
+""
+)
 
-const fileName =
-`${Date.now()}-${crypto.randomUUID()}.${safeExtension}`;
-
-const filePath =
-`products/${fileName}`;
+|| "jpg";
 
 
-/*
-Upload to Supabase Storage
-*/
+const path =
+
+`products/${Date.now()}-${crypto.randomUUID()}.${ext}`;
+
 
 const {
 error
 } =
+
 await client
+
 .storage
-.from(STORAGE_BUCKET)
+
+.from(BUCKET)
+
 .upload(
-filePath,
+
+path,
+
 file,
+
 {
+
 cacheControl:"3600",
+
 upsert:false,
+
 contentType:file.type
+
 }
+
 );
 
 
 if(error){
 
-return {
-url:null,
-error:error
-};
+throw error;
 
 }
 
 
-/*
-Get public URL
-*/
+return
 
-const {
-data:urlData
-} =
 client
+
 .storage
-.from(STORAGE_BUCKET)
-.getPublicUrl(filePath);
 
+.from(BUCKET)
 
-return {
-url:urlData.publicUrl,
-error:null
-};
+.getPublicUrl(path)
+
+.data
+
+.publicUrl;
 
 }
 
 
-/* =========================
-SAVE PRODUCT
-========================= */
+$("saveBtn").onclick =
+async()=>{
 
-document
-.getElementById("saveBtn")
-.onclick =
-async function(){
+formError.textContent =
+"";
 
-formError.textContent = "";
 
 const name =
-productName.value.trim();
+nameEl.value.trim();
 
 const price =
-Number(productPrice.value);
-
-const category =
-productCategory.value;
-
-const description =
-productDescription.value.trim();
+Number(priceEl.value);
 
 const s =
-Number(stockS.value || 0);
+Number(sEl.value || 0);
 
 const m =
-Number(stockM.value || 0);
+Number(mEl.value || 0);
 
 const l =
-Number(stockL.value || 0);
+Number(lEl.value || 0);
 
 const xl =
-Number(stockXL.value || 0);
+Number(xlEl.value || 0);
+
+
+const files =
+[
+...filesEl.files
+];
 
 
 if(!name){
@@ -1643,7 +1566,10 @@ return;
 }
 
 
-if(!Number.isFinite(price) || price < 0){
+if(
+!Number.isFinite(price) ||
+price < 0
+){
 
 formError.textContent =
 "Enter a valid price.";
@@ -1654,10 +1580,9 @@ return;
 
 
 if(
-s < 0 ||
-m < 0 ||
-l < 0 ||
-xl < 0
+[s,m,l,xl].some(
+x => x < 0
+)
 ){
 
 formError.textContent =
@@ -1668,91 +1593,50 @@ return;
 }
 
 
-const saveBtn =
-document.getElementById("saveBtn");
+const b =
+$("saveBtn");
 
-saveBtn.disabled = true;
+b.disabled =
+true;
 
-saveBtn.textContent =
+b.textContent =
 "SAVING...";
 
 
 try{
 
-
-/*
-Get existing product image
-when editing
-*/
-
-let imageUrl = null;
-
-if(editingId){
-
-const {
-data:existingProduct,
-error:existingError
-} =
-await client
-.from("products")
-.select("image")
-.eq("id",editingId)
-.single();
+let images =
+existingImages.slice();
 
 
-if(existingError){
+if(files.length){
 
-throw existingError;
+images = [];
 
-}
 
-imageUrl =
-existingProduct?.image || null;
+for(
+let i=0;
+i<files.length;
+i++
+){
+
+status.textContent =
+`Uploading photo ${i + 1} of ${files.length}...`;
+
+status.className =
+"status";
+
+
+images.push(
+await uploadOne(
+files[i]
+)
+);
 
 }
 
-
-/*
-Upload new photo if selected
-*/
-
-const file =
-productImageFile.files[0];
-
-
-if(file){
-
-uploadStatus.textContent =
-"Uploading photo...";
-
-uploadStatus.className =
-"upload-status";
-
-const uploadResult =
-await uploadImage(file);
-
-
-if(uploadResult.error){
-
-throw uploadResult.error;
-
 }
 
-imageUrl =
-uploadResult.url;
-
-uploadStatus.textContent =
-"Photo uploaded successfully.";
-
-uploadStatus.className =
-"upload-status success";
-
-}
-
-
-/*
-Prepare database payload
-*/
 
 const payload = {
 
@@ -1760,9 +1644,11 @@ name:name,
 
 price:price,
 
-category:category,
+category:
+categoryEl.value,
 
-description:description,
+description:
+descEl.value.trim(),
 
 stock_s:s,
 
@@ -1770,58 +1656,43 @@ stock_m:m,
 
 stock_l:l,
 
-stock_xl:xl
+stock_xl:xl,
+
+images:images,
+
+image:
+images[0] || ""
 
 };
 
 
-/*
-Only change image when:
-1. New image uploaded
-2. Adding a new product
-*/
-
-if(imageUrl){
-
-payload.image =
-imageUrl;
-
-}
-
-
-/*
-UPDATE
-*/
-
 let result;
+
 
 if(editingId){
 
 result =
 await client
+
 .from("products")
+
 .update(payload)
-.eq("id",editingId);
+
+.eq(
+"id",
+editingId
+);
 
 }else{
 
-
-/*
-For a new product,
-image can be empty if no photo selected.
-*/
-
-if(!payload.image){
-
-payload.image = "";
-
-}
-
-
 result =
 await client
+
 .from("products")
-.insert(payload);
+
+.insert(
+payload
+);
 
 }
 
@@ -1833,30 +1704,29 @@ throw result.error;
 }
 
 
-/*
-Success
-*/
+modal.classList.add(
+"hidden"
+);
 
-modal.classList.add("hidden");
-
-clearForm();
+resetForm();
 
 await loadProducts();
 
 
-}catch(error){
+}catch(e){
 
-console.error(error);
+console.error(e);
 
 formError.textContent =
-error.message ||
-"Something went wrong.";
+e.message ||
+"Upload/save failed.";
 
 }finally{
 
-saveBtn.disabled = false;
+b.disabled =
+false;
 
-saveBtn.textContent =
+b.textContent =
 "SAVE PRODUCT";
 
 }
@@ -1864,18 +1734,13 @@ saveBtn.textContent =
 };
 
 
-/* =========================
-DELETE
-========================= */
-
 async function deleteProduct(id){
 
-const ok =
-confirm(
+if(
+!confirm(
 "Delete this product permanently?"
-);
-
-if(!ok){
+)
+){
 
 return;
 
@@ -1886,9 +1751,15 @@ const {
 error
 } =
 await client
+
 .from("products")
+
 .delete()
-.eq("id",id);
+
+.eq(
+"id",
+id
+);
 
 
 if(error){
@@ -1905,62 +1776,55 @@ loadProducts();
 }
 
 
-/* =========================
-MODAL BUTTONS
-========================= */
+$("closeModal").onclick =
+()=>{
 
-document
-.getElementById("closeModal")
-.onclick =
-function(){
-
-modal.classList.add("hidden");
+modal.classList.add(
+"hidden"
+);
 
 };
 
 
-document
-.getElementById("cancelBtn")
-.onclick =
-function(){
+$("cancelBtn").onclick =
+()=>{
 
-modal.classList.add("hidden");
+modal.classList.add(
+"hidden"
+);
 
 };
 
 
 modal.onclick =
-function(e){
+e=>{
 
-if(e.target === modal){
+if(
+e.target === modal
+){
 
-modal.classList.add("hidden");
+modal.classList.add(
+"hidden"
+);
 
 }
 
 };
 
 
-/* =========================
-ENTER KEY LOGIN
-========================= */
+$("loginPassword").onkeydown =
+e=>{
 
-loginPassword.addEventListener(
-"keydown",
-function(e){
+if(
+e.key === "Enter"
+){
 
-if(e.key === "Enter"){
-
-loginBtn.click();
+$("loginBtn").click();
 
 }
 
-});
+};
 
-
-/* =========================
-START
-========================= */
 
 checkUser();
 
