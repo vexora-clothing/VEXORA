@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>VEXORA — Admin</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
+
 *{
 box-sizing:border-box;
 margin:0;
@@ -21,7 +23,10 @@ font-family:Arial,sans-serif;
 min-height:100vh;
 }
 
-button,input,textarea,select{
+button,
+input,
+textarea,
+select{
 font:inherit;
 }
 
@@ -71,7 +76,9 @@ letter-spacing:.15em;
 margin-bottom:8px;
 }
 
-input,textarea,select{
+input,
+textarea,
+select{
 width:100%;
 background:#080808;
 color:#fff;
@@ -81,15 +88,30 @@ outline:none;
 margin-bottom:18px;
 }
 
+input:focus,
+textarea:focus,
+select:focus{
+border-color:#666;
+}
+
 textarea{
 min-height:100px;
 resize:vertical;
 }
 
-input:focus,
-textarea:focus,
-select:focus{
-border-color:#666;
+input[type="file"]{
+padding:12px;
+cursor:pointer;
+}
+
+input[type="file"]::file-selector-button{
+background:#fff;
+color:#000;
+border:0;
+padding:9px 12px;
+margin-right:10px;
+cursor:pointer;
+font-weight:bold;
 }
 
 .btn{
@@ -325,6 +347,43 @@ color:#fff;
 border:1px solid #292929;
 }
 
+/* IMAGE PREVIEW */
+
+.preview-box{
+width:100%;
+background:#111;
+border:1px solid #222;
+padding:10px;
+margin-top:-5px;
+margin-bottom:18px;
+display:none;
+}
+
+.preview-box img{
+display:block;
+width:100%;
+max-height:300px;
+object-fit:contain;
+}
+
+/* UPLOAD STATUS */
+
+.upload-status{
+font-size:10px;
+color:#777;
+margin-top:-8px;
+margin-bottom:18px;
+line-height:1.5;
+}
+
+.upload-status.success{
+color:#35df88;
+}
+
+.upload-status.error{
+color:#ff4b55;
+}
+
 /* MOBILE */
 
 @media(max-width:800px){
@@ -384,13 +443,21 @@ grid-template-columns:1fr 1fr;
 font-size:16px;
 }
 
+.modal-box{
+padding:18px;
 }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- LOGIN -->
+
+<!-- =========================
+LOGIN
+========================= -->
 
 <section class="login" id="loginPage">
 
@@ -404,7 +471,9 @@ VEXORA
 ADMIN PANEL / SECURE LOGIN
 </div>
 
-<label>EMAIL ADDRESS</label>
+<label>
+EMAIL ADDRESS
+</label>
 
 <input
 id="loginEmail"
@@ -412,7 +481,9 @@ type="email"
 placeholder="admin@email.com"
 >
 
-<label>PASSWORD</label>
+<label>
+PASSWORD
+</label>
 
 <input
 id="loginPassword"
@@ -437,7 +508,9 @@ id="loginError"
 </section>
 
 
-<!-- ADMIN -->
+<!-- =========================
+ADMIN
+========================= -->
 
 <section
 class="admin hidden"
@@ -498,7 +571,6 @@ id="addBtn"
 class="products"
 id="products"
 >
-
 </div>
 
 </div>
@@ -506,7 +578,9 @@ id="products"
 </section>
 
 
-<!-- MODAL -->
+<!-- =========================
+MODAL
+========================= -->
 
 <div
 class="modal hidden"
@@ -534,7 +608,9 @@ id="closeModal"
 </div>
 
 
-<label>PRODUCT NAME</label>
+<label>
+PRODUCT NAME
+</label>
 
 <input
 id="productName"
@@ -543,16 +619,21 @@ placeholder="VEXORA DESIGN 01"
 >
 
 
-<label>PRICE</label>
+<label>
+PRICE
+</label>
 
 <input
 id="productPrice"
 type="number"
 placeholder="5900"
+min="0"
 >
 
 
-<label>CATEGORY</label>
+<label>
+CATEGORY
+</label>
 
 <select id="productCategory">
 
@@ -575,16 +656,42 @@ Accessories
 </select>
 
 
-<label>IMAGE URL / FILE NAME</label>
+<!-- DIRECT PHOTO UPLOAD -->
+
+<label>
+PRODUCT PHOTO
+</label>
 
 <input
-id="productImage"
-type="text"
-placeholder="tee01_1.jpg"
+id="productImageFile"
+type="file"
+accept="image/*"
 >
 
+<div
+class="upload-status"
+id="uploadStatus"
+>
+Choose a photo from your phone.
+</div>
 
-<label>DESCRIPTION</label>
+<div
+class="preview-box"
+id="previewBox"
+>
+
+<img
+id="imagePreview"
+src=""
+alt="Preview"
+>
+
+</div>
+
+
+<label>
+DESCRIPTION
+</label>
 
 <textarea
 id="productDescription"
@@ -592,7 +699,9 @@ placeholder="Heavyweight oversized VEXORA T-shirt."
 ></textarea>
 
 
-<label>SIZE S STOCK</label>
+<label>
+SIZE S STOCK
+</label>
 
 <input
 id="stockS"
@@ -602,7 +711,9 @@ value="0"
 >
 
 
-<label>SIZE M STOCK</label>
+<label>
+SIZE M STOCK
+</label>
 
 <input
 id="stockM"
@@ -612,7 +723,9 @@ value="0"
 >
 
 
-<label>SIZE L STOCK</label>
+<label>
+SIZE L STOCK
+</label>
 
 <input
 id="stockL"
@@ -622,7 +735,9 @@ value="0"
 >
 
 
-<label>SIZE XL STOCK</label>
+<label>
+SIZE XL STOCK
+</label>
 
 <input
 id="stockXL"
@@ -649,6 +764,7 @@ SAVE PRODUCT
 </button>
 
 </div>
+
 
 <div
 class="error"
@@ -677,6 +793,14 @@ supabase.createClient(
 SUPABASE_URL,
 SUPABASE_KEY
 );
+
+
+/* =========================
+STORAGE
+========================= */
+
+const STORAGE_BUCKET =
+"products-image";
 
 
 /* =========================
@@ -729,8 +853,8 @@ document.getElementById("productPrice");
 const productCategory =
 document.getElementById("productCategory");
 
-const productImage =
-document.getElementById("productImage");
+const productImageFile =
+document.getElementById("productImageFile");
 
 const productDescription =
 document.getElementById("productDescription");
@@ -746,6 +870,15 @@ document.getElementById("stockL");
 
 const stockXL =
 document.getElementById("stockXL");
+
+const previewBox =
+document.getElementById("previewBox");
+
+const imagePreview =
+document.getElementById("imagePreview");
+
+const uploadStatus =
+document.getElementById("uploadStatus");
 
 
 /* =========================
@@ -792,6 +925,10 @@ showLogin();
 }
 
 
+/* =========================
+SHOW LOGIN
+========================= */
+
 function showLogin(){
 
 loginPage.classList.remove("hidden");
@@ -800,6 +937,10 @@ adminPage.classList.add("hidden");
 
 }
 
+
+/* =========================
+SHOW ADMIN
+========================= */
 
 function showAdmin(){
 
@@ -971,7 +1112,7 @@ if(error){
 productsBox.innerHTML =
 `
 <p style="color:#ff4b55">
-${error.message}
+${escapeHtml(error.message)}
 </p>
 `;
 
@@ -1004,25 +1145,31 @@ Number(product.stock_l || 0) +
 Number(product.stock_xl || 0);
 
 
+const image =
+product.image
+?
+`
+<img
+src="${escapeHtml(product.image)}"
+alt=""
+onerror="this.style.display='none'"
+>
+`
+:
+`
+<span class="no-image">
+NO IMAGE
+</span>
+`;
+
+
 return `
 
 <div class="card">
 
 <div class="image">
 
-${
-product.image
-?
-`<img
-src="${product.image}"
-alt=""
-onerror="this.style.display='none'"
->`
-:
-`<span class="no-image">
-NO IMAGE
-</span>`
-}
+${image}
 
 </div>
 
@@ -1053,14 +1200,14 @@ ${totalStock}
 
 <button
 class="edit"
-onclick="editProduct('${product.id}')"
+onclick="editProduct('${escapeHtml(product.id)}')"
 >
 EDIT
 </button>
 
 <button
 class="delete"
-onclick="deleteProduct('${product.id}')"
+onclick="deleteProduct('${escapeHtml(product.id)}')"
 >
 DELETE
 </button>
@@ -1090,6 +1237,96 @@ return String(value)
 .replaceAll("'","&#039;");
 
 }
+
+
+/* =========================
+IMAGE PREVIEW
+========================= */
+
+productImageFile.addEventListener(
+"change",
+function(){
+
+const file =
+this.files[0];
+
+if(!file){
+
+previewBox.style.display =
+"none";
+
+imagePreview.src = "";
+
+uploadStatus.textContent =
+"Choose a photo from your phone.";
+
+uploadStatus.className =
+"upload-status";
+
+return;
+
+}
+
+
+if(!file.type.startsWith("image/")){
+
+this.value = "";
+
+previewBox.style.display =
+"none";
+
+uploadStatus.textContent =
+"Please select an image file.";
+
+uploadStatus.className =
+"upload-status error";
+
+return;
+
+}
+
+
+if(file.size > 10 * 1024 * 1024){
+
+this.value = "";
+
+previewBox.style.display =
+"none";
+
+uploadStatus.textContent =
+"Image must be smaller than 10MB.";
+
+uploadStatus.className =
+"upload-status error";
+
+return;
+
+}
+
+
+const reader =
+new FileReader();
+
+reader.onload =
+function(e){
+
+imagePreview.src =
+e.target.result;
+
+previewBox.style.display =
+"block";
+
+};
+
+reader.readAsDataURL(file);
+
+uploadStatus.textContent =
+"Photo selected: " + file.name;
+
+uploadStatus.className =
+"upload-status success";
+
+});
 
 
 /* =========================
@@ -1126,7 +1363,7 @@ productPrice.value = "";
 productCategory.value =
 "tshirts";
 
-productImage.value = "";
+productImageFile.value = "";
 
 productDescription.value = "";
 
@@ -1139,6 +1376,17 @@ stockL.value = 0;
 stockXL.value = 0;
 
 formError.textContent = "";
+
+uploadStatus.textContent =
+"Choose a photo from your phone.";
+
+uploadStatus.className =
+"upload-status";
+
+previewBox.style.display =
+"none";
+
+imagePreview.src = "";
 
 }
 
@@ -1183,9 +1431,6 @@ data.price || "";
 productCategory.value =
 data.category || "tshirts";
 
-productImage.value =
-data.image || "";
-
 productDescription.value =
 data.description || "";
 
@@ -1201,9 +1446,153 @@ data.stock_l || 0;
 stockXL.value =
 data.stock_xl || 0;
 
+
+/*
+Existing image preview
+*/
+
+productImageFile.value = "";
+
+if(data.image){
+
+imagePreview.src =
+data.image;
+
+previewBox.style.display =
+"block";
+
+uploadStatus.textContent =
+"Existing photo. Choose a new photo only if you want to replace it.";
+
+uploadStatus.className =
+"upload-status";
+
+}else{
+
+previewBox.style.display =
+"none";
+
+uploadStatus.textContent =
+"No existing photo.";
+
+uploadStatus.className =
+"upload-status";
+
+}
+
+
 formError.textContent = "";
 
 modal.classList.remove("hidden");
+
+}
+
+
+/* =========================
+UPLOAD IMAGE
+========================= */
+
+async function uploadImage(file){
+
+if(!file){
+
+return {
+url:null,
+error:null
+};
+
+}
+
+
+const {
+data:{
+user
+}
+} =
+await client.auth.getUser();
+
+
+if(!user){
+
+return {
+url:null,
+error:new Error(
+"Please login again before uploading."
+)
+};
+
+}
+
+
+/*
+Create unique filename
+*/
+
+const extension =
+file.name
+.split(".")
+.pop()
+.toLowerCase()
+.replace(/[^a-z0-9]/g,"");
+
+const safeExtension =
+extension || "jpg";
+
+const fileName =
+`${Date.now()}-${crypto.randomUUID()}.${safeExtension}`;
+
+const filePath =
+`products/${fileName}`;
+
+
+/*
+Upload to Supabase Storage
+*/
+
+const {
+error
+} =
+await client
+.storage
+.from(STORAGE_BUCKET)
+.upload(
+filePath,
+file,
+{
+cacheControl:"3600",
+upsert:false,
+contentType:file.type
+}
+);
+
+
+if(error){
+
+return {
+url:null,
+error:error
+};
+
+}
+
+
+/*
+Get public URL
+*/
+
+const {
+data:urlData
+} =
+client
+.storage
+.from(STORAGE_BUCKET)
+.getPublicUrl(filePath);
+
+
+return {
+url:urlData.publicUrl,
+error:null
+};
 
 }
 
@@ -1227,9 +1616,6 @@ Number(productPrice.value);
 
 const category =
 productCategory.value;
-
-const image =
-productImage.value.trim();
 
 const description =
 productDescription.value.trim();
@@ -1256,7 +1642,8 @@ return;
 
 }
 
-if(!price || price < 0){
+
+if(!Number.isFinite(price) || price < 0){
 
 formError.textContent =
 "Enter a valid price.";
@@ -1266,6 +1653,107 @@ return;
 }
 
 
+if(
+s < 0 ||
+m < 0 ||
+l < 0 ||
+xl < 0
+){
+
+formError.textContent =
+"Stock cannot be negative.";
+
+return;
+
+}
+
+
+const saveBtn =
+document.getElementById("saveBtn");
+
+saveBtn.disabled = true;
+
+saveBtn.textContent =
+"SAVING...";
+
+
+try{
+
+
+/*
+Get existing product image
+when editing
+*/
+
+let imageUrl = null;
+
+if(editingId){
+
+const {
+data:existingProduct,
+error:existingError
+} =
+await client
+.from("products")
+.select("image")
+.eq("id",editingId)
+.single();
+
+
+if(existingError){
+
+throw existingError;
+
+}
+
+imageUrl =
+existingProduct?.image || null;
+
+}
+
+
+/*
+Upload new photo if selected
+*/
+
+const file =
+productImageFile.files[0];
+
+
+if(file){
+
+uploadStatus.textContent =
+"Uploading photo...";
+
+uploadStatus.className =
+"upload-status";
+
+const uploadResult =
+await uploadImage(file);
+
+
+if(uploadResult.error){
+
+throw uploadResult.error;
+
+}
+
+imageUrl =
+uploadResult.url;
+
+uploadStatus.textContent =
+"Photo uploaded successfully.";
+
+uploadStatus.className =
+"upload-status success";
+
+}
+
+
+/*
+Prepare database payload
+*/
+
 const payload = {
 
 name:name,
@@ -1273,8 +1761,6 @@ name:name,
 price:price,
 
 category:category,
-
-image:image,
 
 description:description,
 
@@ -1289,17 +1775,25 @@ stock_xl:xl
 };
 
 
-const saveBtn =
-document.getElementById("saveBtn");
+/*
+Only change image when:
+1. New image uploaded
+2. Adding a new product
+*/
 
-saveBtn.disabled = true;
+if(imageUrl){
 
-saveBtn.textContent =
-"SAVING...";
+payload.image =
+imageUrl;
 
+}
+
+
+/*
+UPDATE
+*/
 
 let result;
-
 
 if(editingId){
 
@@ -1311,6 +1805,19 @@ await client
 
 }else{
 
+
+/*
+For a new product,
+image can be empty if no photo selected.
+*/
+
+if(!payload.image){
+
+payload.image = "";
+
+}
+
+
 result =
 await client
 .from("products")
@@ -1321,27 +1828,38 @@ await client
 
 if(result.error){
 
-formError.textContent =
-result.error.message;
-
-saveBtn.disabled = false;
-
-saveBtn.textContent =
-"SAVE PRODUCT";
-
-return;
+throw result.error;
 
 }
 
 
+/*
+Success
+*/
+
 modal.classList.add("hidden");
+
+clearForm();
+
+await loadProducts();
+
+
+}catch(error){
+
+console.error(error);
+
+formError.textContent =
+error.message ||
+"Something went wrong.";
+
+}finally{
 
 saveBtn.disabled = false;
 
 saveBtn.textContent =
 "SAVE PRODUCT";
 
-loadProducts();
+}
 
 };
 
@@ -1421,6 +1939,23 @@ modal.classList.add("hidden");
 }
 
 };
+
+
+/* =========================
+ENTER KEY LOGIN
+========================= */
+
+loginPassword.addEventListener(
+"keydown",
+function(e){
+
+if(e.key === "Enter"){
+
+loginBtn.click();
+
+}
+
+});
 
 
 /* =========================
